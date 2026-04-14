@@ -19,7 +19,7 @@
             top: 0; 
             z-index: 1000; 
             background: #000000; 
-            border-bottom: 5px solid #D4AF37; /* THICK GOLD BORDER */
+            border-bottom: 5px solid #D4AF37; 
             padding: 30px 50px; 
             display: flex; 
             justify-content: space-between; 
@@ -31,7 +31,7 @@
             color: #D4AF37; 
             text-transform: uppercase; 
             letter-spacing: 5px; 
-            font-size: 32px; /* LARGE BUSINESS NAME */
+            font-size: 32px; 
             text-decoration: none; 
         }
         #header-links { display: flex; gap: 30px; }
@@ -52,7 +52,7 @@
         #demand-gold { font-family: 'Montserrat'; font-size: 55px; font-weight: 900; color: #D4AF37; text-transform: uppercase; margin-bottom: 40px; }
 
         /* IG STATS & LIVE TICKER */
-        #ig-stats-flex { display: flex; justify(content: center; gap: 50px; margin-bottom: 25px; }
+        #ig-stats-flex { display: flex; justify-content: center; gap: 50px; margin-bottom: 25px; }
         .stat-box { text-align: center; }
         .stat-val { font-family: 'Montserrat'; font-size: 34px; font-weight: 900; color: #D4AF37; display: block; }
         .stat-tag { font-size: 11px; text-transform: uppercase; color: #666; font-weight: 700; }
@@ -114,7 +114,6 @@
         @media (max-width: 900px) {
             #nav-header { flex-direction: column; gap: 20px; padding: 20px; }
             #nav-logo { font-size: 24px; }
-            #header-links { gap: 15px; }
         }
     </style>
 </head>
@@ -134,7 +133,6 @@
     <header id="hero-branding">
         <h1 id="invest-headline">Invest In Your Future.</h1>
         <h2 id="demand-gold">Demand Excellence.</h2>
-        
         <div id="ig-stats-flex">
             <div class="stat-box"><span class="stat-val">247</span><span class="stat-tag">Followers</span></div>
             <div class="stat-box"><span class="stat-val">2,914</span><span class="stat-tag">Following</span></div>
@@ -153,7 +151,6 @@
                 <span class="card-li" style="color: #D4AF37; font-weight: 900;">Grocery costs are a separate standalone fee.</span>
                 <span class="card-li" style="color: #ffffff; font-weight: 900;">10 Plate Minimum For Meal Prep Orders</span>
                 <span class="card-li">Plating Fee: $20 - $30 per plate</span>
-                <span class="card-li">Fresh Sourcing & Full Kitchen Cleanup Included</span>
             </div>
         </div>
     </section>
@@ -164,14 +161,10 @@
             <div class="card-box">
                 <div class="card-head-row"><span class="service-title">Basic Clean</span><span class="price-hero">$150</span></div>
                 <p class="card-p">A complete sweep of common areas, bathrooms, and living spaces.</p>
-                <span class="card-li">Dusting, Mopping & Vacuuming</span>
-                <span class="card-li">Kitchen & Bathroom Sanitation</span>
             </div>
             <div class="card-box gold-wrap">
                 <div class="card-head-row"><span class="service-title">Deep Detail</span><span class="price-hero">$300</span></div>
                 <p class="card-p">Intensive sanitation focusing on appliances, baseboards, and high-dust areas.</p>
-                <span class="card-li">Inside Appliances & High Dusting</span>
-                <span class="card-li">Baseboard & Grout Focus</span>
             </div>
         </div>
     </section>
@@ -182,14 +175,10 @@
             <div class="card-box">
                 <div class="card-head-row"><span class="service-title">Strategy Session</span><span class="price-hero">$100</span></div>
                 <p class="card-p">Full report audit and a custom DIY dispute roadmap.</p>
-                <span class="card-li">DIY Dispute Templates Included</span>
-                <span class="card-li">Restoration eBook Provided</span>
             </div>
             <div class="card-box">
                 <div class="card-head-row"><span class="service-title">Full Service</span><span class="price-hero">$250<span class="unit-text">/mo</span></span></div>
-                <p class="card-p">Aggressive monthly restoration and profile building to prep for high-limit lending.</p>
-                <span class="card-li" style="color:#D4AF37;">Non-Contract | Cancel Anytime</span>
-                <span class="card-li">Monthly Progress Tracking</span>
+                <p class="card-p">Aggressive monthly restoration and profile building.</p>
             </div>
         </div>
     </section>
@@ -200,17 +189,14 @@
             <div class="card-box">
                 <div class="card-head-row"><span class="service-title">Basic</span><span class="price-hero">$150</span></div>
                 <p class="card-p">Local point-to-point delivery. 25-mile radius.</p>
-                <span class="card-li">Up to 500 lbs</span>
             </div>
             <div class="card-box">
                 <div class="card-head-row"><span class="service-title">Premium</span><span class="price-hero">$300</span></div>
-                <p class="card-p">Regional logistics and priority handling. 75-mile radius.</p>
-                <span class="card-li">Up to 1,500 lbs</span>
+                <p class="card-p">Regional logistics. 75-mile radius.</p>
             </div>
             <div class="card-box gold-wrap">
                 <div class="card-head-row"><span class="service-title">Deluxe</span><span class="price-hero">$650</span></div>
                 <p class="card-p">Express long-distance mobilization. 200-mile radius.</p>
-                <span class="card-li">Full Van Capacity Available</span>
             </div>
         </div>
     </section>
@@ -218,22 +204,21 @@
     <div id="referral-promo">
         <h3 id="ref-head">Uncapped Referral Program</h3>
         <p id="ref-sub">Refer 2 Clients = Get 1 Service FREE.</p>
-        <p class="ref-detail">NO LIMITS: Refer 4 = 2 Free / Refer 10 = 5 Free</p>
     </div>
 
     <section id="policy-section">
         <h2 class="policy-headline">Master Rules & Policies</h2>
-        <div class="policy-item"><span class="policy-emoji">💳</span><div><strong>Upfront Payment:</strong> Full payment required at time of booking. No exceptions.</div></div>
-        <div class="policy-item"><span class="policy-emoji">⏳</span><div><strong>24HR Cancellation:</strong> Cancellations within 24 hours result in a 50% service fee forfeiture.</div></div>
-        <div class="policy-item"><span class="policy-emoji">🐾</span><div><strong>Safety:</strong> Pets must be secured in a crate or separate room during home services.</div></div>
-        <div class="policy-item"><span class="policy-emoji">🧹</span><div><strong>Waste:</strong> We do not handle animal waste or biohazards. Clear paths required.</div></div>
+        <div class="policy-item"><span class="policy-emoji">💳</span><div><strong>Upfront Payment:</strong> Full payment required at time of booking.</div></div>
+        <div class="policy-item"><span class="policy-emoji">⏳</span><div><strong>24HR Cancellation:</strong> 50% service fee forfeiture.</div></div>
+        <div class="policy-item"><span class="policy-emoji">🐾</span><div><strong>Safety:</strong> Pets must be secured during home services.</div></div>
+        <div class="policy-item"><span class="policy-emoji">🧹</span><div><strong>Waste:</strong> No biohazard or animal waste handling.</div></div>
     </section>
 
     <section id="intake-area">
         <h2 class="sec-label" style="padding-top:0;">Secure Your Inquiry</h2>
         <div class="form-container">
             <form>
-                <div class="input-row"><label>Client Full Name</label><input type="text" placeholder="Enter Name" required></div>
+                <div class="input-row"><label>Client Full Name</label><input type="text" placeholder="Name" required></div>
                 <div class="input-row"><label>Service Required</label>
                     <select required>
                         <option value="">Choose Service...</option>
@@ -243,8 +228,8 @@
                         <option>Sprinter Courier Logistics</option>
                     </select>
                 </div>
-                <div class="input-row"><label>Inquiry Details</label><textarea rows="5" placeholder="Special requirements or project details..."></textarea></div>
-                <button type="submit" id="submit-inquiry">Submit Official Inquiry</button>
+                <div class="input-row"><label>Inquiry Details</label><textarea rows="5" placeholder="Details..."></textarea></div>
+                <button type="submit" id="submit-inquiry">Submit Inquiry</button>
             </form>
         </div>
     </section>
