@@ -7,7 +7,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
@@ -22,7 +22,7 @@
         #invest-headline { font-family: 'Montserrat'; font-size: clamp(45px, 8vw, 75px); font-weight: 900; color: #ffffff; text-transform: uppercase; line-height: 1; letter-spacing: -3px; margin-bottom: 10px; }
         #demand-gold { font-family: 'Montserrat'; font-size: clamp(38px, 6vw, 60px); font-weight: 900; color: #D4AF37; text-transform: uppercase; margin-bottom: 50px; letter-spacing: -1px; }
         
-        /* IMAGE-STYLE NAV LINKS */
+        /* NAV LINKS */
         #image-nav { display: flex; flex-direction: column; align-items: center; gap: 20px; margin-bottom: 60px; }
         .nav-link-style { color: #ffffff; text-decoration: underline; font-size: 20px; font-weight: 400; letter-spacing: 1px; transition: 0.3s; cursor: pointer; }
         .nav-link-style:hover { color: #D4AF37; text-decoration: none; transform: scale(1.05); }
@@ -38,38 +38,36 @@
         .main-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); max-width: 1300px; margin: 0 auto; padding: 0 25px; gap: 40px; }
 
         /* SERVICE CARDS */
-        .card-box { background: #0a0a0a; border: 1px solid #1a1a1a; padding: 50px; border-radius: 4px; position: relative; transition: 0.4s; }
-        .card-box:hover { border-color: #333; background: #0e0e0e; }
+        .card-box { background: #0a0a0a; border: 1px solid #1a1a1a; padding: 50px; border-radius: 4px; position: relative; }
         .deluxe-edition-wrap { outline: 4px solid #D4AF37; outline-offset: -18px; }
         
         .card-head-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 30px; border-bottom: 1px solid #222; padding-bottom: 15px; }
         .service-title { font-family: 'Montserrat'; color: #D4AF37; font-size: 16px; text-transform: uppercase; font-weight: 800; letter-spacing: 1px; }
-        .price-hero { font-family: 'Montserrat'; font-size: 48px; font-weight: 900; color: #ffffff; }
-        .unit-text { font-size: 16px; color: #555; vertical-align: middle; }
+        
+        /* REDUCED BOLDNESS ON PRICING */
+        .price-hero { font-family: 'Montserrat'; font-size: 44px; font-weight: 500; color: #ffffff; }
+        .unit-text { font-size: 16px; color: #555; font-weight: 400; }
         
         .card-p { color: #aaa; font-size: 17px; margin-bottom: 30px; line-height: 1.5; }
         .feature-list { list-style: none; }
         .card-li { color: #888; font-size: 14px; margin-bottom: 12px; font-weight: 600; display: flex; align-items: center; }
         .card-li::before { content: "•"; color: #D4AF37; margin-right: 15px; font-size: 20px; }
 
-        /* SPECIAL HIGHLIGHTS */
-        .gold-text { color: #D4AF37 !important; }
-        .white-text { color: #ffffff !important; }
-
-        /* POLICIES & FORMS */
+        /* POLICIES */
         #policy-section { background: #080808; border: 2px solid #D4AF37; margin: 100px 20px; padding: 80px 40px; border-radius: 4px; }
         .policy-headline { font-family: 'Montserrat'; color: #D4AF37; text-transform: uppercase; font-size: 26px; font-weight: 900; margin-bottom: 60px; text-align: center; letter-spacing: 5px; }
         .policy-item { margin-bottom: 35px; font-size: 18px; color: #ccc; display: flex; align-items: flex-start; max-width: 900px; margin-left: auto; margin-right: auto; }
         .policy-emoji { margin-right: 25px; font-size: 28px; min-width: 45px; }
 
+        /* INTAKE FORM */
         #intake-area { background: #050505; padding: 120px 20px; border-top: 1px solid #D4AF37; }
         .form-container { max-width: 650px; margin: 0 auto; }
         .input-row { margin-bottom: 40px; }
         label { display: block; font-family: 'Montserrat'; font-size: 12px; text-transform: uppercase; color: #D4AF37; margin-bottom: 15px; letter-spacing: 3px; font-weight: 800; }
-        input, select, textarea { width: 100%; background: #000; border: 1px solid #333; padding: 22px; color: #fff; font-size: 16px; border-radius: 2px; transition: 0.3s; }
+        input, select, textarea { width: 100%; background: #000; border: 1px solid #333; padding: 22px; color: #fff; font-size: 16px; border-radius: 2px; }
         #submit-inquiry { background: #D4AF37; color: #000; width: 100%; padding: 28px; border: none; font-family: 'Montserrat'; font-weight: 900; text-transform: uppercase; letter-spacing: 8px; cursor: pointer; transition: 0.3s; margin-top: 20px; }
 
-        footer { text-align: center; padding: 120px 20px; color: #444; font-size: 12px; letter-spacing: 8px; text-transform: uppercase; font-weight: 800; border-top: 1px solid #111; }
+        footer { text-align: center; padding: 120px 20px; color: #444; font-size: 12px; letter-spacing: 8px; text-transform: uppercase; font-weight: 800; }
 
         @keyframes gold-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
         .live-ticker { color: #D4AF37; font-weight: 900; font-size: 12px; animation: gold-blink 1.4s infinite; margin-left: 15px; vertical-align: middle; }
@@ -106,10 +104,9 @@
                 <div class="card-head-row"><span class="service-title">Chef Service</span><span class="price-hero">$75<span class="unit-text">/hr</span></span></div>
                 <p class="card-p">Professional in-home culinary experience. Menus tailored to your dietary needs.</p>
                 <ul class="feature-list">
-                    <li class="card-li gold-text">Grocery costs are a separate standalone fee.</li>
+                    <li class="card-li" style="color: #D4AF37;">Grocery costs are a separate standalone fee.</li>
                     <li class="card-li">Plating: $20 - $30 per plate</li>
-                    <li class="card-li">Fresh Ingredient Sourcing</li>
-                    <li class="card-li white-text">10 Plate Minimum For Meal Prep Orders</li>
+                    <li class="card-li" style="color: #ffffff;">10 Plate Minimum For Meal Prep Orders</li>
                     <li class="card-li">Full Kitchen Cleanup Included</li>
                 </ul>
             </div>
@@ -123,18 +120,16 @@
                 <div class="card-head-row"><span class="service-title">Strategy Session</span><span class="price-hero">$100</span></div>
                 <p class="card-p">One-time 60-minute analysis with DIY tools included.</p>
                 <ul class="feature-list">
-                    <li class="card-li white-text">FREE: Credit Repair Letter Templates</li>
-                    <li class="card-li white-text">FREE: Credit Repair eBook</li>
-                    <li class="card-li">Full Profile Analysis & DIY Roadmap</li>
+                    <li class="card-li" style="color: #ffffff;">FREE: Credit Repair Letter Templates</li>
+                    <li class="card-li" style="color: #ffffff;">FREE: Credit Repair eBook</li>
                 </ul>
             </div>
             <div class="card-box deluxe-edition-wrap">
                 <div class="card-head-row"><span class="service-title">Full Service</span><span class="price-hero">$250<span class="unit-text">/mo</span></span></div>
                 <p class="card-p">Aggressive monthly restoration targeting inaccuracies across all bureaus.</p>
                 <ul class="feature-list">
-                    <li class="card-li gold-text">NO LONG-TERM CONTRACTS.</li>
-                    <li class="card-li white-text">Cancel Anytime.</li>
-                    <li class="card-li">Month-to-Month Restoration</li>
+                    <li class="card-li" style="color: #D4AF37;">NO LONG-TERM CONTRACTS.</li>
+                    <li class="card-li" style="color: #ffffff;">Cancel Anytime.</li>
                     <li class="card-li">Homeownership Readiness Strategy</li>
                 </ul>
             </div>
@@ -146,7 +141,7 @@
         <div class="main-grid">
             <div class="card-box">
                 <div class="card-head-row"><span class="service-title">The Basic</span><span class="price-hero">$150</span></div>
-                <p class="card-p">Local point-to-point delivery for smaller, urgent loads.</p>
+                <p class="card-p">Local point-to-point delivery for smaller loads.</p>
                 <ul class="feature-list">
                     <li class="card-li">Up to 500 lbs cargo</li>
                     <li class="card-li">25-mile radius coverage</li>
@@ -164,8 +159,8 @@
                 <div class="card-head-row"><span class="service-title">The Deluxe</span><span class="price-hero">$650</span></div>
                 <p class="card-p">Express long-distance mobilization with full van access.</p>
                 <ul class="feature-list">
-                    <li class="card-li white-text">Full van capacity access</li>
-                    <li class="card-li">Up to 200 miles coverage</li>
+                    <li class="card-li" style="color: #ffffff;">UP TO 3,500 LBS CARGO LIMIT</li>
+                    <li class="card-li" style="color: #ffffff;">Up to 200 miles coverage</li>
                 </ul>
             </div>
         </div>
@@ -177,26 +172,17 @@
             <div class="card-box">
                 <div class="card-head-row"><span class="service-title">Essential Clean</span><span class="price-hero">$100</span></div>
                 <p class="card-p">Maintenance cleaning for apartments and small offices.</p>
-                <ul class="feature-list">
-                    <li class="card-li">Surface Sanitization</li>
-                    <li class="card-li">Vacuum & Mop Details</li>
-                </ul>
             </div>
             <div class="card-box">
                 <div class="card-head-row"><span class="service-title">Premium Detail</span><span class="price-hero">$350</span></div>
                 <p class="card-p">Comprehensive deep clean for residential homes.</p>
-                <ul class="feature-list">
-                    <li class="card-li">Window Sills & Door Frames</li>
-                    <li class="card-li">Detailed Kitchen & Bath Scrub</li>
-                </ul>
             </div>
             <div class="card-box deluxe-edition-wrap">
                 <div class="card-head-row"><span class="service-title">Deluxe Edition</span><span class="price-hero">$600</span></div>
                 <p class="card-p">The ultimate restoration package for maximum cleanliness.</p>
                 <ul class="feature-list">
-                    <li class="card-li white-text">Maximum Restoration Effort</li>
-                    <li class="card-li">Baseboards & Interior Appliances</li>
-                    <li class="card-li">High-Dust Ceiling Detail</li>
+                    <li class="card-li" style="color: #ffffff;">Baseboards & Interior Appliances</li>
+                    <li class="card-li" style="color: #ffffff;">High-Dust Ceiling Detail</li>
                 </ul>
             </div>
         </div>
@@ -204,10 +190,9 @@
 
     <section id="policy-section">
         <h2 class="policy-headline">Master Rules & Policies</h2>
-        <div class="policy-item"><span class="policy-emoji">💳</span><div><strong>Upfront Payment Required:</strong> Full payment at booking. No exceptions.</div></div>
-        <div class="policy-item"><span class="policy-emoji">⏳</span><div><strong>Cancellation Policy:</strong> 50% forfeiture fee for cancellations within 24 hours.</div></div>
+        <div class="policy-item"><span class="policy-emoji">💳</span><div><strong>Non-Refundable:</strong> All service payments are strictly non-refundable once processed.</div></div>
+        <div class="policy-item"><span class="policy-emoji">⏳</span><div><strong>48HR Cancellation:</strong> Changes or cancellations must be made 48 hours in advance. Failure to do so results in a 50% forfeiture fee.</div></div>
         <div class="policy-item"><span class="policy-emoji">🐾</span><div><strong>Pet Policy:</strong> All pets must be secured during home service visits.</div></div>
-        <div class="policy-item"><span class="policy-emoji">🧹</span><div><strong>Waste Policy:</strong> We do not handle animal waste or biohazards.</div></div>
     </section>
 
     <section id="intake-area">
