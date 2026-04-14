@@ -56,7 +56,6 @@
         .stat-box { text-align: center; }
         .stat-val { font-family: 'Montserrat'; font-size: 34px; font-weight: 900; color: #D4AF37; display: block; }
         .stat-tag { font-size: 11px; text-transform: uppercase; color: #666; font-weight: 700; }
-        #ig-username { color: #D4AF37; text-decoration: none; font-weight: 900; font-size: 14px; letter-spacing: 3px; text-transform: uppercase; border: 2px solid #D4AF37; padding: 12px 30px; display: inline-block; transition: 0.3s; }
 
         /* SECTIONS */
         .sec-label { text-align: center; font-family: 'Montserrat'; color: #D4AF37; font-size: 30px; font-weight: 900; text-transform: uppercase; padding: 120px 20px 50px; letter-spacing: 3px; }
@@ -109,11 +108,11 @@
     <nav id="nav-header">
         <a href="#" id="nav-logo">TSAH LLC</a>
         <div id="header-links">
-            <a href="#housing-sec" class="nav-anchor">Housing</a>
             <a href="#clean-sec" class="nav-anchor">Cleaning</a>
+            <a href="#courier-sec" class="nav-anchor">Courier</a>
             <a href="#chef-sec" class="nav-anchor">Chef</a>
             <a href="#credit-sec" class="nav-anchor">Credit</a>
-            <a href="#courier-sec" class="nav-anchor">Courier</a>
+            <a href="#intake-area" class="nav-anchor">Inquiry</a>
         </div>
     </nav>
 
@@ -124,38 +123,45 @@
             <div class="stat-box"><span class="stat-val">247</span><span class="stat-tag">Followers</span></div>
             <div class="stat-box"><span class="stat-val">2,914</span><span class="stat-tag">Following</span></div>
         </div>
-        <a href="https://www.instagram.com/_tsah_ceo/" id="ig-username" target="_blank">@_TSAH_CEO <span class="live-ticker">LIVE</span></a>
+        <a href="https://www.instagram.com/_tsah_ceo/" style="color: #D4AF37; text-decoration: none; font-weight: 900; border: 1px solid #D4AF37; padding: 10px 20px; text-transform: uppercase; font-size: 12px;" target="_blank">@_TSAH_CEO <span class="live-ticker">LIVE</span></a>
     </header>
-
-    <section id="housing-sec">
-        <h2 class="sec-label">Real Estate & Filtering <span class="live-ticker">LIVE</span></h2>
-        <div class="main-grid">
-            <div class="card-box deluxe-edition-border">
-                <div class="card-head-row"><span class="service-title">Tenant Screening</span><span class="price-hero">Quote</span></div>
-                <p class="card-p">Professional filtering and income verification. We prevent rental fraud by verifying applicant references and financial standing.</p>
-                <span class="card-li">Anti-Fraud Protection</span>
-                <span class="card-li">Income Verification & Reference Audits</span>
-            </div>
-            <div class="card-box">
-                <div class="card-head-row"><span class="service-title">RE Acquisition</span><span class="price-hero">Partner</span></div>
-                <p class="card-p">Focusing on Buy & Hold strategies for multi-family properties. Expertise in seller financing and acquisition of cash-flowing assets.</p>
-                <span class="card-li">Seller Finance Underwriting</span>
-                <span class="card-li">Market Focus: Columbus & Regional</span>
-            </div>
-        </div>
-    </section>
 
     <section id="clean-sec">
         <h2 class="sec-label">Detailed Home Services <span class="live-ticker">LIVE</span></h2>
         <div class="main-grid">
             <div class="card-box">
-                <div class="card-head-row"><span class="service-title">Basic Clean</span><span class="price-hero">$150</span></div>
-                <p class="card-p">Standard maintenance cleaning. Dusting, vacuuming, and surface sanitation.</p>
+                <div class="card-head-row"><span class="service-title">Essential Clean</span><span class="price-hero">$100</span></div>
+                <p class="card-p">Standard maintenance cleaning. Dusting, vacuuming, and surface sanitation for smaller spaces.</p>
+            </div>
+            <div class="card-box">
+                <div class="card-head-row"><span class="service-title">Premium Detail</span><span class="price-hero">$350</span></div>
+                <p class="card-p">Comprehensive deep clean for residential properties. Includes specialized floor care and appliance detailing.</p>
             </div>
             <div class="card-box deluxe-edition-border">
-                <div class="card-head-row"><span class="service-title">Deluxe Edition</span><span class="price-hero">$300</span></div>
-                <p class="card-p">Intensive sanitation focusing on appliances, baseboards, and high-dust areas.</p>
+                <div class="card-head-row"><span class="service-title">Deluxe Edition</span><span class="price-hero">$600</span></div>
+                <p class="card-p">The ultimate restoration package. Total sanitation including baseboards, interior appliances, and high-dust areas.</p>
                 <span class="card-li">Maximum Restoration Effort</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="courier-sec">
+        <h2 class="sec-label">Sprinter Courier Tiers <span class="live-ticker">LIVE</span></h2>
+        <div class="main-grid">
+            <div class="card-box">
+                <div class="card-head-row"><span class="service-title">The Basic</span><span class="price-hero">$150</span></div>
+                <p class="card-p">Local point-to-point delivery for smaller loads. 25-mile radius.</p>
+                <span class="card-li">Up to 500 lbs</span>
+            </div>
+            <div class="card-box">
+                <div class="card-head-row"><span class="service-title">The Pro</span><span class="price-hero">$350</span></div>
+                <p class="card-p">Regional transport with higher weight capacity. 75-mile radius.</p>
+                <span class="card-li">Up to 1,500 lbs</span>
+            </div>
+            <div class="card-box deluxe-edition-border">
+                <div class="card-head-row"><span class="service-title">The Deluxe</span><span class="price-hero">$650</span></div>
+                <p class="card-p">Express long-distance mobilization and full van access. Up to 200 miles.</p>
+                <span class="card-li">Full Capacity Access</span>
             </div>
         </div>
     </section>
@@ -188,21 +194,6 @@
         </div>
     </section>
 
-    <section id="courier-sec">
-        <h2 class="sec-label">Sprinter Courier <span class="live-ticker">LIVE</span></h2>
-        <div class="main-grid">
-            <div class="card-box">
-                <div class="card-head-row"><span class="service-title">The Basic</span><span class="price-hero">$150</span></div>
-                <p class="card-p">Local point-to-point delivery. Up to 500 lbs | 25-Mile Radius.</p>
-            </div>
-            <div class="card-box deluxe-edition-border">
-                <div class="card-head-row"><span class="service-title">The Deluxe</span><span class="price-hero">$650</span></div>
-                <p class="card-p">Express long-distance mobilization and full van access.</p>
-                <span class="card-li">Full Capacity | Up to 200 Miles</span>
-            </div>
-        </div>
-    </section>
-
     <div id="referral-promo">
         <h3 id="ref-head">Uncapped Referral Program</h3>
         <p id="ref-sub">Refer 2 People = Receive 1 Free Service.</p>
@@ -224,11 +215,10 @@
                 <div class="input-row"><label>Service Required</label>
                     <select required>
                         <option value="">Choose Service...</option>
-                        <option>Real Estate & Filtering</option>
                         <option>Detailed Home Services</option>
+                        <option>Sprinter Courier</option>
                         <option>Private Chef Experience</option>
                         <option>Credit Restoration</option>
-                        <option>Sprinter Courier</option>
                     </select>
                 </div>
                 <div class="input-row"><label>Inquiry Details</label><textarea rows="5" placeholder="Special requirements..."></textarea></div>
