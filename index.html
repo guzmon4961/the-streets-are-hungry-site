@@ -29,7 +29,6 @@
         }
         .logo { font-family: 'Montserrat'; font-weight: 900; color: var(--gold); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; }
 
-        /* ACTIVE BLINKER EFFECT */
         .blinker {
             height: 10px; width: 10px; background-color: var(--gold);
             border-radius: 50%; display: inline-block; margin-right: 12px;
@@ -43,7 +42,6 @@
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
         }
 
-        /* IG STATS TRACKER */
         .tracker-card {
             background: var(--card); border: 1px solid rgba(212, 175, 55, 0.3);
             border-radius: 24px; padding: 25px; max-width: 400px; margin: 40px auto;
@@ -53,7 +51,6 @@
         .stat-item h4 { font-family: 'Montserrat'; font-size: 1.6rem; color: #fff; }
         .stat-item p { font-size: 0.65rem; color: #666; text-transform: uppercase; font-weight: 700; letter-spacing: 1.5px; }
 
-        /* SECTIONS */
         .hero { min-height: 40vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 60px 20px; }
         h1 { font-family: 'Montserrat'; font-size: clamp(2.2rem, 10vw, 4.5rem); text-transform: uppercase; line-height: 0.95; letter-spacing: -2px; }
         .gold-shimmer {
@@ -104,7 +101,7 @@
         <div class="grid">
             <div class="glass-card">
                 <div class="card-header"><h3 class="service-title"><span class="blinker"></span>Chef Service</h3><span class="price">$75<small>/hr</small></span></div>
-                <p style="color:#888;">Professional in-home dining curated for elite health goals and refined palates. Full kitchen cleanup included.</p>
+                <p style="color:#888; line-height:1.6;">Professional in-home culinary experience. Menus tailored to your dietary needs and fitness goals. Service includes full kitchen cleanup.</p>
             </div>
         </div>
     </section>
@@ -114,11 +111,11 @@
         <div class="grid">
             <div class="glass-card">
                 <div class="card-header"><h3 class="service-title"><span class="blinker"></span>Strategy Session</h3><span class="price">$100</span></div>
-                <p style="color:#888;">60-minute intensive profile audit with custom DIY restoration templates provided.</p>
+                <p style="color:#888; line-height:1.6;">One-time 60-minute in-depth credit profile analysis. Includes a personalized action plan and DIY restoration tools to use at your own pace.</p>
             </div>
             <div class="glass-card">
-                <div class="card-header"><h3 class="service-title"><span class="blinker"></span>Full Restoration</h3><span class="price">$250<small>/mo</small></span></div>
-                <p style="color:#888;">Aggressive monthly challenge cycles and profile building. No long-term contracts.</p>
+                <div class="card-header"><h3 class="service-title"><span class="blinker"></span>Full Service</h3><span class="price">$250<small>/mo</small></span></div>
+                <p style="color:#888; line-height:1.6;">Aggressive monthly restoration and profile building. We handle the disputes and creditor communication. No long-term contracts; cancel anytime.</p>
             </div>
         </div>
     </section>
@@ -126,18 +123,36 @@
     <section class="section">
         <h2 class="section-title">Sprinter Logistics</h2>
         <div class="grid">
-            <div class="glass-card"><div class="card-header"><h3 class="service-title"><span class="blinker"></span>The Basic</h3><span class="price">$150</span></div><p style="color:#888;">Up to 500 lbs cargo | 25-mile radius delivery.</p></div>
-            <div class="glass-card"><div class="card-header"><h3 class="service-title"><span class="blinker"></span>The Premium</h3><span class="price">$300</span></div><p style="color:#888;">Up to 1,500 lbs cargo | 75-mile radius delivery.</p></div>
-            <div class="glass-card"><div class="card-header"><h3 class="service-title"><span class="blinker"></span>The Deluxe</h3><span class="price">$650</span></div><p style="color:#888;">Full van capacity (3,000 lbs) | 200-mile radius delivery.</p></div>
+            <div class="glass-card">
+                <div class="card-header"><h3 class="service-title"><span class="blinker"></span>The Basic</h3><span class="price">$150</span></div>
+                <p style="color:#888; line-height:1.6;">Ideal for small moves or quick transport. Includes up to 500 lbs of cargo within a 25-mile radius of the pickup location.</p>
+            </div>
+            <div class="glass-card">
+                <div class="card-header"><h3 class="service-title"><span class="blinker"></span>The Premium</h3><span class="price">$300</span></div>
+                <p style="color:#888; line-height:1.6;">Extended logistics support. Includes up to 1,500 lbs of cargo within a 75-mile radius. Perfect for local furniture or equipment delivery.</p>
+            </div>
+            <div class="glass-card">
+                <div class="card-header"><h3 class="service-title"><span class="blinker"></span>The Deluxe</h3><span class="price">$650</span></div>
+                <p style="color:#888; line-height:1.6;">Full van capacity (up to 3,000 lbs) for heavy-duty requirements. Covers a 200-mile radius. Direct "Hot Shot" delivery service.</p>
+            </div>
         </div>
     </section>
 
     <section class="section">
         <h2 class="section-title">Detailed Home Services</h2>
         <div class="grid">
-            <div class="glass-card"><div class="card-header"><h3 class="service-title"><span class="blinker"></span>The Basic</h3><span class="price">$150</span></div><p style="color:#888;">Carpet refresh, baseboard cleaning, and standard dusting.</p></div>
-            <div class="glass-card"><div class="card-header"><h3 class="service-title"><span class="blinker"></span>The Premium</h3><span class="price">$300</span></div><p style="color:#888;">Includes Basic plus interior windows and glass track detailing.</p></div>
-            <div class="glass-card"><div class="card-header"><h3 class="service-title"><span class="blinker"></span>The Deluxe</h3><span class="price">$650</span></div><p style="color:#888;">Full Deep Interior Clean + Exterior House & Driveway Wash.</p></div>
+            <div class="glass-card">
+                <div class="card-header"><h3 class="service-title"><span class="blinker"></span>The Basic</h3><span class="price">$150</span></div>
+                <p style="color:#888; line-height:1.6;">A fundamental refresh. Includes high-traffic carpet vacuuming, detailed baseboard cleaning, and standard surface dusting.</p>
+            </div>
+            <div class="glass-card">
+                <div class="card-header"><h3 class="service-title"><span class="blinker"></span>The Premium</h3><span class="price">$300</span></div>
+                <p style="color:#888; line-height:1.6;">Comprehensive interior care. Includes everything in Basic plus interior window cleaning and detailed glass track debris removal.</p>
+            </div>
+            <div class="glass-card">
+                <div class="card-header"><h3 class="service-title"><span class="blinker"></span>The Deluxe</h3><span class="price">$650</span></div>
+                <p style="color:#888; line-height:1.6;">The ultimate property overhaul. Full deep interior clean combined with a professional exterior house and driveway pressure wash.</p>
+            </div>
         </div>
     </section>
 
@@ -146,7 +161,7 @@
         <div class="grid">
             <div class="glass-card">
                 <h3 class="service-title" style="margin-bottom:15px;"><span class="blinker"></span>Intake Protocol</h3>
-                <p style="color:#888; font-size:0.85rem; line-height:1.6;">100% upfront payment required. 48-hour notice required for rescheduling. Pets must be crated or off-site for duration of service.</p>
+                <p style="color:#888; font-size:0.85rem; line-height:1.6;">Strict 100% upfront payment policy for all confirmed slots. 48-hour advance notice is required for all rescheduling. For home services, clients must be present and all pets must be safely crated or off-site for the duration of the appointment.</p>
             </div>
         </div>
     </section>
