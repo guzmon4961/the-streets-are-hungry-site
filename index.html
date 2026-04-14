@@ -10,7 +10,7 @@
             --gold: #D4AF37;
             --gold-bright: #F9E29C;
             --dark: #050505;
-            --card: rgba(18, 18, 18, 0.98);
+            --card: rgba(20, 20, 20, 0.9);
             --text: #ffffff;
         }
 
@@ -20,123 +20,117 @@
         /* Animated Background */
         .bg-animate {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
-            background: linear-gradient(135deg, #050505, #141108, #050505);
-            background-size: 400% 400%; animation: gradientBG 15s ease infinite;
+            background: radial-gradient(circle at top right, #1a1a1a, #050505);
         }
-        @keyframes gradientBG { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
         
         /* Navbar */
         .navbar {
             display: flex; justify-content: space-between; align-items: center; padding: 15px 5%;
-            background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); position: sticky; top: 0; z-index: 1000;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            background: rgba(0,0,0,0.8); backdrop-filter: blur(15px); position: sticky; top: 0; z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
         }
-        .logo { font-family: 'Montserrat'; font-weight: 900; color: var(--gold); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1.5px; transition: 0.3s; }
-        .nav-social a { color: var(--gold); text-decoration: none; font-size: 0.7rem; font-weight: 900; letter-spacing: 1px; }
+        .logo { font-family: 'Montserrat'; font-weight: 900; color: var(--gold); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1.5px; }
+        .nav-social a { color: var(--gold); text-decoration: none; font-size: 0.7rem; font-weight: 900; letter-spacing: 1px; border: 1px solid var(--gold); padding: 5px 10px; border-radius: 4px; }
 
         /* Hero */
-        .hero { min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 40px 20px; }
-        h1 { font-family: 'Montserrat'; font-size: clamp(1.8rem, 8vw, 3.2rem); text-transform: uppercase; line-height: 1.1; margin-bottom: 25px; }
+        .hero { min-height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 40px 20px; }
+        h1 { font-family: 'Montserrat'; font-size: clamp(2.2rem, 10vw, 4rem); text-transform: uppercase; line-height: 1; margin-bottom: 30px; letter-spacing: -1px; }
         .gold-shimmer {
             background: linear-gradient(90deg, #d4af37, #f9e29c, #d4af37);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             animation: shimmer 3s infinite linear; background-size: 200% auto;
         }
         @keyframes shimmer { to { background-position: 200% center; } }
-        .badge { border: 1px solid var(--gold); color: var(--gold); padding: 4px 12px; border-radius: 50px; font-size: 0.6rem; margin-bottom: 15px; display: inline-block; animation: pulse 2s infinite; }
-        @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
-
-        .hero-link-column { display: flex; flex-direction: column; gap: 15px; align-items: center; }
-        .hero-link { color: var(--text); text-decoration: none; font-size: 1.1rem; letter-spacing: 0.5px; transition: 0.3s; }
-        .hero-link:hover { color: var(--gold); transform: scale(1.05); }
-
-        /* Sections & Cards */
-        .section { padding: 60px 0; opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
-        .section.visible { opacity: 1; transform: translateY(0); }
-        .alt-bg { background: rgba(212, 175, 55, 0.04); }
-        .section-title { text-align: center; font-family: 'Montserrat'; font-size: 1.3rem; margin-bottom: 30px; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; }
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; width: 92%; margin: 0 auto; }
-        .glass-card { background: var(--card); padding: 25px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; }
-        .glass-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+        .hero-link-column { display: flex; flex-direction: column; gap: 15px; align-items: center; }
+        .hero-link { color: var(--text); text-decoration: none; font-size: 1rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; opacity: 0.7; transition: 0.3s; }
+        .hero-link:hover { opacity: 1; color: var(--gold); }
+
+        /* Sections */
+        .section { padding: 80px 0; opacity: 0; transform: translateY(40px); transition: 1s ease-out; }
+        .section.visible { opacity: 1; transform: translateY(0); }
+        .section-title { text-align: center; font-family: 'Montserrat'; font-size: 1.5rem; margin-bottom: 40px; color: var(--gold); text-transform: uppercase; letter-spacing: 3px; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; width: 90%; margin: 0 auto; }
+        .glass-card { background: var(--card); padding: 35px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.03); backdrop-filter: blur(10px); transition: 0.4s; }
+        .glass-card:hover { border-color: var(--gold); background: rgba(30, 30, 30, 0.9); }
         
         .card-header { 
-            display: flex; justify-content: space-between; align-items: center; 
-            margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            display: flex; justify-content: space-between; align-items: flex-end; 
+            margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.1);
         }
-        .service-title { color: var(--gold); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; margin: 0; }
-        .price-tag { font-size: 1.5rem; font-weight: 900; color: #fff; font-family: 'Montserrat'; }
-        .price-tag small { font-size: 0.7rem; color: #777; font-weight: 400; }
+        .service-title { color: var(--gold); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; margin: 0; }
+        .price-tag { font-size: 2rem; font-weight: 900; color: #fff; font-family: 'Montserrat'; line-height: 1; }
+        .price-tag small { font-size: 0.8rem; color: #666; font-weight: 400; }
 
-        .desc { font-size: 0.85rem; color: #aaa; margin-bottom: 12px; line-height: 1.4; }
-        .card-list { list-style: none; font-size: 0.8rem; color: #888; }
-        .card-list li { padding: 4px 0; display: flex; align-items: center; }
-        .card-list li::before { content: '→'; color: var(--gold); margin-right: 8px; }
+        .desc { font-size: 0.9rem; color: #999; margin-bottom: 20px; line-height: 1.6; }
+        .card-list { list-style: none; font-size: 0.85rem; color: #777; }
+        .card-list li { padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.02); }
 
-        /* Alerts */
-        #custom-alert {
-            position: fixed; bottom: -100px; left: 50%; transform: translateX(-50%);
-            background: var(--gold); color: black; padding: 15px 30px; border-radius: 50px;
-            font-weight: 900; text-transform: uppercase; font-size: 0.75rem; z-index: 2000;
-            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        /* Alert */
+        #booking-alert {
+            position: fixed; top: -100px; left: 50%; transform: translateX(-50%);
+            background: var(--gold); color: black; padding: 15px 40px; border-radius: 8px;
+            font-weight: 900; text-transform: uppercase; font-size: 0.8rem; z-index: 2000;
+            transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
         }
-        #custom-alert.show { bottom: 30px; }
+        #booking-alert.active { top: 20px; }
 
         /* Footer */
-        footer { padding: 80px 5% 40px; text-align: center; background: #000; }
+        footer { padding: 100px 5% 50px; text-align: center; background: #000; }
         .btn-primary { 
-            background: var(--gold); color: #000; padding: 18px 45px; text-decoration: none; font-weight: 900; 
-            border-radius: 4px; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; display: inline-block;
+            background: var(--gold); color: #000; padding: 22px 60px; text-decoration: none; font-weight: 900; 
+            border-radius: 50px; text-transform: uppercase; letter-spacing: 3px; transition: 0.4s; display: inline-block;
         }
-        .btn-primary:hover { background: var(--gold-bright); transform: scale(1.05); }
-        .phone-link { display: block; color: white; text-decoration: none; font-size: 1.4rem; font-weight: 700; margin: 20px 0; }
+        .btn-primary:hover { background: var(--gold-bright); box-shadow: 0 0 30px rgba(212, 175, 55, 0.3); }
         
-        .ig-footer { display: inline-block; margin-top: 30px; color: var(--gold); text-decoration: none; font-weight: 900; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; }
+        .ig-link { display: block; margin-top: 40px; color: #444; text-decoration: none; font-weight: 600; font-size: 0.8rem; letter-spacing: 2px; }
+        .ig-link span { color: var(--gold); }
     </style>
 </head>
 <body>
 
-    <div id="custom-alert">Booking Request Initiated...</div>
+    <div id="booking-alert">Opening Messenger...</div>
     <div class="bg-animate"></div>
 
     <header class="navbar">
         <div class="logo">The Streets Are Hungry LLC</div>
         <div class="nav-social">
-            <a href="https://www.instagram.com/thestreetsarehungryllc/" target="_blank">IG: @THESTREETSAREHUNGRYLLC</a>
+            <a href="https://www.instagram.com/_tsah_ceo/" target="_blank">@_TSAH_CEO</a>
         </div>
     </header>
 
     <section class="hero">
         <div class="hero-content">
-            <span class="badge">Columbus, OH | Excellence Required</span>
-            <h1>Invest in Your Future. <br><span class="gold-shimmer">Demand Excellence.</span></h1>
+            <h1>Invest in Your Future.<br><span class="gold-shimmer">Demand Excellence.</span></h1>
             <div class="hero-link-column">
-                <a href="#chef" class="hero-link">Private Chef Service</a>
-                <a href="#credit" class="hero-link">Advanced Credit Strategy</a>
-                <a href="#courier" class="hero-link">Premium Sprinter Logistics</a>
-                <a href="#standards" class="hero-link">Master Standards</a>
+                <a href="#chef" class="hero-link">Private Chef</a>
+                <a href="#credit" class="hero-link">Credit Restoration</a>
+                <a href="#courier" class="hero-link">Sprinter Logistics</a>
+                <a href="#cleaning" class="hero-link">Home Services</a>
             </div>
         </div>
     </section>
 
     <section id="chef" class="section">
+        <h2 class="section-title">Private Chef</h2>
         <div class="grid">
             <div class="glass-card">
                 <div class="card-header">
-                    <h3 class="service-title">Chef Service</h3>
+                    <h3 class="service-title">In-Home Service</h3>
                     <span class="price-tag">$75<small>/hr</small></span>
                 </div>
-                <p class="desc">Professional in-home culinary experience. Customized menus tailored specifically to your dietary needs.</p>
+                <p class="desc">Bespoke culinary experiences designed for your home. Focus on premium ingredients and impeccable plating.</p>
                 <ul class="card-list">
-                    <li>Plating: $20 - $30 per plate</li>
-                    <li>Full Kitchen Cleanup Included</li>
+                    <li>Customized Menu Planning</li>
+                    <li>Plating: $20 - $30 / person</li>
+                    <li>Full Cleanup Included</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <section id="credit" class="section alt-bg">
+    <section id="credit" class="section">
         <h2 class="section-title">Credit Restoration</h2>
         <div class="grid">
             <div class="glass-card">
@@ -144,20 +138,20 @@
                     <h3 class="service-title">Strategy Session</h3>
                     <span class="price-tag">$100</span>
                 </div>
-                <p class="desc">60-minute intensive profile analysis.</p>
+                <p class="desc">A 60-minute deep dive into your credit report with actionable DIY steps.</p>
                 <ul class="card-list">
-                    <li>FREE: Repair Letter Templates</li>
-                    <li>Full Profile Analysis</li>
+                    <li>FREE Credit Repair eBook</li>
+                    <li>Template Library Access</li>
                 </ul>
             </div>
             <div class="glass-card">
                 <div class="card-header">
-                    <h3 class="service-title">Full Service</h3>
+                    <h3 class="service-title">Monthly Full-Service</h3>
                     <span class="price-tag">$250<small>/mo</small></span>
                 </div>
-                <p class="desc">Aggressive monthly restoration. No contracts.</p>
+                <p class="desc">High-speed restoration and profile building with zero long-term contracts.</p>
                 <ul class="card-list">
-                    <li>Financial Mentorship</li>
+                    <li>Monthly Dispute Cycles</li>
                     <li>Homeownership Readiness</li>
                 </ul>
             </div>
@@ -169,58 +163,52 @@
         <div class="grid">
             <div class="glass-card">
                 <div class="card-header">
-                    <h3 class="service-title">The Basic</h3>
-                    <span class="price-tag">$150</span>
-                </div>
-                <p class="desc">Up to 500 lbs cargo | 25-mile radius.</p>
-            </div>
-            <div class="glass-card">
-                <div class="card-header">
-                    <h3 class="service-title">The Premium</h3>
+                    <h3 class="service-title">Premium Tier</h3>
                     <span class="price-tag">$300</span>
                 </div>
-                <p class="desc">Up to 1,500 lbs cargo | 75-mile radius.</p>
+                <p class="desc">Urgent, dedicated transport for cargo up to 1,500 lbs.</p>
+                <ul class="card-list">
+                    <li>75-Mile Local Radius</li>
+                    <li>Zero-Stop Delivery</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <section id="standards" class="section alt-bg">
-        <h2 class="section-title">Master Standards</h2>
+    <section id="cleaning" class="section">
+        <h2 class="section-title">Detailed Home Services</h2>
         <div class="grid">
             <div class="glass-card">
-                <h3>🐾 Pet Policy</h3>
-                <p class="desc">Animals must be crated or off-site. Non-compliance results in immediate forfeiture.</p>
-            </div>
-            <div class="glass-card">
-                <h3>💳 Payment</h3>
-                <p class="desc">Upfront payment required. All sales final.</p>
-            </div>
-            <div class="glass-card">
-                <h3>📅 48-Hour Rule</h3>
-                <p class="desc">Rescheduling requires 48-hour notice or fee is forfeited.</p>
+                <div class="card-header">
+                    <h3 class="service-title">Deluxe Refresh</h3>
+                    <span class="price-tag">$650</span>
+                </div>
+                <p class="desc">Complete interior and exterior property overhaul for maximum presence.</p>
+                <ul class="card-list">
+                    <li>Full Interior Deep Clean</li>
+                    <li>Exterior House Wash</li>
+                    <li>Driveway & Walkway Polish</li>
+                </ul>
             </div>
         </div>
     </section>
 
     <footer id="contact">
-        <h2 class="section-title">Ready to Begin?</h2>
-        <a href="sms:17405642852" class="btn-primary" onclick="showAlert()">Book Now</a>
-        <a href="tel:17405642852" class="phone-link">(740) 564-2852</a>
-        <a href="https://www.instagram.com/thestreetsarehungryllc/" target="_blank" class="ig-footer gold-shimmer">Follow the Journey on Instagram</a>
-        <p style="margin-top:40px; opacity:0.3; font-size:0.6rem;">&copy; 2026 The Streets Are Hungry LLC. All Rights Reserved.</p>
+        <a href="sms:17405642852" class="btn-primary" onclick="notify()">Book Excellence</a>
+        <a href="https://www.instagram.com/_tsah_ceo/" target="_blank" class="ig-link">FOLLOW THE CEO <span>@_TSAH_CEO</span></a>
+        <p style="margin-top:60px; opacity:0.2; font-size:0.6rem; letter-spacing: 2px;">© 2026 THE STREETS ARE HUNGRY LLC</p>
     </footer>
 
     <script>
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('.section').forEach(s => observer.observe(s));
 
-        function showAlert() {
-            const alert = document.getElementById('custom-alert');
-            alert.classList.add('show');
-            setTimeout(() => alert.classList.remove('show'), 3000);
+        function notify() {
+            const el = document.getElementById('booking-alert');
+            el.classList.add('active');
+            setTimeout(() => el.classList.remove('active'), 3000);
         }
     </script>
 </body>
