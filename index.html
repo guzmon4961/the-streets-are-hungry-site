@@ -3,34 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Streets Are Hungry LLC | Premium Logistics & Home Services</title>
+    <title>The Streets Are Hungry LLC</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"> 
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --dark: #050505;
+            --card: rgba(18, 18, 18, 0.98);
+            --text: #ffffff;
+        }
+
+        /* Basic Setup */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        body { background: var(--dark); color: var(--text); overflow-x: hidden; }
+
+        /* Animated Background Layer */
+        .bg-animate {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
+            background: linear-gradient(135deg, #050505, #141108, #050505);
+            background-size: 400% 400%; animation: gradientBG 15s ease infinite;
+        }
+        @keyframes gradientBG { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        
+        /* Navbar */
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center; padding: 15px 5%;
+            background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); position: sticky; top: 0; z-index: 1000;
+        }
+        .logo { font-family: 'Montserrat'; font-weight: 900; color: var(--gold); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; }
+
+        /* Hero Section - Centered Column */
+        .hero { min-height: 55vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 40px 20px; }
+        h1 { font-family: 'Montserrat'; font-size: clamp(1.8rem, 8vw, 3rem); text-transform: uppercase; line-height: 1.1; margin-bottom: 25px; }
+        .gold-shimmer {
+            background: linear-gradient(90deg, #d4af37, #f9e29c, #d4af37);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            animation: shimmer 3s infinite linear; background-size: 200% auto;
+        }
+        @keyframes shimmer { to { background-position: 200% center; } }
+        .badge { border: 1px solid var(--gold); color: var(--gold); padding: 4px 12px; border-radius: 50px; font-size: 0.6rem; margin-bottom: 15px; display: inline-block; }
+
+        .hero-link-column { display: flex; flex-direction: column; gap: 15px; align-items: center; }
+        .hero-link { color: var(--text); text-decoration: underline; font-size: 1.1rem; letter-spacing: 0.5px; }
+
+        /* Sections */
+        .section { padding: 50px 0; }
+        .alt-bg { background: rgba(212, 175, 55, 0.04); }
+        .section-title { text-align: center; font-family: 'Montserrat'; font-size: 1.4rem; margin-bottom: 30px; color: var(--gold); text-transform: uppercase; }
+        
+        /* Grid and Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; width: 92%; margin: 0 auto; }
+        .glass-card { background: var(--card); padding: 25px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); }
+        .featured { border: 1px solid rgba(212, 175, 55, 0.4); }
+
+        /* Header: Title Left, Pricing Right */
+        .card-header { 
+            display: flex; justify-content: space-between; align-items: center; 
+            margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .service-title { color: var(--gold); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; margin: 0; }
+        .price-tag { font-size: 1.6rem; font-weight: 900; color: #fff; font-family: 'Montserrat'; white-space: nowrap; }
+        .price-tag small { font-size: 0.75rem; color: #777; font-weight: 400; }
+
+        .desc { font-size: 0.85rem; color: #aaa; margin-bottom: 12px; line-height: 1.4; text-align: left; }
+        .card-list { list-style: none; font-size: 0.85rem; color: #888; text-align: left; }
+        .card-list li { padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.02); }
+
+        /* Standards Emojis */
+        .glass-card h3 { color: var(--gold); font-family: 'Montserrat'; font-size: 1rem; margin-bottom: 10px; text-transform: uppercase; }
+
+        /* Footer */
+        footer { padding: 60px 5%; text-align: center; background: #000; }
+        .contact-row { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+        .btn-primary { background: var(--gold); color: #000; padding: 15px 35px; text-decoration: none; font-weight: 900; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; }
+        .phone-link { color: white; text-decoration: none; font-size: 1.4rem; font-weight: 700; margin-top: 10px; }
+    </style>
 </head>
 <body>
 
     <div class="bg-animate"></div>
-    <div class="lighting-spotlight"></div>
 
     <header class="navbar">
         <div class="logo">The Streets Are Hungry</div>
-        <div class="nav-actions">
-            <a href="https://www.instagram.com/_tsah_ceo/" target="_blank" class="ig-link">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            </a>
-        </div>
     </header>
 
     <section class="hero">
         <div class="hero-content">
-            <span class="badge">Columbus, OH | Quality Over Everything</span>
+            <span class="badge">Columbus, OH | Excellence Required</span>
             <h1>Invest in Your Future. <br><span class="gold-shimmer">Demand Excellence.</span></h1>
             
             <div class="hero-link-column">
-                <div><a href="#chef" class="hero-link">Private Chef Service</a></div>
-                <div><a href="#credit" class="hero-link">Advanced Credit Strategy</a></div>
-                <div><a href="#courier" class="hero-link">Premium Sprinter Logistics</a></div>
-                <div><a href="#cleaning" class="hero-link">Detailed Home Services</a></div>
+                <a href="#chef" class="hero-link">Private Chef Service</a>
+                <a href="#credit" class="hero-link">Advanced Credit Strategy</a>
+                <a href="#courier" class="hero-link">Premium Sprinter Logistics</a>
+                <a href="#cleaning" class="hero-link">Detailed Home Services</a>
             </div>
         </div>
     </section>
@@ -58,7 +124,7 @@
     <section id="credit" class="section alt-bg">
         <div class="container">
             <h2 class="section-title">Credit Restoration & Strategy</h2>
-            <div class="pathway-grid">
+            <div class="grid">
                 <div class="glass-card featured">
                     <div class="card-header">
                         <h3 class="service-title">Strategy Session</h3>
@@ -66,8 +132,7 @@
                     </div>
                     <p class="desc">One-time 60-minute analysis with DIY tools included.</p>
                     <ul class="card-list">
-                        <li><strong>FREE:</strong> Credit Repair Letter Templates</li>
-                        <li><strong>FREE:</strong> Credit Repair eBook</li>
+                        <li><strong>FREE:</strong> Repair Letter Templates & eBook</li>
                         <li>Full Profile Analysis & DIY Roadmap</li>
                     </ul>
                 </div>
@@ -80,7 +145,6 @@
                     <ul class="card-list">
                         <li>Month-to-Month Restoration</li>
                         <li>Homeownership Readiness</li>
-                        <li>Financial Mentorship</li>
                     </ul>
                 </div>
             </div>
@@ -97,9 +161,7 @@
                         <span class="price-tag">$150</span>
                     </div>
                     <ul class="card-list">
-                        <li>Up to 500 lbs cargo</li>
-                        <li>Next-Day delivery window</li>
-                        <li>Standard 25-mile radius</li>
+                        <li>Up to 500 lbs cargo | 25-mile radius</li>
                     </ul>
                 </div>
                 <div class="glass-card featured">
@@ -108,9 +170,7 @@
                         <span class="price-tag">$300</span>
                     </div>
                     <ul class="card-list">
-                        <li>Up to 1,500 lbs cargo</li>
-                        <li>Direct "Hot Shot" (No stops)</li>
-                        <li>75-mile radius included</li>
+                        <li>Up to 1,500 lbs cargo | 75-mile radius</li>
                     </ul>
                 </div>
                 <div class="glass-card">
@@ -119,9 +179,7 @@
                         <span class="price-tag">$650</span>
                     </div>
                     <ul class="card-list">
-                        <li>Full van capacity (3,000 lbs)</li>
-                        <li>White Glove loading/unloading</li>
-                        <li>Up to 200 miles included</li>
+                        <li>Full van capacity | Up to 200 miles</li>
                     </ul>
                 </div>
             </div>
@@ -130,39 +188,33 @@
 
     <section id="cleaning" class="section alt-bg">
         <div class="container">
-            <h2 class="section-title">Residential Cleaning Tiers</h2>
+            <h2 class="section-title">Detailed Home Services</h2>
             <div class="grid">
                 <div class="glass-card">
                     <div class="card-header">
-                        <h3 class="service-title">The Basic</h3>
+                        <h3 class="service-title">Basic Clean</h3>
                         <span class="price-tag">$150</span>
                     </div>
                     <ul class="card-list">
-                        <li>Carpet & Hard Floor Refresh</li>
-                        <li>Detailed Baseboard Wiping</li>
-                        <li>Standard Surface Dusting</li>
+                        <li>Floor Refresh | Baseboards | Surface Dusting</li>
                     </ul>
                 </div>
                 <div class="glass-card featured">
                     <div class="card-header">
-                        <h3 class="service-title">The Premium</h3>
+                        <h3 class="service-title">Premium Clean</h3>
                         <span class="price-tag">$300</span>
                     </div>
                     <ul class="card-list">
-                        <li>Includes Basic Package</li>
-                        <li>Interior Windows (Up to 15)</li>
-                        <li>Glass, Tracks, & Sills</li>
+                        <li>Interior Windows | Glass Tracks | Sills</li>
                     </ul>
                 </div>
                 <div class="glass-card">
                     <div class="card-header">
-                        <h3 class="service-title">The Deluxe</h3>
+                        <h3 class="service-title">Deluxe Clean</h3>
                         <span class="price-tag">$650</span>
                     </div>
                     <ul class="card-list">
-                        <li>Includes Premium Package</li>
-                        <li>Full Exterior House Wash</li>
-                        <li>Driveway & Walkway Clean</li>
+                        <li>House Wash | Driveway | Walkway</li>
                     </ul>
                 </div>
             </div>
@@ -190,19 +242,13 @@
     </section>
 
     <footer id="contact">
-        <h2 class="section-title">Ready to Begin?</h2>
         <div class="contact-row">
-            <a href="sms:17405642852" class="phone-link">(740) 564-2852</a>
+            <h2 class="section-title">Ready to Begin?</h2>
             <a href="sms:17405642852" class="btn-primary">Book Now</a>
+            <a href="tel:17405642852" class="phone-link">(740) 564-2852</a>
+            <p style="margin-top:30px; opacity:0.3; font-size:0.7rem;">&copy; 2026 The Streets Are Hungry LLC.</p>
         </div>
-        <p class="copyright">&copy; 2026 The Streets Are Hungry LLC.</p>
     </footer>
 
-    <script>
-        const spotlight = document.querySelector('.lighting-spotlight');
-        document.addEventListener('mousemove', (e) => {
-            spotlight.style.background = `radial-gradient(circle at ${e.clientX}px ${e.clientY}px, rgba(212, 175, 55, 0.15) 0%, rgba(0,0,0,0) 50%)`;
-        });
-    </script>
 </body>
 </html>
