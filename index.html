@@ -22,16 +22,18 @@
         #invest-headline { font-family: 'Montserrat'; font-size: 55px; font-weight: 900; color: #ffffff; text-transform: uppercase; line-height: 1.1; letter-spacing: -2px; margin-bottom: 5px; }
         #demand-gold { font-family: 'Montserrat'; font-size: 48px; font-weight: 900; color: #D4AF37; text-transform: uppercase; margin-bottom: 45px; letter-spacing: -1px; }
         
-        /* GOLD LINKS - VERIFIED SPACING */
+        /* QUICK LINKS */
         #quick-links { margin-bottom: 60px; display: flex; flex-direction: column; align-items: center; gap: 15px; }
-        .quick-anchor { color: #D4AF37; text-decoration: underline; font-size: 18px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .quick-anchor { color: #D4AF37; text-decoration: underline; font-size: 18px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .quick-anchor:hover { color: #ffffff; }
 
         /* INSTAGRAM SECTION */
         #ig-stats-flex { display: flex; justify-content: center; gap: 50px; margin-bottom: 25px; }
         .stat-box { text-align: center; }
         .stat-val { font-family: 'Montserrat'; font-size: 34px; font-weight: 900; color: #D4AF37; display: block; }
         .stat-tag { font-size: 11px; text-transform: uppercase; color: #666; letter-spacing: 2px; font-weight: 700; }
-        #ig-username { color: #D4AF37; text-decoration: none; font-weight: 900; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; border: 1px solid #D4AF37; padding: 10px 20px; display: inline-block; margin-top: 15px; }
+        #ig-username { color: #D4AF37; text-decoration: none; font-weight: 900; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; border: 1px solid #D4AF37; padding: 10px 20px; display: inline-block; margin-top: 15px; transition: 0.3s; }
+        #ig-username:hover { background: #D4AF37; color: #000; }
 
         /* SECTIONS */
         .sec-label { text-align: center; font-family: 'Montserrat'; color: #D4AF37; font-size: 26px; font-weight: 900; text-transform: uppercase; padding: 100px 20px 40px; letter-spacing: 2px; }
@@ -47,29 +49,29 @@
         .card-p { color: #999; font-size: 15px; margin-bottom: 20px; }
         .card-li { color: #777; font-size: 13px; display: block; margin-bottom: 8px; font-weight: 600; }
 
-        /* REFERRAL */
+        /* REFERRAL PROMO */
         #referral-promo { background: #D4AF37; color: #000; padding: 60px 20px; text-align: center; margin: 80px 20px; border-radius: 4px; }
         #ref-head { font-family: 'Montserrat'; font-weight: 900; text-transform: uppercase; font-size: 28px; }
         #ref-sub { font-weight: 800; font-size: 18px; margin-top: 10px; text-transform: uppercase; }
         .ref-detail { font-size: 13px; margin-top: 15px; font-weight: 700; text-transform: uppercase; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 15px; display: inline-block; }
 
-        /* POLICIES */
+        /* POLICIES SECTION */
         #policy-section { background: #080808; border: 1px solid #D4AF37; margin: 60px 20px; padding: 60px 30px; border-radius: 4px; }
         .policy-headline { font-family: 'Montserrat'; color: #D4AF37; text-transform: uppercase; font-size: 20px; font-weight: 900; margin-bottom: 40px; text-align: center; letter-spacing: 3px; }
         .policy-item { margin-bottom: 25px; font-size: 15px; color: #ccc; display: flex; align-items: flex-start; max-width: 850px; margin-left: auto; margin-right: auto; }
         .policy-emoji { margin-right: 20px; font-size: 22px; min-width: 35px; }
 
-        /* FORM */
+        /* INTAKE FORM */
         #intake-area { background: #050505; padding: 100px 20px; border-top: 1px solid #D4AF37; }
         .form-container { max-width: 600px; margin: 0 auto; }
         .input-row { margin-bottom: 35px; }
         label { display: block; font-family: 'Montserrat'; font-size: 11px; text-transform: uppercase; color: #D4AF37; margin-bottom: 12px; letter-spacing: 2px; font-weight: 700; }
         input, select, textarea { width: 100%; background: #000; border: 1px solid #222; padding: 20px; color: #fff; font-size: 15px; }
-        #submit-inquiry { background: #D4AF37; color: #000; width: 100%; padding: 25px; border: none; font-family: 'Montserrat'; font-weight: 900; text-transform: uppercase; letter-spacing: 6px; cursor: pointer; }
+        #submit-inquiry { background: #D4AF37; color: #000; width: 100%; padding: 25px; border: none; font-family: 'Montserrat'; font-weight: 900; text-transform: uppercase; letter-spacing: 6px; cursor: pointer; transition: 0.3s; }
+        #submit-inquiry:hover { background: #ffffff; }
 
         footer { text-align: center; padding: 100px 20px; color: #333; font-size: 11px; letter-spacing: 5px; text-transform: uppercase; font-weight: 700; }
         
-        /* ANIMATION */
         @keyframes gold-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
         .live-ticker { color: #D4AF37; font-weight: 900; font-size: 11px; animation: gold-blink 1.2s infinite; margin-left: 10px; vertical-align: middle; }
     </style>
@@ -86,7 +88,8 @@
             <a href="#chef-sec" class="quick-anchor">Private Chef Service</a>
             <a href="#credit-sec" class="quick-anchor">Advanced Credit Strategy</a>
             <a href="#courier-sec" class="quick-anchor">Premium Sprinter Logistics</a>
-            <a href="#intake-area" class="quick-anchor">Detailed Home Services</a>
+            <a href="#policy-section" class="quick-anchor">Rules & Policies</a>
+            <a href="#intake-area" class="quick-anchor">Secure Your Inquiry</a>
         </div>
 
         <div id="ig-stats-flex">
@@ -102,7 +105,9 @@
             <div class="card-box culinary-gold-wrap">
                 <div class="card-head-row"><span class="service-title">In-Home Culinary</span><span class="price-hero">$75<span class="unit-text">/hr</span></span></div>
                 <p class="card-p">Elevated dining prepared in your home. Customized menus for any dietary need or lifestyle.</p>
+                <span class="card-li" style="color: #D4AF37;">Statement: Grocery costs are a separate standalone fee.</span>
                 <span class="card-li">Plating Fee: $20 - $30 per plate</span>
+                <span class="card-li" style="color: #ffffff;">10 Plate Minimum For Meal Prep Orders</span>
                 <span class="card-li">Fresh Sourcing & Full Kitchen Cleanup Included</span>
             </div>
         </div>
@@ -119,7 +124,8 @@
             </div>
             <div class="card-box">
                 <div class="card-head-row"><span class="service-title">Full Service</span><span class="price-hero">$250<span class="unit-text">/mo</span></span></div>
-                <p class="card-p">Aggressive monthly restoration handled by our experts to prep you for homeownership.</p>
+                <p class="card-p">Aggressive monthly restoration handled by our experts. We target inaccuracies to prepare you for homeownership.</p>
+                <span class="card-li" style="color:#D4AF37;">Non-Contract | Cancel Anytime</span>
                 <span class="card-li">Monthly Progress Tracking</span>
                 <span class="card-li">Profile Building Strategy</span>
             </div>
@@ -172,13 +178,13 @@
                     <select required>
                         <option value="">Choose Service...</option>
                         <option>Private Chef Experience</option>
-                        <option>Credit Restoration</option>
+                        <option>Credit Restoration & Strategy</option>
                         <option>Sprinter Courier Logistics</option>
                         <option>Detailed Home Services</option>
                     </select>
                 </div>
-                <div class="input-row"><label>Details</label><textarea rows="5" placeholder="Special requirements..."></textarea></div>
-                <button type="submit" id="submit-inquiry">Submit Inquiry</button>
+                <div class="input-row"><label>Inquiry Details</label><textarea rows="5" placeholder="Special requirements or project details..."></textarea></div>
+                <button type="submit" id="submit-inquiry">Submit Official Inquiry</button>
             </form>
         </div>
     </section>
