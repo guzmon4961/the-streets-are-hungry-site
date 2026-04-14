@@ -8,6 +8,7 @@
     <style>
         :root {
             --gold: #D4AF37;
+            --gold-bright: #F9E29C;
             --dark: #050505;
             --card: rgba(18, 18, 18, 0.98);
             --text: #ffffff;
@@ -16,6 +17,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         body { background: var(--dark); color: var(--text); overflow-x: hidden; }
 
+        /* Animated Background */
         .bg-animate {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
             background: linear-gradient(135deg, #050505, #141108, #050505);
@@ -23,243 +25,203 @@
         }
         @keyframes gradientBG { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
         
+        /* Navbar */
         .navbar {
             display: flex; justify-content: space-between; align-items: center; padding: 15px 5%;
             background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); position: sticky; top: 0; z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
-        .logo { font-family: 'Montserrat'; font-weight: 900; color: var(--gold); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; }
+        .logo { font-family: 'Montserrat'; font-weight: 900; color: var(--gold); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1.5px; transition: 0.3s; }
+        .nav-social a { color: var(--gold); text-decoration: none; font-size: 0.7rem; font-weight: 900; letter-spacing: 1px; }
 
-        .hero { min-height: 55vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 40px 20px; }
-        h1 { font-family: 'Montserrat'; font-size: clamp(1.8rem, 8vw, 3rem); text-transform: uppercase; line-height: 1.1; margin-bottom: 25px; }
+        /* Hero */
+        .hero { min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 40px 20px; }
+        h1 { font-family: 'Montserrat'; font-size: clamp(1.8rem, 8vw, 3.2rem); text-transform: uppercase; line-height: 1.1; margin-bottom: 25px; }
         .gold-shimmer {
             background: linear-gradient(90deg, #d4af37, #f9e29c, #d4af37);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             animation: shimmer 3s infinite linear; background-size: 200% auto;
         }
         @keyframes shimmer { to { background-position: 200% center; } }
-        .badge { border: 1px solid var(--gold); color: var(--gold); padding: 4px 12px; border-radius: 50px; font-size: 0.6rem; margin-bottom: 15px; display: inline-block; }
+        .badge { border: 1px solid var(--gold); color: var(--gold); padding: 4px 12px; border-radius: 50px; font-size: 0.6rem; margin-bottom: 15px; display: inline-block; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
 
         .hero-link-column { display: flex; flex-direction: column; gap: 15px; align-items: center; }
-        .hero-link { color: var(--text); text-decoration: underline; font-size: 1.1rem; letter-spacing: 0.5px; }
+        .hero-link { color: var(--text); text-decoration: none; font-size: 1.1rem; letter-spacing: 0.5px; transition: 0.3s; }
+        .hero-link:hover { color: var(--gold); transform: scale(1.05); }
 
-        .section { padding: 50px 0; }
+        /* Sections & Cards */
+        .section { padding: 60px 0; opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
+        .section.visible { opacity: 1; transform: translateY(0); }
         .alt-bg { background: rgba(212, 175, 55, 0.04); }
-        .section-title { text-align: center; font-family: 'Montserrat'; font-size: 1.4rem; margin-bottom: 30px; color: var(--gold); text-transform: uppercase; }
+        .section-title { text-align: center; font-family: 'Montserrat'; font-size: 1.3rem; margin-bottom: 30px; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; }
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; width: 92%; margin: 0 auto; }
-        .glass-card { background: var(--card); padding: 25px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); }
-        .featured { border: 1px solid rgba(212, 175, 55, 0.4); }
-
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; width: 92%; margin: 0 auto; }
+        .glass-card { background: var(--card); padding: 25px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; }
+        .glass-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+        
         .card-header { 
             display: flex; justify-content: space-between; align-items: center; 
             margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
-        .service-title { color: var(--gold); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; margin: 0; }
-        .price-tag { font-size: 1.6rem; font-weight: 900; color: #fff; font-family: 'Montserrat'; white-space: nowrap; }
-        .price-tag small { font-size: 0.75rem; color: #777; font-weight: 400; }
+        .service-title { color: var(--gold); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; margin: 0; }
+        .price-tag { font-size: 1.5rem; font-weight: 900; color: #fff; font-family: 'Montserrat'; }
+        .price-tag small { font-size: 0.7rem; color: #777; font-weight: 400; }
 
-        .desc { font-size: 0.85rem; color: #aaa; margin-bottom: 12px; line-height: 1.4; text-align: left; }
-        .card-list { list-style: none; font-size: 0.85rem; color: #888; text-align: left; }
-        .card-list li { padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.02); }
+        .desc { font-size: 0.85rem; color: #aaa; margin-bottom: 12px; line-height: 1.4; }
+        .card-list { list-style: none; font-size: 0.8rem; color: #888; }
+        .card-list li { padding: 4px 0; display: flex; align-items: center; }
+        .card-list li::before { content: '→'; color: var(--gold); margin-right: 8px; }
 
-        .glass-card h3 { color: var(--gold); font-family: 'Montserrat'; font-size: 1rem; margin-bottom: 10px; text-transform: uppercase; }
+        /* Alerts */
+        #custom-alert {
+            position: fixed; bottom: -100px; left: 50%; transform: translateX(-50%);
+            background: var(--gold); color: black; padding: 15px 30px; border-radius: 50px;
+            font-weight: 900; text-transform: uppercase; font-size: 0.75rem; z-index: 2000;
+            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        }
+        #custom-alert.show { bottom: 30px; }
 
-        footer { padding: 60px 5%; text-align: center; background: #000; }
-        .contact-row { display: flex; flex-direction: column; align-items: center; gap: 20px; }
-        .btn-primary { background: var(--gold); color: #000; padding: 15px 35px; text-decoration: none; font-weight: 900; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; }
-        .phone-link { color: white; text-decoration: none; font-size: 1.4rem; font-weight: 700; margin-top: 10px; }
+        /* Footer */
+        footer { padding: 80px 5% 40px; text-align: center; background: #000; }
+        .btn-primary { 
+            background: var(--gold); color: #000; padding: 18px 45px; text-decoration: none; font-weight: 900; 
+            border-radius: 4px; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; display: inline-block;
+        }
+        .btn-primary:hover { background: var(--gold-bright); transform: scale(1.05); }
+        .phone-link { display: block; color: white; text-decoration: none; font-size: 1.4rem; font-weight: 700; margin: 20px 0; }
+        
+        .ig-footer { display: inline-block; margin-top: 30px; color: var(--gold); text-decoration: none; font-weight: 900; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; }
     </style>
 </head>
 <body>
 
+    <div id="custom-alert">Booking Request Initiated...</div>
     <div class="bg-animate"></div>
 
     <header class="navbar">
-        <div class="logo">The Streets Are Hungry</div>
+        <div class="logo">The Streets Are Hungry LLC</div>
+        <div class="nav-social">
+            <a href="https://www.instagram.com/thestreetsarehungryllc/" target="_blank">IG: @THESTREETSAREHUNGRYLLC</a>
+        </div>
     </header>
 
     <section class="hero">
         <div class="hero-content">
             <span class="badge">Columbus, OH | Excellence Required</span>
             <h1>Invest in Your Future. <br><span class="gold-shimmer">Demand Excellence.</span></h1>
-            
             <div class="hero-link-column">
                 <a href="#chef" class="hero-link">Private Chef Service</a>
                 <a href="#credit" class="hero-link">Advanced Credit Strategy</a>
                 <a href="#courier" class="hero-link">Premium Sprinter Logistics</a>
-                <a href="#cleaning" class="hero-link">Detailed Home Services</a>
+                <a href="#standards" class="hero-link">Master Standards</a>
             </div>
         </div>
     </section>
 
     <section id="chef" class="section">
-        <div class="container">
-            <h2 class="section-title">Private Chef Services</h2>
-            <div class="grid">
-                <div class="glass-card featured">
-                    <div class="card-header">
-                        <h3 class="service-title">Chef Service</h3>
-                        <span class="price-tag">$75<small>/hr</small></span>
-                    </div>
-                    <p class="desc">Professional in-home culinary experience. Customized menus tailored specifically to your dietary needs and flavor preferences.</p>
-                    <ul class="card-list">
-                        <li>Plating: <strong>$20 - $30 per plate</strong></li>
-                        <li>Fresh Ingredient Sourcing</li>
-                        <li>Full Kitchen Cleanup Included</li>
-                    </ul>
+        <div class="grid">
+            <div class="glass-card">
+                <div class="card-header">
+                    <h3 class="service-title">Chef Service</h3>
+                    <span class="price-tag">$75<small>/hr</small></span>
                 </div>
+                <p class="desc">Professional in-home culinary experience. Customized menus tailored specifically to your dietary needs.</p>
+                <ul class="card-list">
+                    <li>Plating: $20 - $30 per plate</li>
+                    <li>Full Kitchen Cleanup Included</li>
+                </ul>
             </div>
         </div>
     </section>
 
     <section id="credit" class="section alt-bg">
-        <div class="container">
-            <h2 class="section-title">Credit Restoration & Strategy</h2>
-            <div class="grid">
-                <div class="glass-card featured">
-                    <div class="card-header">
-                        <h3 class="service-title">Strategy Session</h3>
-                        <span class="price-tag">$100</span>
-                    </div>
-                    <p class="desc">A one-time 60-minute intensive analysis of your credit profile with a clear path forward.</p>
-                    <ul class="card-list">
-                        <li><strong>FREE:</strong> Credit Repair Letter Templates</li>
-                        <li><strong>FREE:</strong> Credit Repair eBook</li>
-                        <li>Full Profile Analysis & DIY Roadmap</li>
-                    </ul>
+        <h2 class="section-title">Credit Restoration</h2>
+        <div class="grid">
+            <div class="glass-card">
+                <div class="card-header">
+                    <h3 class="service-title">Strategy Session</h3>
+                    <span class="price-tag">$100</span>
                 </div>
-                <div class="glass-card">
-                    <div class="card-header">
-                        <h3 class="service-title">Full Service</h3>
-                        <span class="price-tag">$250<small>/mo</small></span>
-                    </div>
-                    <p class="desc">Aggressive monthly restoration and profile building. No long-term contracts, cancel anytime.</p>
-                    <ul class="card-list">
-                        <li>Month-to-Month Restoration</li>
-                        <li>Homeownership Readiness</li>
-                        <li>Financial Mentorship</li>
-                    </ul>
+                <p class="desc">60-minute intensive profile analysis.</p>
+                <ul class="card-list">
+                    <li>FREE: Repair Letter Templates</li>
+                    <li>Full Profile Analysis</li>
+                </ul>
+            </div>
+            <div class="glass-card">
+                <div class="card-header">
+                    <h3 class="service-title">Full Service</h3>
+                    <span class="price-tag">$250<small>/mo</small></span>
                 </div>
+                <p class="desc">Aggressive monthly restoration. No contracts.</p>
+                <ul class="card-list">
+                    <li>Financial Mentorship</li>
+                    <li>Homeownership Readiness</li>
+                </ul>
             </div>
         </div>
     </section>
 
     <section id="courier" class="section">
-        <div class="container">
-            <h2 class="section-title">Sprinter Courier Tiers</h2>
-            <div class="grid">
-                <div class="glass-card">
-                    <div class="card-header">
-                        <h3 class="service-title">The Basic</h3>
-                        <span class="price-tag">$150</span>
-                    </div>
-                    <p class="desc">Economical transport for smaller, non-urgent loads.</p>
-                    <ul class="card-list">
-                        <li>Up to 500 lbs cargo</li>
-                        <li>Next-Day delivery window</li>
-                        <li>Standard 25-mile radius</li>
-                    </ul>
+        <h2 class="section-title">Sprinter Logistics</h2>
+        <div class="grid">
+            <div class="glass-card">
+                <div class="card-header">
+                    <h3 class="service-title">The Basic</h3>
+                    <span class="price-tag">$150</span>
                 </div>
-                <div class="glass-card featured">
-                    <div class="card-header">
-                        <h3 class="service-title">The Premium</h3>
-                        <span class="price-tag">$300</span>
-                    </div>
-                    <p class="desc">High-priority logistics for larger equipment or materials.</p>
-                    <ul class="card-list">
-                        <li>Up to 1,500 lbs cargo</li>
-                        <li>Direct "Hot Shot" (No stops)</li>
-                        <li>75-mile radius included</li>
-                    </ul>
+                <p class="desc">Up to 500 lbs cargo | 25-mile radius.</p>
+            </div>
+            <div class="glass-card">
+                <div class="card-header">
+                    <h3 class="service-title">The Premium</h3>
+                    <span class="price-tag">$300</span>
                 </div>
-                <div class="glass-card">
-                    <div class="card-header">
-                        <h3 class="service-title">The Deluxe</h3>
-                        <span class="price-tag">$650</span>
-                    </div>
-                    <p class="desc">Maximum capacity and long-distance capability with specialized care.</p>
-                    <ul class="card-list">
-                        <li>Full van capacity (3,000 lbs)</li>
-                        <li>White Glove loading/unloading</li>
-                        <li>Up to 200 miles included</li>
-                    </ul>
-                </div>
+                <p class="desc">Up to 1,500 lbs cargo | 75-mile radius.</p>
             </div>
         </div>
     </section>
 
-    <section id="cleaning" class="section alt-bg">
-        <div class="container">
-            <h2 class="section-title">Detailed Home Services</h2>
-            <div class="grid">
-                <div class="glass-card">
-                    <div class="card-header">
-                        <h3 class="service-title">The Basic</h3>
-                        <span class="price-tag">$150</span>
-                    </div>
-                    <p class="desc">Essential maintenance to keep your home fresh and tidy.</p>
-                    <ul class="card-list">
-                        <li>Carpet & Hard Floor Refresh</li>
-                        <li>Detailed Baseboard Wiping</li>
-                        <li>Standard Surface Dusting</li>
-                    </ul>
-                </div>
-                <div class="glass-card featured">
-                    <div class="card-header">
-                        <h3 class="service-title">The Premium</h3>
-                        <span class="price-tag">$300</span>
-                    </div>
-                    <p class="desc">Enhanced interior cleaning focusing on visibility and detail.</p>
-                    <ul class="card-list">
-                        <li>Includes Basic Package</li>
-                        <li>Interior Windows (Up to 15)</li>
-                        <li>Glass, Tracks, & Sills</li>
-                    </ul>
-                </div>
-                <div class="glass-card">
-                    <div class="card-header">
-                        <h3 class="service-title">The Deluxe</h3>
-                        <span class="price-tag">$650</span>
-                    </div>
-                    <p class="desc">The ultimate reset for your property's exterior and interior presence.</p>
-                    <ul class="card-list">
-                        <li>Includes Premium Package</li>
-                        <li>Full Exterior House Wash</li>
-                        <li>Driveway & Walkway Clean</li>
-                    </ul>
-                </div>
+    <section id="standards" class="section alt-bg">
+        <h2 class="section-title">Master Standards</h2>
+        <div class="grid">
+            <div class="glass-card">
+                <h3>🐾 Pet Policy</h3>
+                <p class="desc">Animals must be crated or off-site. Non-compliance results in immediate forfeiture.</p>
             </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Master Service Standards</h2>
-            <div class="grid">
-                <div class="glass-card">
-                    <h3>🐾 Pet Policy</h3>
-                    <p class="desc">Animals must be crated or off-site. Non-compliance results in immediate forfeiture of payment.</p>
-                </div>
-                <div class="glass-card">
-                    <h3>💳 Payment</h3>
-                    <p class="desc">Upfront payment required. All sales final. Once the walkthrough or POD is signed, the job is closed.</p>
-                </div>
-                <div class="glass-card">
-                    <h3>📅 48-Hour Rule</h3>
-                    <p class="desc">Rescheduling requires 48-hour notice. Failure results in forfeiture of total service fee.</p>
-                </div>
+            <div class="glass-card">
+                <h3>💳 Payment</h3>
+                <p class="desc">Upfront payment required. All sales final.</p>
+            </div>
+            <div class="glass-card">
+                <h3>📅 48-Hour Rule</h3>
+                <p class="desc">Rescheduling requires 48-hour notice or fee is forfeited.</p>
             </div>
         </div>
     </section>
 
     <footer id="contact">
-        <div class="contact-row">
-            <h2 class="section-title">Ready to Begin?</h2>
-            <a href="sms:17405642852" class="btn-primary">Book Now</a>
-            <a href="tel:17405642852" class="phone-link">(740) 564-2852</a>
-            <p style="margin-top:30px; opacity:0.3; font-size:0.7rem;">&copy; 2026 The Streets Are Hungry LLC.</p>
-        </div>
+        <h2 class="section-title">Ready to Begin?</h2>
+        <a href="sms:17405642852" class="btn-primary" onclick="showAlert()">Book Now</a>
+        <a href="tel:17405642852" class="phone-link">(740) 564-2852</a>
+        <a href="https://www.instagram.com/thestreetsarehungryllc/" target="_blank" class="ig-footer gold-shimmer">Follow the Journey on Instagram</a>
+        <p style="margin-top:40px; opacity:0.3; font-size:0.6rem;">&copy; 2026 The Streets Are Hungry LLC. All Rights Reserved.</p>
     </footer>
 
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.section').forEach(s => observer.observe(s));
+
+        function showAlert() {
+            const alert = document.getElementById('custom-alert');
+            alert.classList.add('show');
+            setTimeout(() => alert.classList.remove('show'), 3000);
+        }
+    </script>
 </body>
 </html>
