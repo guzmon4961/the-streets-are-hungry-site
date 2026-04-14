@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Streets Are Hungry LLC | Service Intake</title>
+    <title>The Streets Are Hungry LLC | Master Intake</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -29,6 +29,8 @@
             border-bottom: 1px solid var(--accent);
         }
         .logo { font-family: 'Montserrat'; font-weight: 900; color: var(--gold); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 3px; }
+        .nav-links a { color: var(--gold); text-decoration: none; font-size: 0.8rem; font-weight: 900; letter-spacing: 2px; transition: 0.3s; }
+        .nav-links a:hover { color: #fff; }
 
         .blinker {
             height: 12px; width: 12px; background-color: var(--gold);
@@ -51,7 +53,6 @@
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             animation: shimmer 3s infinite linear; background-size: 200% auto;
         }
-        @keyframes shimmer { to { background-position: 200% center; } }
 
         .tracker-card {
             background: var(--card); border: 1px solid var(--accent);
@@ -95,6 +96,7 @@
         .btn-main:hover { transform: scale(1.08); background: var(--gold-bright); }
         
         .legal-footer { margin-top: 60px; opacity: 0.4; font-size: 0.75rem; letter-spacing: 4px; font-weight: 800; color: #888; text-transform: uppercase; }
+        .legal-footer a { color: #888; text-decoration: none; }
     </style>
 </head>
 <body>
@@ -102,7 +104,9 @@
     
     <header class="navbar">
         <div class="logo">The Streets Are Hungry LLC</div>
-        <a href="https://www.instagram.com/_tsah_ceo/" target="_blank" style="color:var(--gold); text-decoration:none; font-size:0.8rem; font-weight:900;">@_TSAH_CEO</a>
+        <div class="nav-links">
+            <a href="https://www.instagram.com/_tsah_ceo/" target="_blank">@_TSAH_CEO</a>
+        </div>
     </header>
 
     <section class="hero">
@@ -126,14 +130,14 @@
                     <h3 class="service-title"><span class="blinker"></span>Private Chef</h3>
                     <div class="price">$75<small>per hour</small></div>
                 </div>
-                <p class="description">Luxury in-home dining experience. We handle the menu curation, grocery shopping, cooking, and a deep-clean of your kitchen post-service. Menus are customized based on your specific nutritional requirements and fitness goals.</p>
+                <p class="description"><strong>Labor only.</strong> Includes shopping, cooking, and deep clean. If I have to go shopping, that fee needs to be paid upfront to avoid confusion on labor. All grocery capital is separate from the labor rate.</p>
             </div>
             <div class="glass-card">
                 <div class="card-header">
                     <h3 class="service-title"><span class="blinker"></span>Meal Prep</h3>
                     <div class="price">$20-$30<small>per plate</small></div>
                 </div>
-                <p class="description">Professional meal preparation for high-performers. Each plate is macro-balanced and uses high-grade ingredients. <strong>Minimum order of 10 plates required</strong> to initiate service cycles. Pricing fluctuates based on protein selection.</p>
+                <p class="description">Professional macro-balanced meals. Minimum of 10 plates required to initiate service. Final pricing fluctuates based on protein selection.</p>
             </div>
         </div>
     </section>
@@ -143,17 +147,17 @@
         <div class="grid">
             <div class="glass-card">
                 <div class="card-header">
-                    <h3 class="service-title"><span class="blinker"></span>Strategy Session</h3>
+                    <h3 class="service-title"><span class="blinker"></span>Ebook / DIY</h3>
                     <div class="price">$100</div>
                 </div>
-                <p class="description">A deep-dive technical audit of your credit profile. We identify negative inaccuracies, high-utilization pain points, and reporting gaps. You receive a custom action plan and professional DIY dispute templates.</p>
+                <p class="description">Includes the full <strong>Restoration Ebook</strong> and <strong>Dispute Letter Templates</strong>. Complete DIY strategy with <strong>no contract</strong>—you own the tools for life.</p>
             </div>
             <div class="glass-card">
                 <div class="card-header">
-                    <h3 class="service-title"><span class="blinker"></span>Full Restoration</h3>
+                    <h3 class="service-title"><span class="blinker"></span>Full Service</h3>
                     <div class="price">$250<small>per month</small></div>
                 </div>
-                <p class="description">Aggressive monthly restoration and profile building. We handle all direct disputes with the three major bureaus and original creditors. Includes monthly progress reports and debt-to-income optimization strategy. Cancel anytime.</p>
+                <p class="description">Hands-on monthly litigation and profile building. Includes monthly progress reports. <strong>No contract</strong>—cancel at any time.</p>
             </div>
         </div>
     </section>
@@ -166,21 +170,21 @@
                     <h3 class="service-title"><span class="blinker"></span>The Basic</h3>
                     <div class="price">$150</div>
                 </div>
-                <p class="description">Local transport for high-value items. Up to <strong>500 lbs</strong> of cargo within a <strong>25-mile radius</strong> of pickup. Perfect for small equipment transfers or retail pickups.</p>
+                <p class="description">Up to 500 lbs within 25 miles. Local transport for specialized equipment or high-value retail pickups.</p>
             </div>
             <div class="glass-card">
                 <div class="card-header">
                     <h3 class="service-title"><span class="blinker"></span>The Premium</h3>
                     <div class="price">$300</div>
                 </div>
-                <p class="description">Regional support. Up to <strong>1,500 lbs</strong> of cargo within a <strong>75-mile radius</strong>. Includes professional load securing and direct express delivery.</p>
+                <p class="description">Up to 1,500 lbs within 75 miles. Regional support including professional load securing and direct delivery.</p>
             </div>
             <div class="glass-card">
                 <div class="card-header">
                     <h3 class="service-title"><span class="blinker"></span>The Deluxe</h3>
                     <div class="price">$650</div>
                 </div>
-                <p class="description">Full "Hot Shot" mobilization. Entire van capacity (up to <strong>3,000 lbs</strong>) within a <strong>200-mile radius</strong>. Direct transport from A to B with zero intermediary stops.</p>
+                <p class="description">Full van capacity (3,000 lbs) within 200 miles. Direct "Hot Shot" mobilization with zero stops between pickup and drop.</p>
             </div>
         </div>
     </section>
@@ -193,21 +197,21 @@
                     <h3 class="service-title"><span class="blinker"></span>The Basic</h3>
                     <div class="price">$150</div>
                 </div>
-                <p class="description">Property care foundation. Includes high-traffic carpet vacuuming, precision baseboard cleaning, and thorough surface dusting across all living areas.</p>
+                <p class="description">Precision baseboard cleaning, carpet vacuuming, and thorough dusting across all living areas.</p>
             </div>
             <div class="glass-card">
                 <div class="card-header">
                     <h3 class="service-title"><span class="blinker"></span>The Premium</h3>
                     <div class="price">$300</div>
                 </div>
-                <p class="description">Complete interior maintenance. Includes everything in Basic, plus full interior window washing and detailed cleaning of all glass tracks and sills.</p>
+                <p class="description">Everything in Basic plus full interior window washing and deep cleaning of all window tracks and sills.</p>
             </div>
             <div class="glass-card">
                 <div class="card-header">
                     <h3 class="service-title"><span class="blinker"></span>The Deluxe</h3>
                     <div class="price">$650</div>
                 </div>
-                <p class="description">Curb-to-kitchen overhaul. Combines Premium Interior Deep Clean with a professional exterior house wash and high-pressure driveway cleaning.</p>
+                <p class="description">Elite Interior Deep Clean plus exterior house wash and high-pressure driveway/walkway cleaning.</p>
             </div>
         </div>
     </section>
@@ -218,19 +222,19 @@
             <div class="glass-card">
                 <h3 class="service-title" style="margin-bottom:25px;"><span class="blinker"></span>Intake Protocol</h3>
                 <ul class="policy-list">
-                    <li><strong>100% Upfront Payment:</strong> Mandatory to confirm all bookings and mobilize logistics.</li>
-                    <li>📅 <strong>48-Hour Notice:</strong> Minimum requirement for any rescheduling of confirmed services.</li>
-                    <li><strong>Client Presence:</strong> Mandatory for the duration of all in-home service appointments.</li>
-                    <li>🐾 <strong>Pet Safety:</strong> Pets must be safely crated or off-site for staff safety during appointments.</li>
+                    <li><strong>100% Upfront:</strong> All labor and grocery capital must be paid upfront to confirm and mobilize.</li>
+                    <li>📅 <strong>48-Hour Notice:</strong> Minimum requirement to reschedule any confirmed service.</li>
+                    <li><strong>Presence:</strong> Primary account holder must be on-site for the duration of the appointment.</li>
+                    <li>🐾 <strong>Pet Safety:</strong> Pets must be crated or off-site during the service window for staff safety.</li>
                 </ul>
             </div>
             <div class="glass-card">
-                <h3 class="service-title" style="margin-bottom:25px;"><span class="blinker"></span>Business Standards</h3>
+                <h3 class="service-title" style="margin-bottom:25px;"><span class="blinker"></span>Business Policy</h3>
                 <ul class="policy-list">
-                    <li><strong>Service Radius:</strong> Specific mileage limits apply per tier for Sprinter and Home services.</li>
-                    <li><strong>Mobilization:</strong> Resources and labor are allocated immediately upon payment.</li>
-                    <li><strong>Quality Check:</strong> All services are executed to the "Streets Are Hungry" elite standard.</li>
-                    <li><strong>Direct Line:</strong> Text-first communication for all active service updates.</li>
+                    <li><strong>Zero Confusion:</strong> Material and grocery costs are always separate from professional labor fees.</li>
+                    <li><strong>Radius:</strong> Specific mileage limits apply per tier for Logistics and Home services.</li>
+                    <li><strong>Elite Standard:</strong> Every project is executed to the "Streets Are Hungry" high-performance level.</li>
+                    <li><strong>Direct Line:</strong> Text-first protocol for all active service updates and coordination.</li>
                 </ul>
             </div>
         </div>
@@ -238,7 +242,9 @@
 
     <footer>
         <a href="sms:17405642852" class="btn-main">Initiate Booking</a>
-        <p class="legal-footer">© 2026 THE STREETS ARE HUNGRY LLC | COLUMBUS, OHIO</p>
+        <p class="legal-footer">
+            © 2026 <a href="https://www.instagram.com/_tsah_ceo/" target="_blank">THE STREETS ARE HUNGRY LLC</a> | COLUMBUS, OHIO
+        </p>
     </footer>
 
     <script>
@@ -249,4 +255,3 @@
     </script>
 </body>
 </html>
-
