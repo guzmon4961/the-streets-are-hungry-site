@@ -40,25 +40,28 @@
         /* SERVICE CARDS */
         .card-box { background: #0a0a0a; border: 1px solid #1a1a1a; padding: 50px; border-radius: 4px; position: relative; }
         .deluxe-edition-wrap { outline: 4px solid #D4AF37; outline-offset: -18px; }
-        
         .card-head-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 30px; border-bottom: 1px solid #222; padding-bottom: 15px; }
         .service-title { font-family: 'Montserrat'; color: #D4AF37; font-size: 16px; text-transform: uppercase; font-weight: 800; letter-spacing: 1px; }
-        
-        /* CLEAN PRICING WEIGHT */
         .price-hero { font-family: 'Montserrat'; font-size: 44px; font-weight: 500; color: #ffffff; }
         .unit-text { font-size: 16px; color: #555; font-weight: 400; }
-        
         .card-p { color: #aaa; font-size: 17px; margin-bottom: 30px; line-height: 1.5; }
         .feature-list { list-style: none; }
         .card-li { color: #888; font-size: 14px; margin-bottom: 12px; font-weight: 600; display: flex; align-items: center; }
         .card-li::before { content: "•"; color: #D4AF37; margin-right: 15px; font-size: 20px; }
 
-        /* POLICIES */
+        /* POLICIES & PROCEDURES */
         #policy-section { background: #080808; border: 2px solid #D4AF37; margin: 100px 20px; padding: 80px 40px; border-radius: 4px; }
-        .policy-headline { font-family: 'Montserrat'; color: #D4AF37; text-transform: uppercase; font-size: 26px; font-weight: 900; margin-bottom: 60px; text-align: center; letter-spacing: 5px; }
+        .policy-headline { font-family: 'Montserrat'; color: #D4AF37; text-transform: uppercase; font-size: 26px; font-weight: 900; margin-bottom: 40px; text-align: center; letter-spacing: 5px; }
+        .policy-sub { color: #D4AF37; font-family: 'Montserrat'; font-weight: 800; text-transform: uppercase; font-size: 14px; letter-spacing: 2px; margin-bottom: 25px; display: block; border-left: 3px solid #D4AF37; padding-left: 15px; }
         .policy-item { margin-bottom: 35px; font-size: 18px; color: #ccc; display: flex; align-items: flex-start; max-width: 900px; margin-left: auto; margin-right: auto; }
         .policy-emoji { margin-right: 25px; font-size: 28px; min-width: 45px; }
 
+        /* REFERRAL PROGRAM */
+        #referral-banner { background: #D4AF37; color: #000; padding: 60px 20px; text-align: center; margin-top: 80px; }
+        .ref-title { font-family: 'Montserrat'; font-weight: 900; text-transform: uppercase; font-size: 32px; letter-spacing: 2px; margin-bottom: 15px; }
+        .ref-text { font-family: 'Inter'; font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* INTAKE FORM */
         #intake-area { background: #050505; padding: 120px 20px; border-top: 1px solid #D4AF37; }
         .form-container { max-width: 650px; margin: 0 auto; }
         .input-row { margin-bottom: 40px; }
@@ -170,7 +173,7 @@
         <div class="main-grid">
             <div class="card-box">
                 <div class="card-head-row"><span class="service-title">Essential Clean</span><span class="price-hero">$100</span></div>
-                <p class="card-p">High-quality maintenance cleaning. Focuses on the essentials to keep your space fresh and professional.</p>
+                <p class="card-p">High-quality maintenance cleaning. Focuses on the essentials to keep your space fresh.</p>
                 <ul class="feature-list">
                     <li class="card-li">Full Floor Sweep & Mop</li>
                     <li class="card-li">Sanitization of High-Touch Surfaces</li>
@@ -179,17 +182,16 @@
             </div>
             <div class="card-box">
                 <div class="card-head-row"><span class="service-title">Premium Detail</span><span class="price-hero">$350</span></div>
-                <p class="card-p">Comprehensive deep clean for residential homes. <strong>Includes all Essential Clean services.</strong></p>
+                <p class="card-p">Comprehensive deep clean for residential homes. <strong>Includes Essential Clean.</strong></p>
                 <ul class="feature-list">
                     <li class="card-li">Interior Window Cleaning</li>
                     <li class="card-li">Detailed Cabinet & Door Frame Wipe-Down</li>
-                    <li class="card-li">Full Dusting (Blinds & Window Sills)</li>
-                    <li class="card-li">Upholstery & Carpet Vacuuming</li>
+                    <li class="card-li">Full Dusting (Blinds & Sills)</li>
                 </ul>
             </div>
             <div class="card-box deluxe-edition-wrap">
                 <div class="card-head-row"><span class="service-title">Deluxe Edition</span><span class="price-hero">$600</span></div>
-                <p class="card-p">The ultimate restoration package. Perfect for move-ins or total resets. <strong>Includes all Premium services.</strong></p>
+                <p class="card-p">Ultimate restoration package. <strong>Includes all Premium services.</strong></p>
                 <ul class="feature-list">
                     <li class="card-li" style="color: #ffffff;">EXTERIOR POWER WASHING</li>
                     <li class="card-li" style="color: #ffffff;">Interior Oven & Fridge Restoration</li>
@@ -201,10 +203,21 @@
     </section>
 
     <section id="policy-section">
-        <h2 class="policy-headline">Master Rules & Policies</h2>
-        <div class="policy-item"><span class="policy-emoji">💳</span><div><strong>Non-Refundable:</strong> All service payments are strictly non-refundable once processed.</div></div>
-        <div class="policy-item"><span class="policy-emoji">⏳</span><div><strong>48HR Cancellation:</strong> Changes or cancellations must be made 48 hours in advance. Failure to do so results in a 50% forfeiture fee.</div></div>
-        <div class="policy-item"><span class="policy-emoji">🐾</span><div><strong>Pet Policy:</strong> All pets must be secured during home service visits.</div></div>
+        <h2 class="policy-headline">Master Policies & Procedures</h2>
+        
+        <span class="policy-sub">Financial Integrity</span>
+        <div class="policy-item"><span class="policy-emoji">🚫</span><div><strong>STRICTLY NON-REFUNDABLE:</strong> All service payments are final. Failure to comply with terms or missing appointments results in a 100% non-refundable status. No exceptions.</div></div>
+        <div class="policy-item"><span class="policy-emoji">⏳</span><div><strong>48HR Cancellation Policy:</strong> Service adjustments or cancellations must be submitted 48 hours in advance. Failure to do so results in total forfeiture of the payment/deposit.</div></div>
+        
+        <span class="policy-sub">On-Site Procedures</span>
+        <div class="policy-item"><span class="policy-emoji">🐾</span><div><strong>Safe Access:</strong> All pets must be secured in a separate room or kennel during home service visits to ensure staff safety and service efficiency.</div></div>
+        <div class="policy-item"><span class="policy-emoji">📦</span><div><strong>Logistic Limits:</strong> Sprinter Courier loads are strictly capped at 3,500 lbs. Overloading beyond technical limits will result in immediate service termination without refund.</div></div>
+        <div class="policy-item"><span class="policy-emoji">🍳</span><div><strong>Culinary Hygiene:</strong> Private Chef clients must provide a sanitized kitchen workspace. Grocery costs are calculated separately and due prior to procurement.</div></div>
+    </section>
+
+    <section id="referral-banner">
+        <h3 class="ref-title">The Referral Reward Program</h3>
+        <p class="ref-text">Send us a new client and receive $50 cash or service credit. Loyalty Pays.</p>
     </section>
 
     <section id="intake-area">
