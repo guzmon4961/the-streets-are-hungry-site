@@ -1,6 +1,3 @@
-I hear you loud and clear. I have integrated the **Referral Reward Program** banner as requested and ensured all three tiers for **Cleaning** and **Courier** services are present and distinct. I’ve also applied the specific **Deluxe Edition** branding and room details to the cleaning section, and confirmed the **48-hour cancellation** and **pet policies** are prominently displayed in the SOP section.
-The code has been expanded to ensure all service logic and branding are fully captured.
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +7,7 @@ The code has been expanded to ensure all service logic and branding are fully ca
     
     <!-- 
         THE STREETS ARE HUNGRY LLC
-        MASTER CODE ARCHITECTURE v5.0
+        MASTER CODE ARCHITECTURE v6.0
     -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -109,7 +106,7 @@ The code has been expanded to ensure all service logic and branding are fully ca
             transform: scale(1.05); 
         }
 
-        /* INSTAGRAM DATA */
+        /* STATS SECTION */
         #ig-stats-flex { 
             display: flex; 
             justify-content: center; 
@@ -154,6 +151,12 @@ The code has been expanded to ensure all service logic and branding are fully ca
             position: relative; 
             display: flex;
             flex-direction: column;
+            transition: 0.4s;
+        }
+
+        .card-box:hover {
+            border-color: #D4AF37;
+            background: #0d0d0d;
         }
 
         .deluxe-edition-wrap { 
@@ -256,12 +259,16 @@ The code has been expanded to ensure all service logic and branding are fully ca
         .form-container { max-width: 650px; margin: 0 auto; }
         .input-row { margin-bottom: 40px; }
         label { display: block; font-family: 'Montserrat'; font-size: 12px; text-transform: uppercase; color: #D4AF37; margin-bottom: 15px; letter-spacing: 3px; font-weight: 800; }
-        input, select, textarea { width: 100%; background: #000; border: 1px solid #333; padding: 22px; color: #fff; font-size: 16px; border-radius: 2px; }
+        input, select, textarea { width: 100%; background: #000; border: 1px solid #333; padding: 22px; color: #fff; font-size: 16px; border-radius: 2px; transition: 0.3s; }
+        input:focus, textarea:focus { border-color: #D4AF37; outline: none; }
         #submit-inquiry { background: #D4AF37; color: #000; width: 100%; padding: 28px; border: none; font-family: 'Montserrat'; font-weight: 900; text-transform: uppercase; letter-spacing: 8px; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        #submit-inquiry:hover { background: #fff; letter-spacing: 12px; }
 
         /* UTILITIES */
         .floating-sms { position: fixed; bottom: 30px; right: 30px; background: #D4AF37; color: #000; width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; text-decoration: none; font-size: 30px; box-shadow: 0 4px 20px rgba(212, 175, 55, 0.5); z-index: 9999; transition: 0.3s; border: 2px solid #fff; }
+        .floating-sms:hover { transform: scale(1.1) rotate(10deg); }
         footer { text-align: center; padding: 120px 20px; color: #444; font-size: 12px; letter-spacing: 8px; text-transform: uppercase; font-weight: 800; }
+        
         @keyframes gold-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
         .live-ticker { color: #D4AF37; font-weight: 900; font-size: 12px; animation: gold-blink 1.4s infinite; margin-left: 15px; vertical-align: middle; }
     </style>
@@ -269,7 +276,7 @@ The code has been expanded to ensure all service logic and branding are fully ca
 <body>
 
     <div id="top-bar">
-        <div id="main-brand-name">The Streets Are Hungry LLC</div>
+        <div id="main-brand-name">THE STREETS ARE HUNGRY LLC</div>
     </div>
 
     <a href="sms:+17405642852" class="floating-sms">💬</a>
@@ -279,12 +286,12 @@ The code has been expanded to ensure all service logic and branding are fully ca
         <h2 id="demand-gold">Demand<br>Excellence.</h2>
         
         <nav id="image-nav">
-            <a href="#chef-sec" class="nav-link-style">Private Chef Service</a>
-            <a href="#labor-sec" class="nav-link-style">Labor and Garden</a>
-            <a href="#credit-sec" class="nav-link-style">Credit Strategy</a>
+            <a href="#housing-sec" class="nav-link-style">Housing Consultation</a>
             <a href="#courier-sec" class="nav-link-style">Courier Logistics</a>
             <a href="#clean-sec" class="nav-link-style">Home Services</a>
-            <a href="#policy-section" class="nav-link-style">Policies and SOP</a>
+            <a href="#labor-sec" class="nav-link-style">General Labor</a>
+            <a href="#chef-sec" class="nav-link-style">Private Chef</a>
+            <a href="#policy-section" class="nav-link-style">Master Policies</a>
         </nav>
 
         <div id="ig-stats-flex">
@@ -297,67 +304,41 @@ The code has been expanded to ensure all service logic and branding are fully ca
         </a>
     </header>
 
-    <!-- PRIVATE CHEF -->
-    <section id="chef-sec">
-        <h2 class="sec-label">Private Chef Services <span class="live-ticker">LIVE</span></h2>
-        <div class="main-grid" style="max-width: 800px; grid-template-columns: 1fr;">
-            <div class="card-box deluxe-edition-wrap">
-                <div class="card-head-row">
-                    <span class="service-title">Professional Culinary</span>
-                    <span class="price-hero">$75<span class="unit-text">/hour</span></span>
-                </div>
-                <p class="card-p">Tailored dietary menus with professional preparation and plating.</p>
-                <ul class="feature-list">
-                    <li class="card-li" style="color: #D4AF37;">Grocery costs are a separate standalone fee.</li>
-                    <li class="card-li">Plating: $20 - $30 per plate</li>
-                    <li class="card-li" style="color: #ffffff;">10 Plate Minimum For Preparation Orders</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- LABOR & GARDEN -->
-    <section id="labor-sec">
-        <h2 class="sec-label">General Labor and Garden <span class="live-ticker">LIVE</span></h2>
-        <div class="main-grid" style="max-width: 800px; grid-template-columns: 1fr;">
-            <div class="card-box">
-                <div class="card-head-row">
-                    <span class="service-title">Yard and Labor</span>
-                    <span class="price-hero">$75<span class="unit-text">/hour</span></span>
-                </div>
-                <p class="card-p">Physical labor, hedge trimming, and garden maintenance.</p>
-                <ul class="feature-list">
-                    <li class="card-li" style="color: #D4AF37; font-weight: 900;">CLIENT PROVIDES ALL TOOLS, EQUIPMENT, AND GASOLINE.</li>
-                    <li class="card-li">Debris Removal and Site Organization</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- CREDIT STRATEGY -->
-    <section id="credit-sec">
-        <h2 class="sec-label">Credit Restoration <span class="live-ticker">LIVE</span></h2>
+    <!-- HOUSING & CREDIT STRATEGY -->
+    <section id="housing-sec">
+        <h2 class="sec-label">Housing Consultation & Order <span class="live-ticker">LIVE</span></h2>
         <div class="main-grid">
             <div class="card-box">
                 <div class="card-head-row">
-                    <span class="service-title">Strategy Session</span>
+                    <span class="service-title">DIY Strategy</span>
                     <span class="price-hero">$100</span>
                 </div>
-                <p class="card-p">60-minute analysis with DIY repair letter templates and eBook included.</p>
+                <p class="card-p">Comprehensive session for clients managing their own housing path.</p>
+                <ul class="feature-list">
+                    <li class="card-li">60-Minute Consultation Session</li>
+                    <li class="card-li">DIY Repair Letter Templates</li>
+                    <li class="card-li">Step-by-Step Strategic eBook</li>
+                </ul>
             </div>
             <div class="card-box deluxe-edition-wrap">
                 <div class="card-head-row">
-                    <span class="service-title">Full Service</span>
-                    <span class="price-hero">$250<span class="unit-text">/month</span></span>
+                    <span class="service-title">Housing Order</span>
+                    <span class="price-hero">$250<span class="unit-text">/mo</span></span>
                 </div>
-                <p class="card-p">Monthly restoration targeting all bureaus. No long-term contracts.</p>
+                <p class="card-p">Full-service housing readiness and aggressive restoration suite.</p>
+                <ul class="feature-list">
+                    <li class="card-li" style="color: #ffffff;">Aggressive Bureau Targeting</li>
+                    <li class="card-li">Homeownership Feasibility Study</li>
+                    <li class="card-li">Monthly Strategy Updates</li>
+                    <li class="card-li" style="color: #D4AF37;">No Long-Term Contracts</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- COURIER LOGISTICS (ALL 3 TIERS) -->
+    <!-- COURIER TIERS -->
     <section id="courier-sec">
-        <h2 class="sec-label">Sprinter Courier Tiers <span class="live-ticker">LIVE</span></h2>
+        <h2 class="sec-label">Sprinter Courier Logistics <span class="live-ticker">LIVE</span></h2>
         <div class="main-grid">
             <div class="card-box">
                 <div class="card-head-row">
@@ -365,8 +346,8 @@ The code has been expanded to ensure all service logic and branding are fully ca
                     <span class="price-hero">$150</span>
                 </div>
                 <ul class="feature-list">
-                    <li class="card-li">Up to 500 lbs cargo</li>
-                    <li class="card-li">25-mile radius coverage</li>
+                    <li class="card-li">Up to 500 lbs Cargo</li>
+                    <li class="card-li">25-Mile Radius Coverage</li>
                 </ul>
             </div>
             <div class="card-box">
@@ -375,8 +356,8 @@ The code has been expanded to ensure all service logic and branding are fully ca
                     <span class="price-hero">$350</span>
                 </div>
                 <ul class="feature-list">
-                    <li class="card-li">Up to 1,500 lbs cargo</li>
-                    <li class="card-li">75-mile radius coverage</li>
+                    <li class="card-li">Up to 1,500 lbs Cargo</li>
+                    <li class="card-li">75-Mile Radius Coverage</li>
                 </ul>
             </div>
             <div class="card-box deluxe-edition-wrap">
@@ -386,29 +367,30 @@ The code has been expanded to ensure all service logic and branding are fully ca
                 </div>
                 <ul class="feature-list">
                     <li class="card-li" style="color: #ffffff;">UP TO 3,500 LBS CARGO</li>
-                    <li class="card-li" style="color: #ffffff;">Up to 200 miles coverage</li>
+                    <li class="card-li" style="color: #ffffff;">200-Mile Strategic Radius</li>
+                    <li class="card-li">Priority Route Handling</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- CLEANING SERVICES (ALL 3 TIERS) -->
+    <!-- CLEANING TIERS -->
     <section id="clean-sec">
-        <h2 class="sec-label">Detailed Home Services <span class="live-ticker">LIVE</span></h2>
+        <h2 class="sec-label">Home Service Tiers <span class="live-ticker">LIVE</span></h2>
         <div class="main-grid">
             <div class="card-box">
                 <div class="card-head-row">
-                    <span class="service-title">Essential Clean</span>
+                    <span class="service-title">Essential</span>
                     <span class="price-hero">$150</span>
                 </div>
-                <p class="card-p">High-quality maintenance for essential living spaces.</p>
+                <p class="card-p">Standard maintenance for high-traffic living areas.</p>
             </div>
             <div class="card-box">
                 <div class="card-head-row">
-                    <span class="service-title">Premium Detail</span>
+                    <span class="service-title">Premium</span>
                     <span class="price-hero">$300</span>
                 </div>
-                <p class="card-p">Comprehensive deep clean including interior windows.</p>
+                <p class="card-p">Full interior detailing including window sanitation.</p>
             </div>
             <div class="card-box deluxe-edition-wrap">
                 <div class="card-head-row">
@@ -416,10 +398,38 @@ The code has been expanded to ensure all service logic and branding are fully ca
                     <span class="price-hero">$650</span>
                 </div>
                 <ul class="feature-list">
-                    <li class="card-li" style="color: #ffffff;">Master & Guest Bedrooms</li>
-                    <li class="card-li" style="color: #ffffff;">Full Kitchen & Pantry Restoration</li>
-                    <li class="card-li" style="color: #ffffff;">Bathrooms & Sanitation Points</li>
-                    <li class="card-li">Living, Dining, & Common Areas</li>
+                    <li class="card-li" style="color: #ffffff;">Master & Guest Suite Restoration</li>
+                    <li class="card-li">Full Kitchen & Pantry Detailing</li>
+                    <li class="card-li">Living, Dining, & Common Spaces</li>
+                    <li class="card-li">High-Touch Surface Sanitation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- LABOR & CHEF -->
+    <section id="labor-sec">
+        <h2 class="sec-label">Specialized Services <span class="live-ticker">LIVE</span></h2>
+        <div class="main-grid">
+            <div id="chef-sec" class="card-box">
+                <div class="card-head-row">
+                    <span class="service-title">Private Chef</span>
+                    <span class="price-hero">$75<span class="unit-text">/hr</span></span>
+                </div>
+                <p class="card-p">Professional meal prep and plating. Minimum 10 plates per order.</p>
+                <ul class="feature-list">
+                    <li class="card-li">Plating: $20-$30 Per Plate</li>
+                    <li class="card-li" style="color: #D4AF37;">Groceries are a separate fee.</li>
+                </ul>
+            </div>
+            <div class="card-box">
+                <div class="card-head-row">
+                    <span class="service-title">Labor & Garden</span>
+                    <span class="price-hero">$75<span class="unit-text">/hr</span></span>
+                </div>
+                <p class="card-p">Hedge trimming, debris removal, and heavy labor tasks.</p>
+                <ul class="feature-list">
+                    <li class="card-li" style="color: #D4AF37; font-weight: 900;">CLIENT PROVIDES ALL TOOLS & GAS.</li>
                 </ul>
             </div>
         </div>
@@ -431,49 +441,49 @@ The code has been expanded to ensure all service logic and branding are fully ca
         <p class="ref-text">Refer 2 People and receive 20% OFF your next scheduled service.</p>
     </section>
 
-    <!-- MASTER POLICIES -->
+    <!-- POLICIES -->
     <section id="policy-section">
         <h2 class="policy-headline">Master Policies and SOP</h2>
         
-        <span class="policy-sub">Financial Integrity</span>
+        <span class="policy-sub">Financial Standards</span>
         <div class="policy-item">
             <span class="policy-emoji">🚫</span>
-            <div><strong>NON-REFUNDABLE:</strong> All service payments are strictly final.</div>
+            <div><strong>NON-REFUNDABLE:</strong> All payments for services and consultations are strictly final.</div>
         </div>
         <div class="policy-item">
             <span class="policy-emoji">⏳</span>
-            <div><strong>48-HOUR POLICY:</strong> Rescheduling requires a 48-hour notice or payment is forfeited.</div>
+            <div><strong>48-HOUR NOTICE:</strong> Any rescheduling must occur 48 hours prior to service or payment is forfeited.</div>
         </div>
         
-        <span class="policy-sub">Operational Procedures</span>
+        <span class="policy-sub">Site Operations</span>
         <div class="policy-item">
             <span class="policy-emoji">🐾</span>
-            <div><strong>Pet Policy:</strong> All pets must be secured in a separate room during service visits.</div>
+            <div><strong>PET POLICY:</strong> For safety, all pets must be secured in a kennel or separate room during service.</div>
         </div>
         <div class="policy-item">
-            <span class="policy-emoji">📦</span>
-            <div><strong>Logistics:</strong> Subcontractors provide their own equipment and gasoline.</div>
+            <span class="policy-emoji">🛡️</span>
+            <div><strong>EQUIPMENT:</strong> Subcontractors are responsible for their own tools and fuel costs.</div>
         </div>
     </section>
 
     <!-- INTAKE -->
     <section id="intake-area">
         <div class="form-container">
-            <form id="tsah-inquiry-form">
+            <form id="tsah-master-form">
                 <div class="input-row"><label>Full Name</label><input type="text" id="client-name" required></div>
                 <div class="input-row">
-                    <label>Department</label>
+                    <label>Inquiry Type</label>
                     <select id="client-service" required>
-                        <option value="">Choose Service...</option>
-                        <option>Private Chef</option>
-                        <option>Labor and Garden</option>
-                        <option>Credit Restoration</option>
+                        <option value="">Select Service...</option>
+                        <option>Housing Consultation</option>
                         <option>Courier Logistics</option>
                         <option>Home Services</option>
+                        <option>Private Chef</option>
+                        <option>General Labor</option>
                     </select>
                 </div>
-                <div class="input-row"><label>Details</label><textarea id="client-details" rows="6"></textarea></div>
-                <button type="submit" id="submit-inquiry">Submit Inquiry to TSAH LLC</button>
+                <div class="input-row"><label>Message / Order Details</label><textarea id="client-details" rows="6" placeholder="Describe your needs..."></textarea></div>
+                <button type="submit" id="submit-inquiry">Submit Official Inquiry</button>
             </form>
         </div>
     </section>
@@ -481,18 +491,16 @@ The code has been expanded to ensure all service logic and branding are fully ca
     <footer>© 2026 THE STREETS ARE HUNGRY LLC | COLUMBUS, OHIO</footer>
 
     <script>
-        document.getElementById('tsah-inquiry-form').addEventListener('submit', function(event) {
+        document.getElementById('tsah-master-form').addEventListener('submit', function(event) {
             event.preventDefault();
             const phone = "7405642852";
             const name = document.getElementById('client-name').value;
             const service = document.getElementById('client-service').value;
             const details = document.getElementById('client-details').value;
-            const message = `TSAH LLC INQUIRY%0AClient: ${name}%0AService: ${service}%0ADetails: ${details}`;
-            window.location.href = `sms:+1${phone}?body=${message}`;
+            const message = `TSAH LLC INQUIRY%0A----------------%0AClient: ${name}%0AService: ${service}%0ADetails: ${details}`;
+            window.location.href = `sms:+1${phone}${/iPhone|iPad|iPod/.test(navigator.userAgent) ? '&' : '?'}body=${message}`;
         });
     </script>
 
 </body>
 </html>
-
-```
