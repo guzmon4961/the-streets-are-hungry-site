@@ -101,7 +101,7 @@
             transform: scale(1.05); 
         }
 
-        /* INSTAGRAM DATA */
+        /* STATS DATA */
         #ig-stats-flex { 
             display: flex; 
             justify-content: center; 
@@ -416,11 +416,11 @@
         
         <nav id="image-nav">
             <a href="#chef-sec" class="nav-link-style">Private Chef Service</a>
+            <a href="#re-sec" class="nav-link-style">House & Rental Consulting</a>
             <a href="#labor-sec" class="nav-link-style">General Labor and Garden</a>
             <a href="#credit-sec" class="nav-link-style">Advanced Credit Strategy</a>
             <a href="#courier-sec" class="nav-link-style">Premium Sprinter Logistics</a>
             <a href="#clean-sec" class="nav-link-style">Detailed Home Services</a>
-            <a href="#policy-section" class="nav-link-style">Master Policies and SOP</a>
         </nav>
 
         <div id="ig-stats-flex">
@@ -450,6 +450,40 @@
                     <li class="card-li">Plating: $20 - $30 per plate</li>
                     <li class="card-li" style="color: #ffffff;">10 Plate Minimum For Meal Preparation Orders</li>
                     <li class="card-li">Full Kitchen Cleanup Included</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOUSE & RENTAL CONSULTING -->
+    <section id="re-sec">
+        <h2 class="sec-label">Real Estate & Rental Consulting <span class="live-ticker">LIVE</span></h2>
+        <div class="main-grid">
+            <!-- Client Side -->
+            <div class="card-box">
+                <div class="card-head-row">
+                    <span class="service-title">Buyer & Renter Search</span>
+                    <span class="price-hero">$150<span class="unit-text"> Flat Fee</span></span>
+                </div>
+                <p class="card-p">Strategic property searches for those looking to rent or purchase. We handle the discovery phase.</p>
+                <ul class="feature-list">
+                    <li class="card-li">In-House Realtor Network Access</li>
+                    <li class="card-li">Rental History & App Optimization</li>
+                    <li class="card-li">Comprehensive Market Reports</li>
+                </ul>
+            </div>
+            
+            <!-- Landlord Side -->
+            <div class="card-box deluxe-edition-wrap">
+                <div class="card-head-row">
+                    <span class="service-title">Landlord Logistics</span>
+                    <span class="price-hero">$150<span class="unit-text"> Flat Fee</span></span>
+                </div>
+                <p class="card-p">Assisting landlords with filling vacancies and connecting with local investors.</p>
+                <ul class="feature-list">
+                    <li class="card-li" style="color: #D4AF37;">DIRECT ACCESS TO LOCAL CASH BUYERS</li>
+                    <li class="card-li">Tenant Pre-Screening & Lead Gen</li>
+                    <li class="card-li" style="color: #ffffff;">Realtor-Backed Listing Support</li>
                 </ul>
             </div>
         </div>
@@ -587,6 +621,12 @@
             <div><strong>48-HOUR POLICY:</strong> Adjustments require 48-hour notice or payment is forfeited in full.</div>
         </div>
         
+        <span class="policy-sub">Consulting Compliance</span>
+        <div class="policy-item">
+            <span class="policy-emoji">🏘️</span>
+            <div><strong>REALTOR PARTNERSHIP:</strong> TSAH LLC provides consulting and lead discovery. Official transactions and legal real estate documentation are facilitated through our licensed in-house realtor network.</div>
+        </div>
+
         <span class="policy-sub">Operational Procedures</span>
         <div class="policy-item">
             <span class="policy-emoji">🐾</span>
@@ -618,6 +658,7 @@
                     <select id="client-service" required>
                         <option value="">Choose Service...</option>
                         <option>Private Chef Experience</option>
+                        <option>House & Rental Consulting</option>
                         <option>General Labor and Garden</option>
                         <option>Credit Restoration</option>
                         <option>Sprinter Logistics</option>
@@ -626,7 +667,7 @@
                 </div>
                 <div class="input-row">
                     <label>Details</label>
-                    <textarea id="client-details" rows="6" placeholder="Special requirements..."></textarea>
+                    <textarea id="client-details" rows="6" placeholder="Property locations, specific needs, or cargo details..."></textarea>
                 </div>
                 <button type="submit" id="submit-inquiry">Submit Official Inquiry</button>
             </form>
