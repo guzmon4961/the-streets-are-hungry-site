@@ -3,635 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE STREETS ARE HUNGRY LLC | MASTER EXECUTIVE SITE</title>
+    <title>TSAH LLC | DEMAND YOUR EXCELLENCE</title>
     
-    <!-- BRAND FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Inter:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@300;400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
 
     <style>
-        /* 
-           ================================================================
-           1. ENTERPRISE DESIGN SYSTEM
-           ================================================================
-        */
         :root {
             --tsah-gold: #D4AF37;
-            --tsah-gold-alt: #f1c40f;
             --tsah-black: #000000;
             --tsah-matte: #0a0a0a;
             --tsah-surface: #111111;
             --tsah-white: #ffffff;
             --tsah-gray: #888888;
             --tsah-border: #222222;
-            --tsah-transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-            --tsah-glow: 0 0 20px rgba(212, 175, 55, 0.2);
         }
 
-        /* 
-           ================================================================
-           2. BASE ARCHITECTURE
-           ================================================================
-        */
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
-        html { scroll-behavior: smooth; }
-        body { 
-            background-color: var(--tsah-black); 
-            color: var(--tsah-white); 
-            font-family: 'Inter', sans-serif; 
-            line-height: 1.8; 
-            overflow-x: hidden; 
+        body { background-color: var(--tsah-black); color: var(--tsah-white); font-family: 'Inter', sans-serif; line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 2px; }
+        .mono { font-family: 'JetBrains Mono', monospace; font-size: 14px; }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed; top: 0; width: 100%; height: 80px;
+            background: rgba(0,0,0,0.9); border-bottom: 1px solid var(--tsah-border);
+            display: flex; align-items: center; justify-content: center; z-index: 100;
         }
+        .nav-logo { font-weight: 900; color: var(--tsah-gold); letter-spacing: 4px; }
 
-        h1, h2, h3, h4, .brand-font { font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 2px; }
-        .mono-font { font-family: 'JetBrains Mono', monospace; }
+        /* HERO */
+        #hero {
+            height: 100vh; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; text-align: center;
+            background: radial-gradient(circle, #1a1a1a 0%, #000 70%);
+        }
+        .hero-slogan { font-size: clamp(30px, 8vw, 90px); font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+        .hero-slogan span { color: var(--tsah-gold); }
 
-        /* 
-           ================================================================
-           3. DYNAMIC UI EFFECTS
-           ================================================================
-        */
-        @keyframes borderPulse { 0% { border-color: #222; } 50% { border-color: #D4AF37; } 100% { border-color: #222; } }
-        @keyframes textReveal { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        /* SECTIONS */
+        .section { padding: 120px 5%; max-width: 1400px; margin: 0 auto; }
+        .section-title { font-size: 40px; margin-bottom: 60px; border-left: 4px solid var(--tsah-gold); padding-left: 20px; }
+
+        /* PRICING GRIDS */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .card { background: var(--tsah-matte); border: 1px solid var(--tsah-border); padding: 50px 30px; transition: 0.3s; }
+        .card:hover { border-color: var(--tsah-gold); }
+        .deluxe { border: 2px solid var(--tsah-gold); }
         
-        .reveal-node { animation: textReveal 1s forwards; }
+        .tier-label { color: var(--tsah-gold); font-weight: 700; margin-bottom: 10px; display: block; }
+        .price { font-size: 48px; margin: 20px 0; border-bottom: 1px solid var(--tsah-border); padding-bottom: 15px; }
+        .features { list-style: none; }
+        .features li { margin-bottom: 12px; display: flex; align-items: flex-start; color: #ccc; }
+        .features li::before { content: "›"; color: var(--tsah-gold); margin-right: 15px; font-weight: 900; }
 
-        /* 
-           ================================================================
-           4. GLOBAL NAVIGATION
-           ================================================================
-        */
-        #tsah-nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: 100px;
-            background: rgba(0,0,0,0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--tsah-border);
-            z-index: 10000;
-            display: flex;
-            align-items: center;
-            padding: 0 5%;
-        }
+        /* POLICIES */
+        #policies { background: var(--tsah-matte); border-top: 1px solid var(--tsah-border); }
+        .policy-item { margin-bottom: 40px; }
+        .policy-item h4 { color: var(--tsah-gold); margin-bottom: 10px; }
 
-        .nav-wrapper {
-            width: 100%;
-            max-width: 1800px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        /* FORM */
+        #intake { background: var(--tsah-surface); padding: 100px 5%; }
+        .form-container { max-width: 800px; margin: 0 auto; }
+        .input-group { margin-bottom: 30px; }
+        .input-group label { display: block; color: var(--tsah-gold); margin-bottom: 10px; font-size: 12px; font-weight: 700; }
+        input, select, textarea { width: 100%; background: #000; border: 1px solid #333; padding: 15px; color: #fff; outline: none; }
+        .btn { width: 100%; padding: 25px; background: var(--tsah-gold); border: none; font-weight: 900; cursor: pointer; letter-spacing: 5px; }
 
-        .brand-logo { font-weight: 900; font-size: 1.2rem; color: var(--tsah-gold); letter-spacing: 5px; }
-
-        .nav-links { display: flex; gap: 40px; }
-        .nav-links a { 
-            font-size: 0.7rem; 
-            font-weight: 800; 
-            color: var(--tsah-gray); 
-            transition: var(--tsah-transition);
-            text-transform: uppercase;
-        }
-        .nav-links a:hover { color: var(--tsah-gold); }
-
-        /* 
-           ================================================================
-           5. HERO: CORPORATE VISION
-           ================================================================
-        */
-        #executive-hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: radial-gradient(circle at center, #151515 0%, #000 80%);
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        .hero-wrap { max-width: 1200px; }
-        .hero-top { font-family: 'JetBrains Mono'; color: var(--tsah-gold); font-size: 14px; letter-spacing: 12px; margin-bottom: 35px; display: block; }
-        .hero-main-title { font-size: clamp(45px, 11vw, 120px); font-weight: 900; line-height: 0.85; letter-spacing: -6px; margin-bottom: 45px; }
-        .hero-main-title span { color: var(--tsah-gold); }
-        .hero-blurb { font-size: 22px; color: var(--tsah-gray); font-weight: 300; max-width: 800px; margin: 0 auto 70px; }
-
-        /* 
-           ================================================================
-           6. SECTION STYLING
-           ================================================================
-        */
-        .master-section { padding: 160px 5% 120px; max-width: 1800px; margin: 0 auto; }
-        .section-label { font-family: 'JetBrains Mono'; color: var(--tsah-gold); font-size: 13px; letter-spacing: 8px; display: block; margin-bottom: 15px; }
-        .section-headline { font-size: 55px; font-weight: 900; letter-spacing: -2px; margin-bottom: 100px; }
-
-        /* 
-           ================================================================
-           7. THE TIERS & SERVICE ARCHITECTURE
-           ================================================================
-        */
-        .service-matrix {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-        }
-
-        .service-card {
-            background: var(--tsah-matte);
-            border: 1px solid var(--tsah-border);
-            padding: 80px 50px;
-            position: relative;
-            transition: var(--tsah-transition);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .service-card:hover { 
-            border-color: var(--tsah-gold); 
-            transform: translateY(-15px); 
-            background: #0d0d0d;
-            box-shadow: var(--tsah-glow);
-        }
-
-        .deluxe-edition-frame {
-            border: 2px solid var(--tsah-gold);
-            background: linear-gradient(145deg, #050505 0%, #111 100%);
-        }
-
-        .edition-badge {
-            position: absolute;
-            top: 30px;
-            right: -10px;
-            background: var(--tsah-gold);
-            color: #000;
-            padding: 5px 25px;
-            font-size: 11px;
-            font-weight: 900;
-            letter-spacing: 2px;
-            transform: rotate(0deg);
-        }
-
-        .tier-label { font-size: 12px; color: var(--tsah-gold); margin-bottom: 15px; font-weight: 800; letter-spacing: 3px; }
-        .tier-title { font-size: 32px; font-weight: 900; margin-bottom: 30px; line-height: 1.1; }
-        .tier-cost { font-size: 60px; font-weight: 400; margin-bottom: 50px; border-bottom: 1px solid var(--tsah-border); padding-bottom: 25px; }
-        .tier-cost small { font-size: 18px; color: var(--tsah-gray); letter-spacing: 0; }
-
-        .benefit-list { list-style: none; margin-bottom: 60px; flex-grow: 1; }
-        .benefit-item { 
-            color: #ccc; 
-            font-size: 17px; 
-            margin-bottom: 22px; 
-            display: flex; 
-            align-items: flex-start;
-            line-height: 1.4;
-        }
-        .benefit-item::before { 
-            content: "•"; 
-            color: var(--tsah-gold); 
-            margin-right: 20px; 
-            font-weight: 900; 
-            font-size: 24px;
-            line-height: 1;
-        }
-
-        /* 
-           ================================================================
-           8. A LA CARTE SPECIALTY
-           ================================================================
-        */
-        .ala-carte-system {
-            margin-top: 100px;
-            background: var(--tsah-matte);
-            border: 1px dashed var(--tsah-border);
-            padding: 80px;
-        }
-
-        .ala-carte-headline { text-align: center; margin-bottom: 60px; font-size: 24px; color: var(--tsah-gold); }
-        .ala-carte-matrix { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
-        .ala-carte-node { border-left: 2px solid var(--tsah-gold); padding-left: 30px; }
-        .ala-carte-node strong { display: block; font-size: 14px; color: var(--tsah-gold); margin-bottom: 10px; letter-spacing: 2px; }
-        .ala-carte-node span { font-size: 22px; color: var(--tsah-white); font-weight: 700; }
-
-        /* 
-           ================================================================
-           9. SERVICE STANDARDS & POLICIES
-           ================================================================
-        */
-        #firm-standards { background: var(--tsah-matte); padding: 160px 5%; border-top: 1px solid var(--tsah-border); }
-        .standard-matrix {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 60px;
-            max-width: 1600px;
-            margin: 0 auto;
-        }
-
-        .standard-node h4 { color: var(--tsah-gold); font-size: 16px; margin-bottom: 25px; letter-spacing: 4px; border-bottom: 1px solid #333; padding-bottom: 15px; }
-        .standard-node p { color: #888; font-size: 16px; line-height: 1.8; }
-
-        /* 
-           ================================================================
-           10. MASTER INTAKE ARCHITECTURE
-           ================================================================
-        */
-        #tsah-intake { padding: 180px 5%; background: var(--tsah-black); }
-        .intake-frame { 
-            max-width: 1100px; 
-            margin: 0 auto; 
-            background: var(--tsah-surface); 
-            padding: 100px; 
-            border: 1px solid var(--tsah-border);
-        }
-
-        .field-group { margin-bottom: 60px; position: relative; }
-        .field-group label { 
-            display: block; 
-            font-size: 12px; 
-            font-weight: 900; 
-            color: var(--tsah-gold); 
-            margin-bottom: 20px; 
-            letter-spacing: 5px;
-            text-transform: uppercase;
-        }
-
-        .field-group input, .field-group select, .field-group textarea {
-            width: 100%;
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid #333;
-            padding: 20px 0;
-            color: var(--tsah-white);
-            font-size: 22px;
-            outline: none;
-            transition: var(--tsah-transition);
-        }
-
-        .field-group input:focus { border-bottom-color: var(--tsah-gold); }
-
-        .master-submit-btn {
-            width: 100%;
-            padding: 40px;
-            background: var(--tsah-gold);
-            color: #000;
-            font-family: 'Montserrat';
-            font-weight: 900;
-            font-size: 20px;
-            border: none;
-            cursor: pointer;
-            letter-spacing: 12px;
-            transition: var(--tsah-transition);
-            text-transform: uppercase;
-        }
-
-        .master-submit-btn:hover { background: var(--tsah-white); letter-spacing: 18px; }
-
-        /* 
-           ================================================================
-           11. FOOTER & COMPLIANCE
-           ================================================================
-        */
-        #firm-footer { padding: 120px 5%; border-top: 1px solid var(--tsah-border); text-align: center; }
-        .footer-identity { font-size: 26px; font-weight: 900; color: var(--tsah-gold); margin-bottom: 30px; display: block; letter-spacing: 8px; }
-        .footer-legal { color: #555; font-size: 13px; letter-spacing: 7px; text-transform: uppercase; }
-
-        /* 
-           ================================================================
-           12. MOBILE OVERRIDES
-           ================================================================
-        */
-        @media (max-width: 1024px) {
-            .nav-links { display: none; }
-            .intake-frame { padding: 60px 30px; }
-            .tier-cost { font-size: 45px; }
-            .service-matrix { grid-template-columns: 1fr; }
-        }
-
-        /* FLOATING SMS COMMAND */
-        .tsah-sms-link {
-            position: fixed;
-            bottom: 50px;
-            right: 50px;
-            background: var(--tsah-gold);
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-            color: #000;
-            z-index: 10001;
-            border: 5px solid var(--tsah-white);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-            transition: 0.3s;
-        }
-        .tsah-sms-link:hover { transform: scale(1.1); }
-
+        /* SMS */
+        .sms-float { position: fixed; bottom: 30px; right: 30px; background: var(--tsah-gold); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: #000; text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
     </style>
 </head>
 <body>
 
-    <!-- MASTER NAVIGATION -->
-    <header id="tsah-nav">
-        <div class="nav-wrapper">
-            <div class="brand-logo">THE STREETS ARE HUNGRY LLC</div>
-            <nav class="nav-links">
-                <a href="#housing-sec">Housing</a>
-                <a href="#credit-sec">Credit</a>
-                <a href="#labor-sec">Estate Labor</a>
-                <a href="#residential-sec">Home Services</a>
-                <a href="#logistics-sec">Logistics</a>
-                <a href="#firm-standards">Standards</a>
-            </nav>
-        </div>
-    </header>
+    <nav><div class="nav-logo">THE STREETS ARE HUNGRY LLC</div></nav>
 
-    <a href="sms:+17405642852" class="tsah-sms-link">💬</a>
-
-    <!-- EXECUTIVE HERO -->
-    <section id="executive-hero">
-        <div class="hero-wrap">
-            <span class="hero-top">ESTABLISHED 2026 | COLUMBUS, OHIO</span>
-            <h1 class="hero-main-title">ELITE<br><span>ASSET CONTROL</span><br>SYSTEMS.</h1>
-            <p class="hero-blurb">The Streets Are Hungry LLC is a premier investment and professional service firm specializing in high-impact lifestyle and financial logistics.</p>
-            <a href="#tsah-intake" class="master-submit-btn" style="display:inline-block; width: auto; padding: 25px 70px;">INITIATE PARTNERSHIP</a>
-        </div>
+    <section id="hero">
+        <h1 class="hero-slogan">DEMAND<br>YOUR<br><span>EXCELLENCE.</span></h1>
+        <p class="mono" style="color: var(--tsah-gray); letter-spacing: 5px;">ESTABLISHED 2026 | COLUMBUS, OHIO</p>
     </section>
 
-    <!-- 1. HOUSING CONSULTATION -->
-    <section id="housing-sec" class="master-section">
-        <span class="section-label">OPERATIONAL VERTICAL 01</span>
-        <h2 class="section-headline">Housing Consultation</h2>
-
-        <div class="service-matrix">
-            <div class="service-card deluxe-edition-frame">
-                <div class="edition-badge">EXECUTIVE</div>
-                <span class="tier-label">PROCUREMENT</span>
-                <h3 class="tier-title">Placement & Procurement</h3>
-                <div class="tier-cost">$150<small> Flat Assessment</small></div>
-                <ul class="benefit-list">
-                    <li class="benefit-item">In-House Realtor Representation</li>
-                    <li class="benefit-item">Targeted Tenant/Homeowner Search</li>
-                    <li class="benefit-item">Direct Network to Institutional Cash Buyers</li>
-                    <li class="benefit-item">Landlord Vacancy Restoration Support</li>
+    <!-- CREDIT SECTION -->
+    <section class="section">
+        <h2 class="section-title">Credit Restoration</h2>
+        <div class="grid">
+            <div class="card">
+                <span class="tier-label">DIY INTENSIVE</span>
+                <h3>60-Minute Strategy</h3>
+                <div class="price">$100</div>
+                <ul class="features">
+                    <li>Professional DIY Restoration Blueprint</li>
+                    <li>Step-by-Step Recovery Roadmap</li>
+                    <li>Free Credit Resource Access Points</li>
+                    <li>Dispute Submission Training</li>
+                </ul>
+            </div>
+            <div class="card deluxe">
+                <span class="tier-label">MANAGED CONCIERGE</span>
+                <h3>Managed Recovery</h3>
+                <div class="price">$250<small>/mo</small></div>
+                <ul class="features">
+                    <li>Full Bureau Dispute Management</li>
+                    <li>Custom Professional Correspondence</li>
+                    <li>Physical Documentation Mailing</li>
+                    <li>Monthly Reporting & Analysis</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- 2. CREDIT RESTORATION -->
-    <section id="credit-sec" class="master-section">
-        <span class="section-label">OPERATIONAL VERTICAL 02</span>
-        <h2 class="section-headline">Credit Restoration</h2>
-
-        <div class="service-matrix">
-            <!-- DIY INTENSIVE -->
-            <div class="service-card">
-                <span class="tier-label">STRATEGY SESSION</span>
-                <h3 class="tier-title">60-Minute DIY Strategy</h3>
-                <div class="tier-cost">$100<small> / Session</small></div>
-                <ul class="benefit-list">
-                    <li class="benefit-item">Professional Restoration Blueprint</li>
-                    <li class="benefit-item">Custom Step-by-Step Restoration Roadmap</li>
-                    <li class="benefit-item">Access to Free Credit Resource Points</li>
-                    <li class="benefit-item">Bureau Submission Training & Logic</li>
+    <!-- RESIDENTIAL SECTION -->
+    <section class="section">
+        <h2 class="section-header section-title">Residential Home Services</h2>
+        <div class="grid">
+            <div class="card">
+                <span class="tier-label">ESSENTIAL</span>
+                <h3>The Basic Edition</h3>
+                <div class="price">$150</div>
+                <ul class="features">
+                    <li>Carpet & Rug Vacuuming</li>
+                    <li>Hard Floor Dusting & Mop</li>
+                    <li>Baseboard & Edge Sanitation</li>
                 </ul>
             </div>
-
-            <!-- FULL SERVICE -->
-            <div class="service-card deluxe-edition-frame">
-                <div class="edition-badge">MANAGED</div>
-                <span class="tier-label">CONCIERGE RESTORE</span>
-                <h3 class="tier-title">Managed Recovery Systems</h3>
-                <div class="tier-cost">$250<small> / Month</small></div>
-                <ul class="benefit-list">
-                    <li class="benefit-item">End-to-End Bureau Dispute Management</li>
-                    <li class="benefit-item">Custom Legal & Professional Correspondence</li>
-                    <li class="benefit-item">Full Physical Mailing Management</li>
-                    <li class="benefit-item">Monthly Impact & Velocity Reporting</li>
+            <div class="card">
+                <span class="tier-label">ENHANCED</span>
+                <h3>The Premium Edition</h3>
+                <div class="price">$300</div>
+                <ul class="features">
+                    <li>Includes Basic Edition Services</li>
+                    <li>Interior Window Clarity Detail</li>
+                    <li>Kitchen & Bathroom Sanitation</li>
                 </ul>
             </div>
-        </div>
-    </section>
-
-    <!-- 3. ESTATE LABOR (CHEF & GARDEN) -->
-    <section id="labor-sec" class="master-section">
-        <span class="section-label">OPERATIONAL VERTICAL 03 & 04</span>
-        <h2 class="section-headline">Professional Estate Labor</h2>
-
-        <div class="service-matrix">
-            <!-- PRIVATE CHEF -->
-            <div class="service-card">
-                <span class="tier-label">CULINARY ARTS</span>
-                <h3 class="tier-title">Private Chef Labor</h3>
-                <div class="tier-cost">$75<small> / Hour</small></div>
-                <ul class="benefit-list">
-                    <li class="benefit-item">Elite Gourmet Meal Preparation</li>
-                    <li class="benefit-item">Professional Kitchen Sanitation & Management</li>
-                    <li class="benefit-item">Labor Only: Client Provides All Groceries</li>
-                    <li class="benefit-item">$20-$30 Per-Plate Assessment (10 Plate Min)</li>
-                </ul>
-            </div>
-
-            <!-- GARDEN LABOR -->
-            <div class="service-card">
-                <span class="tier-label">HORTICULTURE</span>
-                <h3 class="tier-title">Garden & Outdoor Labor</h3>
-                <div class="tier-cost">$75<small> / Hour</small></div>
-                <ul class="benefit-list">
-                    <li class="benefit-item">Property Restoration & Heavy Labor</li>
-                    <li class="benefit-item">Professional Mowing, Edging, & Garden Care</li>
-                    <li class="benefit-item">Labor Only: Client Provides Tools & Fuel</li>
-                    <li class="benefit-item">Site Cleanup & Debris Management</li>
+            <div class="card deluxe">
+                <span class="tier-label">TSAH MASTER</span>
+                <h3>The Deluxe Edition</h3>
+                <div class="price">$650</div>
+                <ul class="features">
+                    <li>Full Interior Deep Restoration</li>
+                    <li>Exterior House Siding Soft-Wash</li>
+                    <li>High-Pressure Driveway Restore</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- 4. RESIDENTIAL HOME SERVICES -->
-    <section id="residential-sec" class="master-section">
-        <span class="section-label">OPERATIONAL VERTICAL 05</span>
-        <h2 class="section-headline">Residential Home Services</h2>
-
-        <div class="service-matrix">
-            <div class="service-card">
-                <span class="tier-label">INTERIOR ESSENTIAL</span>
-                <h3 class="tier-title">The Basic Edition</h3>
-                <div class="tier-cost">$150</div>
-                <ul class="benefit-list">
-                    <li class="benefit-item">Deep Carpet & Rug Vacuuming</li>
-                    <li class="benefit-item">Hard Surface Dusting & Wet-Mop Detail</li>
-                    <li class="benefit-item">Edge & Baseboard Sanitation</li>
-                </ul>
+    <!-- LOGISTICS SECTION -->
+    <section class="section">
+        <h2 class="section-title">Sprinter Van Logistics</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>The Basic Edition</h3>
+                <div class="price">$150</div>
+                <ul class="features"><li>500 lbs Payload | 25 Mile Radius</li></ul>
             </div>
-
-            <div class="service-card">
-                <span class="tier-label">INTERIOR RESTORE</span>
-                <h3 class="tier-title">The Premium Edition</h3>
-                <div class="tier-cost">$300</div>
-                <ul class="benefit-list">
-                    <li class="benefit-item">Includes All BASIC Services</li>
-                    <li class="benefit-item">Professional Interior Window Clarity</li>
-                    <li class="benefit-item">Deep Kitchen & Bathroom Sanitation</li>
-                </ul>
+            <div class="card">
+                <h3>The Premium Edition</h3>
+                <div class="price">$300</div>
+                <ul class="features"><li>1,500 lbs Payload | 50 Mile Radius</li></ul>
             </div>
-
-            <div class="service-card deluxe-edition-frame">
-                <div class="edition-badge">DELUXE</div>
-                <span class="tier-label">FULL PROPERTY RESET</span>
-                <h3 class="tier-title">The Deluxe Edition</h3>
-                <div class="tier-cost">$650</div>
-                <ul class="benefit-list">
-                    <li class="benefit-item">Full Interior Deep Restoration</li>
-                    <li class="benefit-item">Exterior House Siding Soft-Wash</li>
-                    <li class="benefit-item">High-Pressure Driveway Restoration</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="ala-carte-system">
-            <div class="ala-carte-headline">A La Carte Residential Enhancements</div>
-            <div class="ala-carte-matrix">
-                <div class="ala-carte-node"><strong>Exterior Siding</strong><span>$95 / Side</span></div>
-                <div class="ala-carte-node"><strong>Driveway Restore</strong><span>$150 Flat</span></div>
-                <div class="ala-carte-node"><strong>Deep Floor Scrub</strong><span>$150 / Room</span></div>
-                <div class="ala-carte-node"><strong>Extra Panes</strong><span>$15 / ea</span></div>
+            <div class="card deluxe">
+                <h3>The Deluxe Edition</h3>
+                <div class="price">$650</div>
+                <ul class="features"><li>3,000 lbs Payload | 200 Mile Radius</li></ul>
             </div>
         </div>
     </section>
 
-    <!-- 5. SPRINTER VAN LOGISTICS -->
-    <section id="logistics-sec" class="master-section">
-        <span class="section-label">OPERATIONAL VERTICAL 06</span>
-        <h2 class="section-headline">Sprinter Van Logistics</h2>
-
-        <div class="service-matrix">
-            <div class="service-card">
-                <span class="tier-label">LOCAL FREIGHT</span>
-                <h3 class="tier-title">The Basic Edition</h3>
-                <div class="tier-cost">$150</div>
-                <ul class="benefit-list">
-                    <li class="benefit-item">500 lbs Payload Max</li>
-                    <li class="benefit-item">25 Mile Operating Radius</li>
-                    <li class="benefit-item">Next-Business-Day Delivery Guarantee</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <span class="tier-label">PRIORITY CARGO</span>
-                <h3 class="tier-title">The Premium Edition</h3>
-                <div class="tier-cost">$300</div>
-                <ul class="benefit-list">
-                    <li class="benefit-item">1,500 lbs Payload Max</li>
-                    <li class="benefit-item">50 Mile Operating Radius</li>
-                    <li class="benefit-item">Same-Day Priority Pickup Status</li>
-                </ul>
-            </div>
-
-            <div class="service-card deluxe-edition-frame">
-                <div class="edition-badge">DELUXE</div>
-                <span class="tier-label">WHITE GLOVE LONG-HAUL</span>
-                <h3 class="tier-title">The Deluxe Edition</h3>
-                <div class="tier-cost">$650</div>
-                <ul class="benefit-list">
-                    <li class="benefit-item">3,000 lbs Max Payload Capacity</li>
-                    <li class="benefit-item">200 Mile Operating Radius</li>
-                    <li class="benefit-item">Full Professional Load & Unload Support</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- REFERRAL NETWORK -->
-    <section style="background: var(--tsah-gold); color: #000; padding: 120px 5%; text-align: center;">
-        <h2 style="font-size: clamp(30px, 8vw, 70px); font-weight: 900; margin-bottom: 25px;">NETWORK REWARDS</h2>
-        <p style="font-size: 24px; font-weight: 800; text-transform: uppercase;">Refer 2 active clients and receive 20% OFF your next full service.</p>
-    </section>
-
-    <!-- FIRM STANDARDS & POLICIES -->
-    <section id="firm-standards">
-        <h2 style="text-align: center; margin-bottom: 100px; font-weight: 900; font-size: 40px; letter-spacing: -1px;">Firm Standards & Policies</h2>
-        <div class="standard-matrix">
-            <div class="standard-node">
+    <!-- POLICIES -->
+    <section id="policies" class="section">
+        <h2 class="section-title">Firm Standards</h2>
+        <div class="grid">
+            <div class="policy-item">
                 <h4>48-HOUR CANCELLATION</h4>
-                <p>The Streets Are Hungry LLC strictly enforces a 48-hour cancellation policy. Notice provided less than 48 hours prior to service results in automatic forfeiture of deposit.</p>
+                <p>TSAH LLC strictly enforces a 48-hour cancellation policy. Failure to provide notice results in forfeiture of deposit.</p>
             </div>
-            <div class="standard-node">
+            <div class="policy-item">
                 <h4>SUBCONTRACTOR TERMS</h4>
-                <p>All independent subcontractors are legally required to provide their own professional equipment and fuel. This is a labor-first firm architecture.</p>
+                <p>Independent subcontractors are required to provide their own equipment and gasoline for all service executions.</p>
             </div>
-            <div class="standard-node">
-                <h4>LABOR-ONLY POLICY</h4>
-                <p>Private Chef and Outdoor Garden rates are Labor-Only. All groceries, specialized machinery, and supplies must be staged by the client prior to service arrival.</p>
-            </div>
-            <div class="standard-node">
-                <h4>PROPERTY SAFETY</h4>
-                <p>All pets must be secured in a separate area or off-site during the duration of service execution for the safety of our technical team.</p>
-            </div>
-            <div class="standard-node">
-                <h4>SIZING STANDARDS</h4>
-                <p>Standard residential rates apply to property units up to 2,500 sq. ft. Larger estates or Portmore-level assessments require custom quotes.</p>
-            </div>
-            <div class="standard-node">
-                <h4>PAYMENT ARCHITECTURE</h4>
-                <p>All transactions are processed via TSAH LLC corporate accounts. Final invoicing and tax-compliant documentation are issued upon service completion.</p>
+            <div class="policy-item">
+                <h4>LABOR-ONLY ARCHITECTURE</h4>
+                <p>Chef and Garden services are Labor-Only; clients must stage groceries and supplies prior to arrival.</p>
             </div>
         </div>
     </section>
 
-    <!-- MASTER INTAKE -->
-    <section id="tsah-intake">
-        <div class="intake-frame">
-            <h2 style="margin-bottom: 80px; font-weight: 900; font-size: 50px; letter-spacing: -2px;">Service Inquiry</h2>
-            <form id="master-executive-form">
-                <div class="field-group">
-                    <label>Client Full Name</label>
-                    <input type="text" id="name" required placeholder="JERRY ALEXANDER">
-                </div>
-                <div class="field-group">
-                    <label>Target Operational Vertical</label>
+    <!-- CONTACT -->
+    <section id="intake">
+        <div class="form-container">
+            <h2 style="margin-bottom: 40px;">Service Inquiry</h2>
+            <form id="tsah-form">
+                <div class="input-group"><label>FULL NAME</label><input type="text" id="name" required></div>
+                <div class="input-group"><label>SERVICE VERTICAL</label>
                     <select id="service" required>
-                        <option value="">-- Choose Vertical --</option>
-                        <option>Housing Consultation</option>
+                        <option value="">-- SELECT --</option>
                         <option>Credit Restoration</option>
-                        <option>Private Chef Labor</option>
-                        <option>Garden/Outdoor Labor</option>
-                        <option>Residential Home Services</option>
-                        <option>Sprinter Van Logistics</option>
+                        <option>Residential Services</option>
+                        <option>Logistics</option>
                     </select>
                 </div>
-                <div class="field-group">
-                    <label>Requirements Brief</label>
-                    <textarea id="brief" rows="5" placeholder="Detail your project or requirements..."></textarea>
-                </div>
-                <button type="submit" class="master-submit-btn">TRANSMIT TO FIRM</button>
+                <div class="input-group"><label>PROJECT DETAILS</label><textarea id="details" rows="5"></textarea></div>
+                <button type="submit" class="btn">TRANSMIT INQUIRY</button>
             </form>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer id="firm-footer">
-        <span class="footer-identity">THE STREETS ARE HUNGRY LLC</span>
-        <span class="footer-legal">COLUMBUS, OHIO | ASSET MANAGEMENT SYSTEMS | EST. 2026</span>
+    <footer style="padding: 50px; text-align: center; border-top: 1px solid var(--tsah-border);">
+        <p class="mono" style="color: var(--tsah-gold);">THE STREETS ARE HUNGRY LLC © 2026</p>
     </footer>
 
+    <a href="sms:+17405642852" class="sms-float">💬</a>
+
     <script>
-        document.getElementById('master-executive-form').addEventListener('submit', function(e) {
+        document.getElementById('tsah-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const phone = "7405642852";
-            const name = document.getElementById('name').value;
-            const service = document.getElementById('service').value;
-            const brief = document.getElementById('brief').value;
-            
-            const message = `THE STREETS ARE HUNGRY LLC%0A------------------------%0ACLIENT: ${name}%0AVERTICAL: ${service}%0ABRIEF: ${brief}`;
-            
-            const isApple = /iPhone|iPad|iPod/.test(navigator.userAgent);
-            window.location.href = `sms:+1${phone}${isApple ? '&' : '?'}body=${message}`;
+            const msg = `TSAH LLC:%0ADemand Your Excellence%0A----------------%0AName: ${document.getElementById('name').value}%0AService: ${document.getElementById('service').value}%0ADetails: ${document.getElementById('details').value}`;
+            window.location.href = `sms:+1${phone}${/iPhone|iPad|iPod/.test(navigator.userAgent) ? '&' : '?'}body=${msg}`;
         });
     </script>
 </body>
 </html>
-
-```
