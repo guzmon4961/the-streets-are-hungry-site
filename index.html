@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Streets Are Hungry LLC | Official Master Site</title>
     
-    <!-- FONTS -->
+    <!-- FONTS: Montserrat for Branding, Inter for Content -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -47,6 +47,12 @@
         .feature-list { list-style: none; margin-top: auto; }
         .card-li { color: #888; font-size: 15px; margin-bottom: 14px; font-weight: 600; display: flex; align-items: flex-start; }
         .card-li::before { content: "•"; color: #D4AF37; margin-right: 15px; font-size: 20px; }
+
+        /* A LA CARTE */
+        .alacarte-box { max-width: 1300px; margin: 50px auto; padding: 50px 30px; background: #050505; border: 1px dashed #333; }
+        .alacarte-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
+        .ala-item { font-size: 15px; color: #888; }
+        .ala-item strong { color: #D4AF37; display: block; font-family: 'Montserrat'; font-size: 13px; margin-bottom: 5px; }
 
         /* REFERRAL BANNER */
         #referral-banner { background: #D4AF37; color: #000; padding: 120px 20px; text-align: center; margin: 100px 0; border-top: 5px solid #fff; border-bottom: 5px solid #fff; }
@@ -92,6 +98,8 @@
             <a href="#garden-sec" class="nav-link-style">Garden & Outdoor Labor</a>
             <a href="#clean-sec" class="nav-link-style">Residential Home Services</a>
             <a href="#courier-sec" class="nav-link-style">Sprinter Van Logistics</a>
+            <a href="#referral-banner" class="nav-link-style">Referral Rewards</a>
+            <a href="#policy-section" class="nav-link-style">Standards & Policies</a>
         </nav>
     </header>
 
@@ -106,7 +114,7 @@
                 </div>
                 <p class="card-p">End-to-end housing solutions leveraging an in-house realtor and professional community network.</p>
                 <ul class="feature-list">
-                    <li class="card-li">In-House Realtor Representation for Clients</li>
+                    <li class="card-li">In-House Realtor Representation</li>
                     <li class="card-li">Tenant Support for Home/Rental Search</li>
                     <li class="card-li">Landlord Support: Filling Vacant Units</li>
                     <li class="card-li">Community Partnership with Cash Buyers</li>
@@ -119,6 +127,19 @@
     <section id="credit-sec">
         <h2 class="sec-label">Credit Restoration</h2>
         <div class="main-grid">
+            <div class="card-box">
+                <div class="card-head-row">
+                    <span class="service-title">DIY Credit Strategy</span>
+                    <span class="price-hero">$100<span class="unit-text">/Session</span></span>
+                </div>
+                <p class="card-p">A high-impact 60-minute intensive to empower self-led restoration and management.</p>
+                <ul class="feature-list">
+                    <li class="card-li">60-Minute Strategy Blueprint Session</li>
+                    <li class="card-li">Custom Step-by-Step DIY Roadmap</li>
+                    <li class="card-li">Free Resource Access Points for Credit</li>
+                </ul>
+            </div>
+
             <div class="card-box deluxe-edition-wrap">
                 <div class="card-head-row">
                     <span class="service-title">Full Service Credit</span>
@@ -128,7 +149,7 @@
                 <ul class="feature-list">
                     <li class="card-li">Full Managed Dispute Strategy</li>
                     <li class="card-li">Custom Mailed Letters to All Bureaus</li>
-                    <li class="card-li">Monthly Progress Tracking</li>
+                    <li class="card-li">Monthly Progress & Impact Tracking</li>
                 </ul>
             </div>
         </div>
@@ -143,7 +164,7 @@
                     <span class="service-title">Gourmet Chef Labor</span>
                     <span class="price-hero">$75<span class="unit-text">/hr</span></span>
                 </div>
-                <p class="card-p">Professional gourmet preparation. Labor-only rate.</p>
+                <p class="card-p">Professional gourmet preparation and professional kitchen management. Labor-only rate.</p>
                 <ul class="feature-list">
                     <li class="card-li">Client Must Provide All Groceries</li>
                     <li class="card-li">$20-$30 Per Plate Assessment</li>
@@ -167,7 +188,7 @@
                 <ul class="feature-list">
                     <li class="card-li">Client Must Provide All Tools & Machinery</li>
                     <li class="card-li">Professional Mowing & Edging</li>
-                    <li class="card-li">Garden Bed Restoration</li>
+                    <li class="card-li">Garden Bed Restoration & Planting</li>
                 </ul>
             </div>
         </div>
@@ -175,8 +196,34 @@
 
     <!-- 5. RESIDENTIAL HOME SERVICES -->
     <section id="clean-sec">
-        <h2 class="sec-label">Home Service Tiers</h2>
+        <h2 class="sec-label">Residential Home Services</h2>
         <div class="main-grid">
+            <div class="card-box">
+                <div class="card-head-row">
+                    <span class="service-title">The Basic</span>
+                    <span class="price-hero">$150</span>
+                </div>
+                <p class="card-p">Essential interior maintenance for high-traffic surfaces and floors.</p>
+                <ul class="feature-list">
+                    <li class="card-li">Deep Carpet Vacuuming</li>
+                    <li class="card-li">Hard Floors: Dusting & Wet-Mopping</li>
+                    <li class="card-li">Detailed Baseboard & Edge Wiping</li>
+                </ul>
+            </div>
+
+            <div class="card-box">
+                <div class="card-head-row">
+                    <span class="service-title">The Premium</span>
+                    <span class="price-hero">$300</span>
+                </div>
+                <p class="card-p">Complete interior restoration focusing on clarity and deep sanitation.</p>
+                <ul class="feature-list">
+                    <li class="card-li">Includes All Services in THE BASIC</li>
+                    <li class="card-li">Interior Window Detailing</li>
+                    <li class="card-li">Kitchen & Bathroom Deep Sanitation</li>
+                </ul>
+            </div>
+
             <div class="card-box deluxe-edition-wrap">
                 <div class="card-head-row">
                     <span class="service-title">The Deluxe Edition</span>
@@ -190,12 +237,46 @@
                 </ul>
             </div>
         </div>
+
+        <div class="alacarte-box">
+            <label style="margin-bottom: 25px; text-align: center;">A La Carte Cleaning Add-Ons</label>
+            <div class="alacarte-grid">
+                <div class="ala-item"><strong>Exterior Siding</strong>$95 Per Side</div>
+                <div class="ala-item"><strong>Driveway Restore</strong>$150</div>
+                <div class="ala-item"><strong>Deep Floor Scrub</strong>$150 Per Room</div>
+                <div class="ala-item"><strong>Extra Glass</strong>$15 Per Pane</div>
+            </div>
+        </div>
     </section>
 
     <!-- 6. SPRINTER VAN LOGISTICS -->
     <section id="courier-sec">
-        <h2 class="sec-label">Sprinter Courier Logistics</h2>
+        <h2 class="sec-label">Sprinter Van Logistics</h2>
         <div class="main-grid">
+            <div class="card-box">
+                <div class="card-head-row">
+                    <span class="service-title">The Basic</span>
+                    <span class="price-hero">$150</span>
+                </div>
+                <p class="card-p">Standard Local: Reliable transport for cargo within 25 miles.</p>
+                <ul class="feature-list">
+                    <li class="card-li">Up to 500 lbs Payload Capacity</li>
+                    <li class="card-li">Next-Business-Day Delivery</li>
+                </ul>
+            </div>
+
+            <div class="card-box">
+                <div class="card-head-row">
+                    <span class="service-title">The Premium</span>
+                    <span class="price-hero">$300</span>
+                </div>
+                <p class="card-p">Priority Same-Day: Direct point-to-point commercial-grade transport.</p>
+                <ul class="feature-list">
+                    <li class="card-li">Up to 1,500 lbs Payload Capacity</li>
+                    <li class="card-li">Priority Pickup</li>
+                </ul>
+            </div>
+
             <div class="card-box deluxe-edition-wrap">
                 <div class="card-head-row">
                     <span class="service-title">The Deluxe Edition</span>
@@ -204,7 +285,7 @@
                 <p class="card-p">White Glove Long-Haul: Premium logistics with full labor support.</p>
                 <ul class="feature-list">
                     <li class="card-li">Full Van Payload (3,000 lbs)</li>
-                    <li class="card-li">Long-Distance Radius (up to 200 Miles)</li>
+                    <li class="card-li">Radius up to 200 Miles</li>
                     <li class="card-li">Full Professional Loading & Unloading</li>
                 </ul>
             </div>
@@ -216,16 +297,19 @@
         <p class="ref-text">REFER 2 PEOPLE TO THE STREETS ARE HUNGRY LLC AND RECEIVE<br><span style="font-size: 60px; display: block;">20% OFF</span> YOUR NEXT SERVICE.</p>
     </section>
 
+    <!-- STANDARDS & POLICIES -->
     <section id="policy-section">
         <h2 class="policy-headline">Service Standards & Policies</h2>
-        <div class="policy-item"><span class="policy-emoji">⌛</span><div><strong>48-HOUR CANCELLATION:</strong> Notice strictly required to avoid deposit forfeiture.</div></div>
-        <div class="policy-item"><span class="policy-emoji">🛡️</span><div><strong>CONTRACTOR SOP:</strong> Subcontractors provide their own equipment and gasoline.</div></div>
-        <div class="policy-item"><span class="policy-emoji">🛠️</span><div><strong>LABOR ONLY POLICY:</strong> Hourly rates for Chef and Garden services exclude tools and groceries.</div></div>
+        <div class="policy-item"><span class="policy-emoji">⌛</span><div><strong>48-HOUR CANCELLATION:</strong> A 48-hour notice is strictly required for all scheduled services to avoid forfeiture of deposit.</div></div>
+        <div class="policy-item"><span class="policy-emoji">🛡️</span><div><strong>EQUIPMENT POLICY:</strong> Independent subcontractors are responsible for providing their own equipment and gasoline.</div></div>
+        <div class="policy-item"><span class="policy-emoji">🛠️</span><div><strong>LABOR ONLY POLICY:</strong> Hourly rates for Private Chef and Garden services exclude the provision of tools, supplies, and groceries.</div></div>
+        <div class="policy-item"><span class="policy-emoji">📏</span><div><strong>SIZING STANDARDS:</strong> Standard rates apply to rooms up to 300 sq. ft. and homes up to 2,500 sq. ft.</div></div>
+        <div class="policy-item"><span class="policy-emoji">🐾</span><div><strong>PET POLICY:</strong> All pets must be secured during on-site services for the safety of our team.</div></div>
     </section>
 
     <section id="intake-area">
         <div class="form-container">
-            <form id="master-form">
+            <form id="master-form-inquiry">
                 <div class="input-row">
                     <label>Full Client Name</label>
                     <input type="text" id="client-name" required placeholder="Full Name">
@@ -239,7 +323,7 @@
                         <option>Private Chef Service</option>
                         <option>Garden & Outdoor Labor</option>
                         <option>Residential Home Services</option>
-                        <option>Sprinter Logistics / Courier</option>
+                        <option>Sprinter Van Logistics</option>
                     </select>
                 </div>
                 <div class="input-row">
@@ -254,12 +338,13 @@
     <footer>© 2026 THE STREETS ARE HUNGRY LLC | COLUMBUS, OHIO</footer>
 
     <script>
-        document.getElementById('master-form').addEventListener('submit', function(event) {
+        document.getElementById('master-form-inquiry').addEventListener('submit', function(event) {
             event.preventDefault();
             const phone = "7405642852";
             const name = document.getElementById('client-name').value;
             const service = document.getElementById('client-service').value;
             const details = document.getElementById('client-details').value;
+            // Spelled out branding in SMS message
             const message = `THE STREETS ARE HUNGRY LLC INQUIRY%0A------------------------%0AName: ${name}%0AService: ${service}%0ADetails: ${details}`;
             const isApple = /iPhone|iPad|iPod/.test(navigator.userAgent);
             window.location.href = `sms:+1${phone}${isApple ? '&' : '?'}body=${message}`;
@@ -267,4 +352,3 @@
     </script>
 </body>
 </html>
-
