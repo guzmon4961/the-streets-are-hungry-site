@@ -48,15 +48,10 @@
         .card-li { color: #888; font-size: 15px; margin-bottom: 14px; font-weight: 600; display: flex; align-items: flex-start; }
         .card-li::before { content: "•"; color: #D4AF37; margin-right: 15px; font-size: 20px; }
 
-        /* A LA CARTE */
-        .alacarte-box { max-width: 1300px; margin: 50px auto; padding: 50px 30px; background: #050505; border: 1px dashed #333; }
-        .alacarte-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
-        .ala-item { font-size: 15px; color: #888; }
-        .ala-item strong { color: #D4AF37; display: block; font-family: 'Montserrat'; font-size: 13px; margin-bottom: 5px; }
-
-        /* BANNER */
+        /* REFERRAL BANNER */
         #referral-banner { background: #D4AF37; color: #000; padding: 120px 20px; text-align: center; margin: 100px 0; border-top: 5px solid #fff; border-bottom: 5px solid #fff; }
         .ref-title { font-family: 'Montserrat'; font-weight: 900; text-transform: uppercase; font-size: 48px; margin-bottom: 30px; letter-spacing: -1px; }
+        .ref-text { font-family: 'Inter'; font-weight: 900; font-size: 26px; text-transform: uppercase; max-width: 900px; margin: 0 auto; }
 
         /* POLICY SECTION */
         #policy-section { background: #080808; border: 2px solid #D4AF37; margin: 120px 20px; padding: 100px 50px; border-radius: 4px; }
@@ -71,6 +66,7 @@
         label { display: block; font-family: 'Montserrat'; font-size: 13px; text-transform: uppercase; color: #D4AF37; margin-bottom: 18px; letter-spacing: 4px; font-weight: 800; }
         input, select, textarea { width: 100%; background: #000; border: 1px solid #333; padding: 24px; color: #fff; font-size: 16px; border-radius: 2px; }
         #submit-inquiry { background: #D4AF37; color: #000; width: 100%; padding: 30px; border: none; font-family: 'Montserrat'; font-weight: 900; text-transform: uppercase; letter-spacing: 10px; cursor: pointer; transition: 0.4s; }
+        #submit-inquiry:hover { background: #fff; letter-spacing: 14px; }
 
         /* FLOATING SMS */
         .floating-sms { position: fixed; bottom: 40px; right: 40px; background: #D4AF37; color: #000; width: 75px; height: 75px; border-radius: 50%; display: flex; justify-content: center; align-items: center; text-decoration: none; font-size: 35px; z-index: 9999; border: 3px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
@@ -92,10 +88,10 @@
         <nav id="image-nav">
             <a href="#housing-sec" class="nav-link-style">Housing Consultation</a>
             <a href="#credit-sec" class="nav-link-style">Credit Restoration</a>
-            <a href="#clean-sec" class="nav-link-style">Home Services</a>
-            <a href="#garden-sec" class="nav-link-style">Garden & Labor</a>
-            <a href="#culinary-sec" class="nav-link-style">Culinary Excellence</a>
-            <a href="#courier-sec" class="nav-link-style">Sprinter Logistics</a>
+            <a href="#culinary-sec" class="nav-link-style">Private Chef Service</a>
+            <a href="#garden-sec" class="nav-link-style">Garden & Outdoor Labor</a>
+            <a href="#clean-sec" class="nav-link-style">Residential Home Services</a>
+            <a href="#courier-sec" class="nav-link-style">Sprinter Van Logistics</a>
         </nav>
     </header>
 
@@ -108,12 +104,12 @@
                     <span class="service-title">Placement & Procurement</span>
                     <span class="price-hero">$150<span class="unit-text"> Flat</span></span>
                 </div>
-                <p class="card-p">Leveraging our in-house realtor and community network for total housing stability.</p>
+                <p class="card-p">End-to-end housing solutions leveraging an in-house realtor and professional community network.</p>
                 <ul class="feature-list">
-                    <li class="card-li">In-House Realtor Representation</li>
-                    <li class="card-li">Tenant Search & Home Purchase Support</li>
+                    <li class="card-li">In-House Realtor Representation for Clients</li>
+                    <li class="card-li">Tenant Support for Home/Rental Search</li>
                     <li class="card-li">Landlord Support: Filling Vacant Units</li>
-                    <li class="card-li">Network Access for Cash Buyers</li>
+                    <li class="card-li">Community Partnership with Cash Buyers</li>
                 </ul>
             </div>
         </div>
@@ -123,45 +119,36 @@
     <section id="credit-sec">
         <h2 class="sec-label">Credit Restoration</h2>
         <div class="main-grid">
-            <div class="card-box">
-                <div class="card-head-row">
-                    <span class="service-title">DIY Credit Strategy</span>
-                    <span class="price-hero">$100</span>
-                </div>
-                <p class="card-p">A high-impact 60-minute intensive to empower self-led restoration.</p>
-                <ul class="feature-list">
-                    <li class="card-li">60-Minute Intensive Session</li>
-                    <li class="card-li">Step-by-Step DIY Roadmap</li>
-                </ul>
-            </div>
             <div class="card-box deluxe-edition-wrap">
                 <div class="card-head-row">
                     <span class="service-title">Full Service Credit</span>
                     <span class="price-hero">$250<span class="unit-text">/mo</span></span>
                 </div>
-                <p class="card-p">Concierge bureau management and professional correspondence.</p>
+                <p class="card-p">Concierge-level restoration featuring full bureau management and professional correspondence.</p>
                 <ul class="feature-list">
                     <li class="card-li">Full Managed Dispute Strategy</li>
-                    <li class="card-li">Custom Mailed Bureau Letters</li>
+                    <li class="card-li">Custom Mailed Letters to All Bureaus</li>
+                    <li class="card-li">Monthly Progress Tracking</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- 3. CULINARY EXCELLENCE -->
+    <!-- 3. PRIVATE CHEF SERVICE -->
     <section id="culinary-sec">
-        <h2 class="sec-label">Culinary Excellence</h2>
+        <h2 class="sec-label">Private Chef Service</h2>
         <div class="main-grid">
             <div class="card-box deluxe-edition-wrap">
                 <div class="card-head-row">
-                    <span class="service-title">Private Chef Experience</span>
-                    <span class="price-hero">$350<span class="unit-text"> + Food</span></span>
+                    <span class="service-title">Gourmet Chef Labor</span>
+                    <span class="price-hero">$75<span class="unit-text">/hr</span></span>
                 </div>
-                <p class="card-p">Gourmet meal preparation and professional kitchen management.</p>
+                <p class="card-p">Professional gourmet preparation. Labor-only rate.</p>
                 <ul class="feature-list">
-                    <li class="card-li">Custom Menu Design & Planning</li>
-                    <li class="card-li">In-Home Meal Preparation</li>
-                    <li class="card-li">Post-Meal Sanitation & Organization</li>
+                    <li class="card-li">Client Must Provide All Groceries</li>
+                    <li class="card-li">$20-$30 Per Plate Assessment</li>
+                    <li class="card-li">Strict 10-Plate Order Minimum</li>
+                    <li class="card-li">Kitchen Resources Must Be Provided</li>
                 </ul>
             </div>
         </div>
@@ -171,27 +158,16 @@
     <section id="garden-sec">
         <h2 class="sec-label">Garden & Outdoor Labor</h2>
         <div class="main-grid">
-            <div class="card-box">
-                <div class="card-head-row">
-                    <span class="service-title">Basic Maintenance</span>
-                    <span class="price-hero">$150</span>
-                </div>
-                <p class="card-p">Essential outdoor upkeep for pristine curb appeal.</p>
-                <ul class="feature-list">
-                    <li class="card-li">Standard Mowing & Trimming</li>
-                    <li class="card-li">Debris Removal & Clear-Away</li>
-                </ul>
-            </div>
             <div class="card-box deluxe-edition-wrap">
                 <div class="card-head-row">
-                    <span class="service-title">The Deluxe Edition Garden</span>
-                    <span class="price-hero">$650</span>
+                    <span class="service-title">Outdoor Professional Labor</span>
+                    <span class="price-hero">$75<span class="unit-text">/hr</span></span>
                 </div>
-                <p class="card-p">The ultimate outdoor transformation and seasonal prep.</p>
+                <p class="card-p">Elite outdoor maintenance and heavy labor services. Labor-only rate.</p>
                 <ul class="feature-list">
-                    <li class="card-li">Full Landscaping & Flower Bed Care</li>
-                    <li class="card-li">Fertilization & Soil Optimization</li>
-                    <li class="card-li">Pressure Wash: Walkways & Siding</li>
+                    <li class="card-li">Client Must Provide All Tools & Machinery</li>
+                    <li class="card-li">Professional Mowing & Edging</li>
+                    <li class="card-li">Garden Bed Restoration</li>
                 </ul>
             </div>
         </div>
@@ -201,108 +177,75 @@
     <section id="clean-sec">
         <h2 class="sec-label">Home Service Tiers</h2>
         <div class="main-grid">
-            <div class="card-box">
-                <div class="card-head-row">
-                    <span class="service-title">The Basic</span>
-                    <span class="price-hero">$150</span>
-                </div>
-                <p class="card-p">Traditional interior maintenance and floor care.</p>
-                <ul class="feature-list">
-                    <li class="card-li">Deep Vacuuming & Mopping</li>
-                    <li class="card-li">Baseboard & Edge Detail</li>
-                </ul>
-            </div>
-            <div class="card-box">
-                <div class="card-head-row">
-                    <span class="service-title">The Premium</span>
-                    <span class="price-hero">$300</span>
-                </div>
-                <p class="card-p">Complete interior clarity and sanitation.</p>
-                <ul class="feature-list">
-                    <li class="card-li">Includes Basic Services</li>
-                    <li class="card-li">Window Detailing (up to 15)</li>
-                    <li class="card-li">Kitchen/Bath Deep Sanitation</li>
-                </ul>
-            </div>
             <div class="card-box deluxe-edition-wrap">
                 <div class="card-head-row">
                     <span class="service-title">The Deluxe Edition</span>
                     <span class="price-hero">$650</span>
                 </div>
-                <p class="card-p">The total property reset for the estate.</p>
+                <p class="card-p">Total Property Reset: The ultimate interior and exterior overhaul.</p>
                 <ul class="feature-list">
-                    <li class="card-li">Includes Premium Services</li>
-                    <li class="card-li">Full Exterior Soft Wash</li>
+                    <li class="card-li">Full Interior Deep Clean</li>
+                    <li class="card-li">Full Exterior House Siding Soft Wash</li>
+                    <li class="card-li">High-Pressure Driveway Restoration</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- 6. SPRINTER COURIER LOGISTICS -->
+    <!-- 6. SPRINTER VAN LOGISTICS -->
     <section id="courier-sec">
         <h2 class="sec-label">Sprinter Courier Logistics</h2>
         <div class="main-grid">
-            <div class="card-box">
-                <div class="card-head-row">
-                    <span class="service-title">The Basic</span>
-                    <span class="price-hero">$150</span>
-                </div>
-                <p class="card-p">Local transport within a 25-mile radius.</p>
-                <ul class="feature-list">
-                    <li class="card-li">Up to 500 lbs Payload</li>
-                    <li class="card-li">Next-Business-Day Delivery</li>
-                </ul>
-            </div>
-            <div class="card-box">
-                <div class="card-head-row">
-                    <span class="service-title">The Premium</span>
-                    <span class="price-hero">$300</span>
-                </div>
-                <p class="card-p">Same-day priority commercial transport.</p>
-                <ul class="feature-list">
-                    <li class="card-li">Up to 1,500 lbs Capacity</li>
-                    <li class="card-li">Priority Local Pickup</li>
-                </ul>
-            </div>
             <div class="card-box deluxe-edition-wrap">
                 <div class="card-head-row">
                     <span class="service-title">The Deluxe Edition</span>
                     <span class="price-hero">$650</span>
                 </div>
-                <p class="card-p">Long-haul white glove logistics.</p>
+                <p class="card-p">White Glove Long-Haul: Premium logistics with full labor support.</p>
                 <ul class="feature-list">
                     <li class="card-li">Full Van Payload (3,000 lbs)</li>
-                    <li class="card-li">Long-Distance (up to 200 Miles)</li>
+                    <li class="card-li">Long-Distance Radius (up to 200 Miles)</li>
+                    <li class="card-li">Full Professional Loading & Unloading</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <section id="referral-banner">
-        <h3 class="ref-title">REFERRAL REWARDS</h3>
-        <p>REFER 2 PEOPLE TO THE STREETS ARE HUNGRY LLC AND RECEIVE 20% OFF YOUR NEXT SERVICE.</p>
+        <h3 class="ref-title">REFERRAL REWARD PROGRAM</h3>
+        <p class="ref-text">REFER 2 PEOPLE TO THE STREETS ARE HUNGRY LLC AND RECEIVE<br><span style="font-size: 60px; display: block;">20% OFF</span> YOUR NEXT SERVICE.</p>
     </section>
 
     <section id="policy-section">
         <h2 class="policy-headline">Service Standards & Policies</h2>
-        <div class="policy-item"><span class="policy-emoji">⌛</span><div><strong>48-HOUR CANCELLATION:</strong> Required notice for all services.</div></div>
-        <div class="policy-item"><span class="policy-emoji">🛡️</span><div><strong>CONTRACTOR SOP:</strong> Subcontractors provide all equipment and gasoline.</div></div>
+        <div class="policy-item"><span class="policy-emoji">⌛</span><div><strong>48-HOUR CANCELLATION:</strong> Notice strictly required to avoid deposit forfeiture.</div></div>
+        <div class="policy-item"><span class="policy-emoji">🛡️</span><div><strong>CONTRACTOR SOP:</strong> Subcontractors provide their own equipment and gasoline.</div></div>
+        <div class="policy-item"><span class="policy-emoji">🛠️</span><div><strong>LABOR ONLY POLICY:</strong> Hourly rates for Chef and Garden services exclude tools and groceries.</div></div>
     </section>
 
     <section id="intake-area">
         <div class="form-container">
-            <form id="tsah-master-form">
-                <input type="text" id="client-name" required placeholder="Full Name">
-                <select id="client-service" required>
-                    <option value="">-- Choose Service --</option>
-                    <option>Housing Consultation</option>
-                    <option>Credit Restoration</option>
-                    <option>Culinary Excellence</option>
-                    <option>Garden & Labor</option>
-                    <option>Home Services</option>
-                    <option>Sprinter Logistics</option>
-                </select>
-                <textarea id="client-details" rows="6" placeholder="Details..."></textarea>
+            <form id="master-form">
+                <div class="input-row">
+                    <label>Full Client Name</label>
+                    <input type="text" id="client-name" required placeholder="Full Name">
+                </div>
+                <div class="input-row">
+                    <label>Selected Service Vertical</label>
+                    <select id="client-service" required>
+                        <option value="">-- Choose Vertical --</option>
+                        <option>Housing Consultation</option>
+                        <option>Credit Restoration</option>
+                        <option>Private Chef Service</option>
+                        <option>Garden & Outdoor Labor</option>
+                        <option>Residential Home Services</option>
+                        <option>Sprinter Logistics / Courier</option>
+                    </select>
+                </div>
+                <div class="input-row">
+                    <label>Detailed Requirements</label>
+                    <textarea id="client-details" rows="6" placeholder="Describe your needs..."></textarea>
+                </div>
                 <button type="submit" id="submit-inquiry">Submit Official Inquiry</button>
             </form>
         </div>
@@ -311,16 +254,17 @@
     <footer>© 2026 THE STREETS ARE HUNGRY LLC | COLUMBUS, OHIO</footer>
 
     <script>
-        document.getElementById('tsah-master-form').addEventListener('submit', function(event) {
+        document.getElementById('master-form').addEventListener('submit', function(event) {
             event.preventDefault();
             const phone = "7405642852";
             const name = document.getElementById('client-name').value;
             const service = document.getElementById('client-service').value;
             const details = document.getElementById('client-details').value;
-            const message = `THE STREETS ARE HUNGRY LLC INQUIRY%0AName: ${name}%0AService: ${service}%0ADetails: ${details}`;
+            const message = `THE STREETS ARE HUNGRY LLC INQUIRY%0A------------------------%0AName: ${name}%0AService: ${service}%0ADetails: ${details}`;
             const isApple = /iPhone|iPad|iPod/.test(navigator.userAgent);
             window.location.href = `sms:+1${phone}${isApple ? '&' : '?'}body=${message}`;
         });
     </script>
 </body>
 </html>
+
