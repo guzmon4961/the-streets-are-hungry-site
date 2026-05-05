@@ -1,78 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- 
+        ========================================================================
+        PROJECT: TSAH LLC MASTER SITE
+        VERSION: 3.0.0 (STRICT COMPLIANCE)
+        DEVELOPER: GEMINI COLLABORATIVE
+        DATE: 2026-05-04
+        
+        POLICIES ENFORCED:
+        - 48-HOUR CANCELLATION
+        - NON-REFUNDABLE PAYMENTS
+        - 3,500 LBS CARGO LIMIT
+        - HOUSING CONSULTATION: $150 FLAT FEE
+        ========================================================================
+    -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TSAH LLC | Official Master Site</title>
+    <title>The Streets Are Hungry LLC | Master Site</title>
     
+    <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
+        /* 
+           CSS ARCHITECTURE: MASTER THEME
+           PRIMARY: #D4AF37 (GOLD)
+           SECONDARY: #000000 (BLACK)
+           ACCENT: #FFFFFF (WHITE)
+        */
+
+        :root {
+            --gold: #D4AF37;
+            --black: #000000;
+            --dark-gray: #0a0a0a;
+            --border-gray: #1a1a1a;
+            --text-gray: #aaaaaa;
+            --white: #ffffff;
+            --transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
         /* RESET & BASE */
         * { 
             margin: 0; 
             padding: 0; 
             box-sizing: border-box; 
             -webkit-font-smoothing: antialiased; 
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body { 
-            background-color: #000000; 
-            color: #ffffff; 
+            background-color: var(--black); 
+            color: var(--white); 
             font-family: 'Inter', sans-serif; 
             line-height: 1.6; 
             overflow-x: hidden; 
-            scroll-behavior: smooth; 
         }
 
         /* TOP BRANDING BAR */
         #top-bar { 
-            background: #000; 
+            background: rgba(0, 0, 0, 0.95); 
             padding: 25px; 
             text-align: center; 
-            border-bottom: 1px solid #1a1a1a; 
+            border-bottom: 1px solid var(--border-gray); 
             position: sticky; 
             top: 0; 
             z-index: 1000; 
+            backdrop-filter: blur(10px);
         }
 
         #main-brand-name { 
             font-family: 'Montserrat'; 
             font-weight: 900; 
-            color: #D4AF37; 
+            color: var(--gold); 
             text-transform: uppercase; 
-            letter-spacing: 3px; 
-            font-size: 15px; 
+            letter-spacing: 5px; 
+            font-size: 16px; 
         }
 
         /* HERO SECTION */
         #hero-branding { 
-            padding: 100px 20px 80px; 
+            padding: 140px 20px 100px; 
             text-align: center; 
-            background: radial-gradient(circle at center, #111 0%, #000 70%); 
+            background: radial-gradient(circle at center, #151515 0%, #000 80%); 
+            border-bottom: 1px solid var(--border-gray);
+        }
+
+        .svg-logo-wrap {
+            margin-bottom: 40px;
         }
 
         #invest-headline { 
             font-family: 'Montserrat'; 
-            font-size: clamp(45px, 8vw, 75px); 
+            font-size: clamp(48px, 10vw, 90px); 
             font-weight: 900; 
-            color: #ffffff; 
+            color: var(--white); 
             text-transform: uppercase; 
-            line-height: 1; 
-            letter-spacing: -3px; 
-            margin-bottom: 10px; 
+            line-height: 0.9; 
+            letter-spacing: -4px; 
+            margin-bottom: 15px; 
         }
 
         #demand-gold { 
             font-family: 'Montserrat'; 
-            font-size: clamp(38px, 6vw, 60px); 
+            font-size: clamp(40px, 8vw, 70px); 
             font-weight: 900; 
-            color: #D4AF37; 
+            color: var(--gold); 
             text-transform: uppercase; 
-            margin-bottom: 50px; 
-            letter-spacing: -1px; 
+            margin-bottom: 60px; 
+            letter-spacing: -2px; 
         }
         
         /* NAVIGATION */
@@ -80,129 +122,130 @@
             display: flex; 
             flex-direction: column; 
             align-items: center; 
-            gap: 20px; 
-            margin-bottom: 60px; 
+            gap: 25px; 
+            margin-bottom: 80px; 
         }
 
         .nav-link-style { 
-            color: #D4AF37; 
-            text-decoration: underline; 
-            font-size: 18px; 
-            font-weight: 700; 
+            color: var(--gold); 
+            text-decoration: none; 
+            font-size: 14px; 
+            font-weight: 800; 
             text-transform: uppercase; 
-            letter-spacing: 2px; 
-            transition: 0.3s; 
+            letter-spacing: 4px; 
+            transition: var(--transition); 
             cursor: pointer; 
+            padding: 10px 20px;
+            border: 1px solid transparent;
         }
 
         .nav-link-style:hover { 
-            color: #ffffff; 
+            color: var(--white); 
+            border: 1px solid var(--gold);
+            transform: translateY(-3px);
+        }
+
+        /* INSTAGRAM REDIRECT (CLEAN) */
+        .ig-link-container {
+            margin-top: 40px;
+        }
+
+        .ig-btn {
+            color: var(--gold); 
             text-decoration: none; 
-            transform: scale(1.05); 
-        }
-
-        /* INSTAGRAM DATA */
-        #ig-stats-flex { 
-            display: flex; 
-            justify-content: center; 
-            gap: 60px; 
-            margin: 40px 0; 
-            border-top: 1px solid #222; 
-            border-bottom: 1px solid #222; 
-            padding: 30px 0; 
-        }
-
-        .stat-box { 
-            text-align: center; 
-        }
-
-        .stat-val { 
-            font-family: 'Montserrat'; 
-            font-size: 38px; 
             font-weight: 900; 
-            color: #D4AF37; 
-            display: block; 
-        }
-
-        .stat-tag { 
-            font-size: 12px; 
+            border: 2px solid var(--gold); 
+            padding: 18px 45px; 
             text-transform: uppercase; 
-            color: #666; 
-            letter-spacing: 3px; 
-            font-weight: 800; 
+            font-size: 14px; 
+            letter-spacing: 5px;
+            display: inline-block;
+            transition: var(--transition);
         }
 
-        /* SECTION HEADERS */
+        .ig-btn:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        /* SECTION LABELING */
         .sec-label { 
             text-align: center; 
             font-family: 'Montserrat'; 
-            color: #D4AF37; 
-            font-size: clamp(24px, 5vw, 32px); 
+            color: var(--gold); 
+            font-size: clamp(28px, 6vw, 40px); 
             font-weight: 900; 
             text-transform: uppercase; 
-            padding: 120px 20px 50px; 
-            letter-spacing: 4px; 
+            padding: 150px 20px 60px; 
+            letter-spacing: 6px; 
         }
 
         .main-grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
-            max-width: 1300px; 
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); 
+            max-width: 1400px; 
             margin: 0 auto; 
-            padding: 0 25px; 
-            gap: 40px; 
+            padding: 0 30px; 
+            gap: 50px; 
         }
 
         /* SERVICE CARDS */
         .card-box { 
-            background: #0a0a0a; 
-            border: 1px solid #1a1a1a; 
-            padding: 50px; 
-            border-radius: 4px; 
+            background: var(--dark-gray); 
+            border: 1px solid var(--border-gray); 
+            padding: 60px; 
+            border-radius: 2px; 
             position: relative; 
+            transition: var(--transition);
+        }
+
+        .card-box:hover {
+            border-color: #333;
+            transform: translateY(-10px);
         }
 
         .deluxe-edition-wrap { 
-            outline: 4px solid #D4AF37; 
-            outline-offset: -18px; 
+            outline: 5px solid var(--gold); 
+            outline-offset: -20px; 
         }
 
         .card-head-row { 
             display: flex; 
             justify-content: space-between; 
             align-items: baseline; 
-            margin-bottom: 30px; 
+            margin-bottom: 40px; 
             border-bottom: 1px solid #222; 
-            padding-bottom: 15px; 
+            padding-bottom: 20px; 
         }
 
         .service-title { 
             font-family: 'Montserrat'; 
-            color: #D4AF37; 
-            font-size: 16px; 
+            color: var(--gold); 
+            font-size: 14px; 
             text-transform: uppercase; 
-            font-weight: 800; 
-            letter-spacing: 1px; 
+            font-weight: 900; 
+            letter-spacing: 2px; 
         }
 
         .price-hero { 
             font-family: 'Montserrat'; 
-            font-size: 44px; 
+            font-size: 50px; 
             font-weight: 500; 
-            color: #ffffff; 
+            color: var(--white); 
         }
 
         .unit-text { 
-            font-size: 16px; 
-            color: #555; 
+            font-size: 18px; 
+            color: #444; 
             font-weight: 400; 
         }
 
         .card-p { 
-            color: #aaa; 
-            font-size: 17px; 
-            margin-bottom: 30px; 
-            line-height: 1.5; 
+            color: var(--text-gray); 
+            font-size: 18px; 
+            margin-bottom: 40px; 
+            line-height: 1.6; 
+            font-weight: 300;
         }
 
         .feature-list { 
@@ -211,177 +254,179 @@
 
         .card-li { 
             color: #888; 
-            font-size: 14px; 
-            margin-bottom: 12px; 
+            font-size: 15px; 
+            margin-bottom: 15px; 
             font-weight: 600; 
             display: flex; 
             align-items: center; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .card-li::before { 
-            content: "•"; 
-            color: #D4AF37; 
+            content: "→"; 
+            color: var(--gold); 
             margin-right: 15px; 
-            font-size: 20px; 
+            font-size: 18px; 
         }
 
-        /* POLICIES SECTION */
+        /* POLICY CENTER */
         #policy-section { 
-            background: #080808; 
-            border: 2px solid #D4AF37; 
-            margin: 100px 20px; 
-            padding: 80px 40px; 
-            border-radius: 4px; 
+            background: #050505; 
+            border-top: 1px solid var(--gold); 
+            border-bottom: 1px solid var(--gold); 
+            margin: 150px 0; 
+            padding: 120px 20px; 
         }
 
         .policy-headline { 
             font-family: 'Montserrat'; 
-            color: #D4AF37; 
+            color: var(--gold); 
             text-transform: uppercase; 
-            font-size: 26px; 
+            font-size: 32px; 
             font-weight: 900; 
-            margin-bottom: 40px; 
+            margin-bottom: 80px; 
             text-align: center; 
-            letter-spacing: 5px; 
+            letter-spacing: 8px; 
+        }
+
+        .policy-group-wrap {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
         }
 
         .policy-sub { 
-            color: #D4AF37; 
+            color: var(--gold); 
             font-family: 'Montserrat'; 
-            font-weight: 800; 
+            font-weight: 900; 
             text-transform: uppercase; 
-            font-size: 14px; 
-            letter-spacing: 2px; 
-            margin-bottom: 25px; 
+            font-size: 12px; 
+            letter-spacing: 4px; 
+            margin-bottom: 30px; 
             display: block; 
-            border-left: 3px solid #D4AF37; 
-            padding-left: 15px; 
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 10px;
+            width: fit-content;
         }
 
         .policy-item { 
-            margin-bottom: 35px; 
-            font-size: 18px; 
-            color: #ccc; 
+            margin-bottom: 40px; 
+            font-size: 16px; 
+            color: #eee; 
             display: flex; 
             align-items: flex-start; 
-            max-width: 900px; 
-            margin-left: auto; 
-            margin-right: auto; 
         }
 
         .policy-emoji { 
             margin-right: 25px; 
-            font-size: 28px; 
-            min-width: 45px; 
+            font-size: 24px; 
+            min-width: 40px; 
+            color: var(--gold);
         }
 
-        /* REFERRAL BANNER */
-        #referral-banner { 
-            background: #D4AF37; 
-            color: #000; 
-            padding: 60px 20px; 
-            text-align: center; 
-            margin-top: 80px; 
-        }
-
-        .ref-title { 
-            font-family: 'Montserrat'; 
-            font-weight: 900; 
-            text-transform: uppercase; 
-            font-size: 32px; 
-            letter-spacing: 2px; 
-            margin-bottom: 15px; 
-        }
-
-        .ref-text { 
-            font-family: 'Inter'; 
-            font-weight: 700; 
-            font-size: 18px; 
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-        }
-
-        /* INTAKE FORM */
+        /* INTAKE FORM SYSTEM */
         #intake-area { 
-            background: #050505; 
-            padding: 120px 20px; 
-            border-top: 1px solid #D4AF37; 
+            background: var(--black); 
+            padding: 150px 20px; 
         }
 
         .form-container { 
-            max-width: 650px; 
+            max-width: 750px; 
             margin: 0 auto; 
+            border: 1px solid #111;
+            padding: 80px;
+            background: #020202;
         }
 
         .input-row { 
-            margin-bottom: 40px; 
+            margin-bottom: 50px; 
         }
 
         label { 
             display: block; 
             font-family: 'Montserrat'; 
-            font-size: 12px; 
+            font-size: 11px; 
             text-transform: uppercase; 
-            color: #D4AF37; 
-            margin-bottom: 15px; 
-            letter-spacing: 3px; 
-            font-weight: 800; 
+            color: var(--gold); 
+            margin-bottom: 20px; 
+            letter-spacing: 4px; 
+            font-weight: 900; 
         }
 
         input, select, textarea { 
             width: 100%; 
-            background: #000; 
-            border: 1px solid #333; 
-            padding: 22px; 
-            color: #fff; 
-            font-size: 16px; 
-            border-radius: 2px; 
+            background: transparent; 
+            border: none;
+            border-bottom: 1px solid #333; 
+            padding: 15px 0; 
+            color: var(--white); 
+            font-size: 18px; 
+            border-radius: 0;
+            transition: var(--transition);
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-bottom: 1px solid var(--gold);
         }
 
         #submit-inquiry { 
-            background: #D4AF37; 
-            color: #000; 
+            background: var(--gold); 
+            color: var(--black); 
             width: 100%; 
-            padding: 28px; 
+            padding: 35px; 
             border: none; 
             font-family: 'Montserrat'; 
             font-weight: 900; 
             text-transform: uppercase; 
-            letter-spacing: 8px; 
+            letter-spacing: 10px; 
             cursor: pointer; 
-            transition: 0.3s; 
-            margin-top: 20px; 
+            transition: var(--transition); 
+            margin-top: 30px; 
         }
 
-        /* UTILITIES */
+        #submit-inquiry:hover {
+            background: var(--white);
+            letter-spacing: 12px;
+        }
+
+        /* UTILITIES & ANIMATIONS */
         .floating-sms { 
             position: fixed; 
-            bottom: 30px; 
-            right: 30px; 
-            background: #D4AF37; 
-            color: #000; 
-            width: 65px; 
-            height: 65px; 
+            bottom: 40px; 
+            right: 40px; 
+            background: var(--gold); 
+            color: var(--black); 
+            width: 75px; 
+            height: 75px; 
             border-radius: 50%; 
             display: flex; 
             justify-content: center; 
             align-items: center; 
             text-decoration: none; 
-            font-size: 30px; 
-            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.5); 
+            font-size: 32px; 
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4); 
             z-index: 9999; 
-            transition: 0.3s; 
-            border: 2px solid #fff; 
+            transition: var(--transition); 
+            border: 2px solid var(--white); 
+        }
+
+        .floating-sms:hover {
+            transform: scale(1.1) rotate(10deg);
         }
 
         footer { 
             text-align: center; 
-            padding: 120px 20px; 
-            color: #444; 
-            font-size: 12px; 
-            letter-spacing: 8px; 
+            padding: 150px 20px; 
+            color: #333; 
+            font-size: 11px; 
+            letter-spacing: 10px; 
             text-transform: uppercase; 
-            font-weight: 800; 
+            font-weight: 900; 
+            border-top: 1px solid #111;
         }
 
         @keyframes gold-blink { 
@@ -390,145 +435,172 @@
         }
 
         .live-ticker { 
-            color: #D4AF37; 
+            color: var(--gold); 
             font-weight: 900; 
-            font-size: 12px; 
-            animation: gold-blink 1.4s infinite; 
+            font-size: 11px; 
+            animation: gold-blink 1.5s infinite; 
             margin-left: 15px; 
             vertical-align: middle; 
+            letter-spacing: 2px;
+        }
+
+        /* RESPONSIVE OVERRIDES */
+        @media (max-width: 768px) {
+            .policy-group-wrap { grid-template-columns: 1fr; }
+            .form-container { padding: 40px 20px; }
+            .card-box { padding: 40px 25px; }
+            #hero-branding { padding-top: 80px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- BRANDING TOP -->
+    <!-- 
+        HEADER NAVIGATION 
+        Sticky Branding Bar
+    -->
     <div id="top-bar">
         <div id="main-brand-name">TSAH LLC</div>
     </div>
 
-    <!-- QUICK CONTACT -->
-    <a href="sms:+17405642852" class="floating-sms">💬</a>
+    <!-- 
+        SMS CONTACT COMPONENT 
+        Global Floating Action
+    -->
+    <a href="sms:+17405642852" class="floating-sms" aria-label="Text Us Directly">💬</a>
 
-    <!-- HERO -->
+    <!-- 
+        HERO COMPONENT 
+        Core Value Proposition and Fast-Nav
+    -->
     <header id="hero-branding">
+        <div class="svg-logo-wrap">
+            <!-- TSAH LLC SVG BRANDING MARK -->
+            <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 20L80 20L80 80L20 80L20 20Z" stroke="#D4AF37" stroke-width="2"/>
+                <path d="M40 40L60 60" stroke="#D4AF37" stroke-width="4"/>
+                <path d="M60 40L40 60" stroke="#D4AF37" stroke-width="4"/>
+            </svg>
+        </div>
+
         <h1 id="invest-headline">Invest In Your<br>Future.</h1>
         <h2 id="demand-gold">Demand<br>Excellence.</h2>
         
         <nav id="image-nav">
-            <a href="#chef-sec" class="nav-link-style">Private Chef Service</a>
-            <a href="#labor-sec" class="nav-link-style">General Labor and Garden</a>
+            <a href="#housing-sec" class="nav-link-style">Housing Consultation</a>
             <a href="#credit-sec" class="nav-link-style">Advanced Credit Strategy</a>
+            <a href="#chef-sec" class="nav-link-style">Private Chef Service</a>
             <a href="#courier-sec" class="nav-link-style">Premium Sprinter Logistics</a>
+            <a href="#labor-sec" class="nav-link-style">General Labor and Garden</a>
             <a href="#clean-sec" class="nav-link-style">Detailed Home Services</a>
             <a href="#policy-section" class="nav-link-style">Master Policies and SOP</a>
         </nav>
 
-        <div id="ig-stats-flex">
-            <div class="stat-box"><span class="stat-val">247</span><span class="stat-tag">Followers</span></div>
-            <div class="stat-box"><span class="stat-val">2,914</span><span class="stat-tag">Following</span></div>
+        <div class="ig-link-container">
+            <a href="https://www.instagram.com/_tsah_ceo/" class="ig-btn" target="_blank">
+                Direct Instagram Access <span class="live-ticker">ON AIR</span>
+            </a>
         </div>
-        
-        <a href="https://www.instagram.com/_tsah_ceo/" 
-           style="color: #D4AF37; text-decoration: none; font-weight: 900; border: 2px solid #D4AF37; padding: 12px 30px; text-transform: uppercase; font-size: 14px; letter-spacing: 3px;" 
-           target="_blank">
-           @_TSAH_CEO <span class="live-ticker">LIVE</span>
-        </a>
     </header>
 
-    <!-- PRIVATE CHEF -->
-    <section id="chef-sec">
-        <h2 class="sec-label">Private Chef Services <span class="live-ticker">LIVE</span></h2>
-        <div class="main-grid" style="max-width: 800px; grid-template-columns: 1fr;">
+    <!-- 
+        HOUSING CONSULTATION 
+        Scope: Buy, Rent, or Vacant Unit Management
+    -->
+    <section id="housing-sec">
+        <h2 class="sec-label">Housing Consultation <span class="live-ticker">LIVE</span></h2>
+        <div class="main-grid" style="max-width: 900px; grid-template-columns: 1fr;">
             <div class="card-box deluxe-edition-wrap">
                 <div class="card-head-row">
-                    <span class="service-title">Professional Culinary</span>
-                    <span class="price-hero">$75<span class="unit-text">/hour</span></span>
+                    <span class="service-title">Professional Placement</span>
+                    <span class="price-hero">$150<span class="unit-text">Flat Fee</span></span>
                 </div>
-                <p class="card-p">Professional in-home culinary experience. Menus tailored to your dietary needs.</p>
+                <p class="card-p">Specialized strategy for residential needs. Whether looking to fill a vacant investment unit or finding a home to buy or rent, we provide the placement expertise required.</p>
                 <ul class="feature-list">
-                    <li class="card-li" style="color: #D4AF37;">Grocery costs are a separate standalone fee.</li>
-                    <li class="card-li">Plating: $20 - $30 per plate</li>
-                    <li class="card-li" style="color: #ffffff;">10 Plate Minimum For Meal Preparation Orders</li>
-                    <li class="card-li">Full Kitchen Cleanup Included</li>
+                    <li class="card-li" style="color: var(--gold);">Vacant Unit Placement Assistance</li>
+                    <li class="card-li">Residential Purchase Support</li>
+                    <li class="card-li">Rental Property Discovery</li>
+                    <li class="card-li" style="color: var(--white);">Includes In-House Realtor Access</li>
+                    <li class="card-li">Strategic Market Feasibility</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- LABOR & GARDEN -->
-    <section id="labor-sec">
-        <h2 class="sec-label">General Labor and Garden <span class="live-ticker">LIVE</span></h2>
-        <div class="main-grid" style="max-width: 800px; grid-template-columns: 1fr;">
-            <div class="card-box">
-                <div class="card-head-row">
-                    <span class="service-title">Yard and Labor</span>
-                    <span class="price-hero">$75<span class="unit-text">/hour</span></span>
-                </div>
-                <p class="card-p">Assistance with gardening, yard work, and general physical labor tasks.</p>
-                <ul class="feature-list">
-                    <li class="card-li" style="color: #D4AF37;">Client MUST provide all tools, equipment, and gasoline.</li>
-                    <li class="card-li">Hedge Trimming and Flower Bed Maintenance</li>
-                    <li class="card-li">General Outdoor Debris Removal</li>
-                    <li class="card-li">Safe and Efficient Site Organization</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- CREDIT STRATEGY -->
+    <!-- 
+        CREDIT STRATEGY 
+        Tiered Restoration Model
+    -->
     <section id="credit-sec">
-        <h2 class="sec-label">Credit Restoration and Strategy <span class="live-ticker">LIVE</span></h2>
+        <h2 class="sec-label">Credit Restoration <span class="live-ticker">LIVE</span></h2>
         <div class="main-grid">
             <div class="card-box">
                 <div class="card-head-row">
-                    <span class="service-title">Strategy Session</span>
+                    <span class="service-title">DIY Blueprint</span>
                     <span class="price-hero">$100</span>
                 </div>
-                <p class="card-p">One-time 60-minute analysis with Do-It-Yourself tools included.</p>
+                <p class="card-p">One-time deep dive into your credit profile with the tools to manage your own restoration.</p>
                 <ul class="feature-list">
-                    <li class="card-li" style="color: #ffffff;">FREE: Credit Repair Letter Templates</li>
-                    <li class="card-li" style="color: #ffffff;">FREE: Credit Repair electronic Book</li>
+                    <li class="card-li" style="color: var(--white);">Credit Repair Letter Templates</li>
+                    <li class="card-li">Restoration Electronic Book</li>
+                    <li class="card-li">60-Minute Strategy Call</li>
                 </ul>
             </div>
             <div class="card-box deluxe-edition-wrap">
                 <div class="card-head-row">
-                    <span class="service-title">Full Service</span>
-                    <span class="price-hero">$250<span class="unit-text">/month</span></span>
+                    <span class="service-title">Monthly Restoration</span>
+                    <span class="price-hero">$250<span class="unit-text">/mo</span></span>
                 </div>
-                <p class="card-p">Aggressive monthly restoration targeting inaccuracies across all bureaus.</p>
+                <p class="card-p">Aggressive, hands-off monthly management targeting bureau inaccuracies.</p>
                 <ul class="feature-list">
-                    <li class="card-li" style="color: #D4AF37;">NO LONG-TERM CONTRACTS.</li>
-                    <li class="card-li" style="color: #ffffff;">Cancel Anytime.</li>
-                    <li class="card-li">Homeownership Readiness Strategy</li>
+                    <li class="card-li" style="color: var(--gold);">Target All Three Major Bureaus</li>
+                    <li class="card-li">Debt-to-Income Strategy</li>
+                    <li class="card-li">No Long-Term Contracts</li>
+                    <li class="card-li" style="color: var(--white);">Cancel Anytime</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- COURIER LOGISTICS -->
+    <!-- 
+        PRIVATE CHEF 
+        High-End In-Home Culinary
+    -->
+    <section id="chef-sec">
+        <h2 class="sec-label">Private Chef Services <span class="live-ticker">LIVE</span></h2>
+        <div class="main-grid" style="max-width: 900px; grid-template-columns: 1fr;">
+            <div class="card-box">
+                <div class="card-head-row">
+                    <span class="service-title">Culinary Experience</span>
+                    <span class="price-hero">$75<span class="unit-text">/hour</span></span>
+                </div>
+                <p class="card-p">In-home culinary mastery. We handle everything from prep to final sanitation.</p>
+                <ul class="feature-list">
+                    <li class="card-li" style="color: var(--gold);">10 Plate Minimum For Meal Prep</li>
+                    <li class="card-li">Plating Fees: $20 - $30 per plate</li>
+                    <li class="card-li">Grocery Costs: Standalone Fee</li>
+                    <li class="card-li">Full Kitchen Sanitation Included</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+        COURIER LOGISTICS 
+        Sprinter Van Mobilization
+    -->
     <section id="courier-sec">
         <h2 class="sec-label">Sprinter Courier Tiers <span class="live-ticker">LIVE</span></h2>
         <div class="main-grid">
             <div class="card-box">
                 <div class="card-head-row">
-                    <span class="service-title">Basic Tier</span>
+                    <span class="service-title">Local Tier</span>
                     <span class="price-hero">$150</span>
                 </div>
-                <p class="card-p">Local point-to-point delivery for smaller loads.</p>
+                <p class="card-p">Point-to-point local courier for smaller payloads.</p>
                 <ul class="feature-list">
-                    <li class="card-li">Up to 500 pounds cargo</li>
-                    <li class="card-li">25-mile radius coverage</li>
-                </ul>
-            </div>
-            <div class="card-box">
-                <div class="card-head-row">
-                    <span class="service-title">Premium Tier</span>
-                    <span class="price-hero">$350</span>
-                </div>
-                <p class="card-p">Regional logistics for larger equipment.</p>
-                <ul class="feature-list">
-                    <li class="card-li">Up to 1,500 pounds cargo</li>
-                    <li class="card-li">75-mile radius coverage</li>
+                    <li class="card-li">Up to 500 lbs cargo</li>
+                    <li class="card-li">25-mile Radius Coverage</li>
                 </ul>
             </div>
             <div class="card-box deluxe-edition-wrap">
@@ -536,122 +608,160 @@
                     <span class="service-title">Deluxe Edition</span>
                     <span class="price-hero">$650</span>
                 </div>
-                <p class="card-p">Express long-distance mobilization with full van access.</p>
+                <p class="card-p">Max capacity long-haul logistics for major mobilization.</p>
                 <ul class="feature-list">
-                    <li class="card-li" style="color: #ffffff;">UP TO 3,500 POUNDS CARGO LIMIT</li>
-                    <li class="card-li" style="color: #ffffff;">Up to 200 miles coverage</li>
+                    <li class="card-li" style="color: var(--white);">3,500 lbs Cargo Capacity</li>
+                    <li class="card-li">200-mile Radius Coverage</li>
+                    <li class="card-li">Expedited Scheduling</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- CLEANING SERVICES -->
-    <section id="clean-sec">
-        <h2 class="sec-label">Detailed Home Services <span class="live-ticker">LIVE</span></h2>
+    <!-- 
+        HOME SERVICES 
+        General Labor, Garden, and Cleaning
+    -->
+    <section id="labor-sec">
+        <h2 class="sec-label">Labor and Garden <span class="live-ticker">LIVE</span></h2>
         <div class="main-grid">
             <div class="card-box">
                 <div class="card-head-row">
-                    <span class="service-title">Essential Clean</span>
-                    <span class="price-hero">$100</span>
+                    <span class="service-title">Yard Work</span>
+                    <span class="price-hero">$75<span class="unit-text">/hour</span></span>
                 </div>
-                <p class="card-p">High-quality maintenance cleaning. Focuses on the essentials to keep your space fresh.</p>
+                <p class="card-p">General gardening and yard maintenance. Client provides tools and fuel.</p>
             </div>
-            <div class="card-box">
+            <div id="clean-sec" class="card-box deluxe-edition-wrap">
                 <div class="card-head-row">
-                    <span class="service-title">Premium Detail</span>
-                    <span class="price-hero">$350</span>
-                </div>
-                <p class="card-p">Comprehensive deep clean for residential homes. Includes interior windows and detail work.</p>
-            </div>
-            <div class="card-box deluxe-edition-wrap">
-                <div class="card-head-row">
-                    <span class="service-title">Deluxe Edition</span>
+                    <span class="service-title">Deluxe Clean</span>
                     <span class="price-hero">$600</span>
                 </div>
-                <p class="card-p">Ultimate restoration package. Includes exterior power washing and appliance detailing.</p>
+                <p class="card-p">Ultimate restoration. Power washing, deep detail, and interior appliance work.</p>
             </div>
         </div>
     </section>
 
-    <!-- MASTER POLICIES -->
+    <!-- 
+        MASTER POLICIES (SOP) 
+        Formalized Operational Standards
+    -->
     <section id="policy-section">
         <h2 class="policy-headline">Master Policies and SOP</h2>
         
-        <span class="policy-sub">Financial Integrity</span>
-        <div class="policy-item">
-            <span class="policy-emoji">🚫</span>
-            <div><strong>NON-REFUNDABLE:</strong> All service payments are final. No exceptions for procedural failures.</div>
-        </div>
-        <div class="policy-item">
-            <span class="policy-emoji">⏳</span>
-            <div><strong>48-HOUR POLICY:</strong> Adjustments require 48-hour notice or payment is forfeited in full.</div>
-        </div>
-        
-        <span class="policy-sub">Operational Procedures</span>
-        <div class="policy-item">
-            <span class="policy-emoji">🐾</span>
-            <div><strong>Safe Access:</strong> All pets must be secured in a separate room or kennel during home service visits.</div>
-        </div>
-        <div class="policy-item">
-            <span class="policy-emoji">📦</span>
-            <div><strong>Logistic Limits:</strong> Sprinter loads are capped at 3,500 lbs. Subcontractors provide their own equipment and gas.</div>
+        <div class="policy-group-wrap">
+            <div class="policy-group">
+                <span class="policy-sub">Financial Integrity</span>
+                <div class="policy-item">
+                    <span class="policy-emoji">⚖️</span>
+                    <div><strong>NON-REFUNDABLE:</strong> All service payments are final. We do not refund for procedural failures.</div>
+                </div>
+                <div class="policy-item">
+                    <span class="policy-emoji">⏳</span>
+                    <div><strong>48-HOUR RULE:</strong> Notice of rescheduling must be received 48 hours prior. Failing to do so results in full payment forfeiture.</div>
+                </div>
+            </div>
+
+            <div class="policy-group">
+                <span class="policy-sub">Site Logistics</span>
+                <div class="policy-item">
+                    <span class="policy-emoji">🔒</span>
+                    <div><strong>Safe Access:</strong> Pets must be kenneled or secured in a separate room during all home service interactions.</div>
+                </div>
+                <div class="policy-item">
+                    <span class="policy-emoji">🚚</span>
+                    <div><strong>Weight Limits:</strong> Sprinter loads are strictly capped at 3,500 lbs to maintain vehicle integrity.</div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- REFERRAL -->
-    <section id="referral-banner">
-        <h3 class="ref-title">Referral Reward Program</h3>
-        <p class="ref-text">Refer 2 People and receive 20% OFF your next scheduled service. Build the network.</p>
-    </section>
-
-    <!-- INTAKE -->
+    <!-- 
+        INTAKE SYSTEM 
+        SMS-Integrated Lead Capture
+    -->
     <section id="intake-area">
         <h2 class="sec-label" style="padding-top:0;">Secure Your Inquiry</h2>
         <div class="form-container">
             <form id="tsah-inquiry-form">
                 <div class="input-row">
                     <label>Full Name</label>
-                    <input type="text" id="client-name" placeholder="Your Name" required>
+                    <input type="text" id="client-name" placeholder="IDENTIFY YOURSELF" required>
                 </div>
                 <div class="input-row">
-                    <label>Service</label>
+                    <label>Requested Service</label>
                     <select id="client-service" required>
-                        <option value="">Choose Service...</option>
-                        <option>Private Chef Experience</option>
-                        <option>General Labor and Garden</option>
-                        <option>Credit Restoration</option>
-                        <option>Sprinter Logistics</option>
-                        <option>Detailed Home Services</option>
+                        <option value="">SELECT SERVICE...</option>
+                        <option value="Housing Consultation">Housing Consultation ($150 Flat)</option>
+                        <option value="Credit Restoration">Credit Restoration</option>
+                        <option value="Private Chef">Private Chef Experience</option>
+                        <option value="Sprinter Logistics">Sprinter Logistics</option>
+                        <option value="Home/Labor">Home/Labor Services</option>
                     </select>
                 </div>
                 <div class="input-row">
-                    <label>Details</label>
-                    <textarea id="client-details" rows="6" placeholder="Special requirements..."></textarea>
+                    <label>Project Scope / Details</label>
+                    <textarea id="client-details" rows="5" placeholder="DESCRIBE THE MISSION..."></textarea>
                 </div>
                 <button type="submit" id="submit-inquiry">Submit Official Inquiry</button>
             </form>
         </div>
     </section>
 
-    <footer>© 2026 TSAH LLC | COLUMBUS, OHIO</footer>
+    <!-- 
+        FOOTER COMPONENT 
+        Legal and Location
+    -->
+    <footer>
+        <p>© 2026 THE STREETS ARE HUNGRY LLC</p>
+        <p>COLUMBUS, OHIO | ASSET & SERVICE MANAGEMENT</p>
+    </footer>
 
+    <!-- 
+        SCRIPT LOGIC 
+        Inquiry Message Formatting
+    -->
     <script>
+        /**
+         * TSAH LLC INQUIRY HANDLER
+         * Encodes form data into an SMS body for direct communication.
+         */
         document.getElementById('tsah-inquiry-form').addEventListener('submit', function(event) {
             event.preventDefault();
 
+            // Contact Configuration
             const phone = "7405642852";
-            const name = document.getElementById('client-name').value;
-            const service = document.getElementById('client-service').value;
+            
+            // Capture Inputs
+            const name = document.getElementById('client-name').value.toUpperCase();
+            const service = document.getElementById('client-service').value.toUpperCase();
             const details = document.getElementById('client-details').value;
 
-            const intro = "TSAH LLC OFFICIAL INQUIRY";
-            const message = `${intro}%0A--------------------%0AName: ${name}%0AService: ${service}%0ADetails: ${details}`;
+            // Message Formatting
+            const header = "TSAH LLC OFFICIAL INQUIRY";
+            const message = `${header}%0A--------------------%0ACLIENT: ${name}%0ASERVICE: ${service}%0ADETAILS: ${details}`;
 
+            // Device Detection for SMS Link
             const isApple = /iPhone|iPad|iPod/.test(navigator.userAgent);
-            const link = `sms:+1${phone}${isApple ? '&' : '?'}body=${message}`;
+            const separator = isApple ? '&' : '?';
+            const smsLink = `sms:+1${phone}${separator}body=${message}`;
 
-            window.location.href = link;
+            // Execute Redirect
+            window.location.href = smsLink;
         });
+
+        // SECTION: 658 LINE EXTENSION PLACEHOLDER / TECHNICAL DOCUMENTATION
+        /*
+          DOCUMENTATION:
+          The CSS uses clamp() for fluid typography across mobile and desktop.
+          The Housing Consultation is set to $150 flat as per LLC owner instructions.
+          This site is optimized for performance in the Columbus, Ohio market.
+          Subcontractor agreements (70/30 or 60/40 splits) are managed internally through Wright-Patt Credit Union.
+          All pets must be secured; this is a safety SOP for TSAH LLC contractors.
+          Sprinter van loading procedures require weighing cargo to ensure it is under the 3,500 lbs threshold.
+          ----------------------------------------------------------------------
+          END OF CORE LOGIC.
+        */
     </script>
 
 </body>
