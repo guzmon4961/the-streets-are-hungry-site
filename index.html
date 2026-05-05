@@ -1,5 +1,3 @@
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,61 +10,71 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
+        /* CORE RESET & TYPOGRAPHY */
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
         body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth; }
 
+        /* BRANDING & NAVIGATION */
         #top-bar { background: #000; padding: 25px; text-align: center; border-bottom: 1px solid #1a1a1a; position: sticky; top: 0; z-index: 1000; }
         #main-brand-name { font-family: 'Montserrat'; font-weight: 900; color: #D4AF37; text-transform: uppercase; letter-spacing: 3px; font-size: 15px; }
 
-        #hero-branding { padding: 100px 20px 80px; text-align: center; background: radial-gradient(circle at center, #111 0%, #000 70%); }
-        #invest-headline { font-family: 'Montserrat'; font-size: clamp(45px, 8vw, 75px); font-weight: 900; color: #fff; text-transform: uppercase; line-height: 1; letter-spacing: -3px; margin-bottom: 10px; }
-        #demand-gold { font-family: 'Montserrat'; font-size: clamp(38px, 6vw, 60px); font-weight: 900; color: #D4AF37; text-transform: uppercase; margin-bottom: 50px; letter-spacing: -1px; }
+        #hero-branding { padding: 120px 20px 100px; text-align: center; background: radial-gradient(circle at center, #111 0%, #000 70%); }
+        #invest-headline { font-family: 'Montserrat'; font-size: clamp(45px, 8vw, 85px); font-weight: 900; color: #fff; text-transform: uppercase; line-height: 0.9; letter-spacing: -4px; margin-bottom: 15px; }
+        #demand-gold { font-family: 'Montserrat'; font-size: clamp(38px, 6vw, 65px); font-weight: 900; color: #D4AF37; text-transform: uppercase; margin-bottom: 60px; letter-spacing: -2px; }
         
-        #image-nav { display: flex; flex-direction: column; align-items: center; gap: 20px; margin-bottom: 60px; }
+        #image-nav { display: flex; flex-direction: column; align-items: center; gap: 25px; margin-bottom: 60px; }
         .nav-link-style { color: #D4AF37; text-decoration: underline; font-size: 18px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; cursor: pointer; }
         .nav-link-style:hover { color: #fff; transform: scale(1.05); }
 
-        .sec-label { text-align: center; font-family: 'Montserrat'; color: #D4AF37; font-size: clamp(24px, 5vw, 32px); font-weight: 900; text-transform: uppercase; padding: 120px 20px 50px; letter-spacing: 4px; }
-        .main-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); max-width: 1300px; margin: 0 auto; padding: 0 25px; gap: 30px; }
+        /* SECTION LAYOUTS */
+        .sec-label { text-align: center; font-family: 'Montserrat'; color: #D4AF37; font-size: clamp(24px, 5vw, 36px); font-weight: 900; text-transform: uppercase; padding: 140px 20px 60px; letter-spacing: 5px; }
+        .main-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); max-width: 1400px; margin: 0 auto; padding: 0 25px; gap: 40px; }
 
-        .card-box { background: #0a0a0a; border: 1px solid #1a1a1a; padding: 45px; border-radius: 4px; position: relative; display: flex; flex-direction: column; transition: 0.4s; }
-        .card-box:hover { border-color: #D4AF37; }
-        .deluxe-edition-wrap { outline: 4px solid #D4AF37; outline-offset: -18px; }
+        /* SERVICE CARDS */
+        .card-box { background: #0a0a0a; border: 1px solid #1a1a1a; padding: 50px; border-radius: 4px; position: relative; display: flex; flex-direction: column; transition: 0.4s; }
+        .card-box:hover { border-color: #D4AF37; transform: translateY(-5px); }
+        .deluxe-edition-wrap { outline: 4px solid #D4AF37; outline-offset: -20px; }
 
-        .card-head-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 30px; border-bottom: 1px solid #222; padding-bottom: 15px; }
-        .service-title { font-family: 'Montserrat'; color: #D4AF37; font-size: 15px; text-transform: uppercase; font-weight: 800; letter-spacing: 1px; }
-        .price-hero { font-family: 'Montserrat'; font-size: 40px; font-weight: 500; color: #fff; }
+        .card-head-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 35px; border-bottom: 1px solid #222; padding-bottom: 20px; }
+        .service-title { font-family: 'Montserrat'; color: #D4AF37; font-size: 16px; text-transform: uppercase; font-weight: 800; letter-spacing: 1.5px; }
+        .price-hero { font-family: 'Montserrat'; font-size: 42px; font-weight: 500; color: #fff; }
         .unit-text { font-size: 14px; color: #555; font-weight: 400; }
 
-        .card-p { color: #aaa; font-size: 16px; margin-bottom: 25px; line-height: 1.5; }
+        .card-p { color: #aaa; font-size: 17px; margin-bottom: 30px; line-height: 1.5; min-height: 80px; }
         .feature-list { list-style: none; margin-top: auto; }
-        .card-li { color: #888; font-size: 14px; margin-bottom: 10px; font-weight: 600; display: flex; align-items: flex-start; }
-        .card-li::before { content: "•"; color: #D4AF37; margin-right: 12px; font-size: 18px; }
+        .card-li { color: #888; font-size: 15px; margin-bottom: 14px; font-weight: 600; display: flex; align-items: flex-start; }
+        .card-li::before { content: "•"; color: #D4AF37; margin-right: 15px; font-size: 20px; }
 
-        .alacarte-box { max-width: 1300px; margin: 40px auto; padding: 40px 25px; background: #050505; border: 1px dashed #333; }
-        .alacarte-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .ala-item { font-size: 14px; color: #888; }
-        .ala-item strong { color: #D4AF37; display: block; font-family: 'Montserrat'; }
+        /* A LA CARTE */
+        .alacarte-box { max-width: 1300px; margin: 50px auto; padding: 50px 30px; background: #050505; border: 1px dashed #333; }
+        .alacarte-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
+        .ala-item { font-size: 15px; color: #888; }
+        .ala-item strong { color: #D4AF37; display: block; font-family: 'Montserrat'; font-size: 13px; margin-bottom: 5px; }
 
-        #referral-banner { background: #D4AF37; color: #000; padding: 100px 20px; text-align: center; margin: 80px 0; border-top: 5px solid #fff; border-bottom: 5px solid #fff; }
-        .ref-title { font-family: 'Montserrat'; font-weight: 900; text-transform: uppercase; font-size: 42px; margin-bottom: 25px; letter-spacing: -1px; }
-        .ref-text { font-family: 'Inter'; font-weight: 900; font-size: 24px; text-transform: uppercase; max-width: 800px; margin: 0 auto; }
+        /* REFERRAL BANNER */
+        #referral-banner { background: #D4AF37; color: #000; padding: 120px 20px; text-align: center; margin: 100px 0; border-top: 5px solid #fff; border-bottom: 5px solid #fff; }
+        .ref-title { font-family: 'Montserrat'; font-weight: 900; text-transform: uppercase; font-size: 48px; margin-bottom: 30px; letter-spacing: -1px; }
+        .ref-text { font-family: 'Inter'; font-weight: 900; font-size: 26px; text-transform: uppercase; max-width: 900px; margin: 0 auto; }
 
-        #policy-section { background: #080808; border: 2px solid #D4AF37; margin: 100px 20px; padding: 80px 40px; border-radius: 4px; }
-        .policy-headline { font-family: 'Montserrat'; color: #D4AF37; text-transform: uppercase; font-size: 26px; font-weight: 900; margin-bottom: 40px; text-align: center; letter-spacing: 5px; }
-        .policy-item { margin-bottom: 35px; font-size: 18px; color: #ccc; display: flex; align-items: flex-start; max-width: 900px; margin: 0 auto 35px; }
-        .policy-emoji { margin-right: 25px; font-size: 28px; min-width: 45px; }
+        /* POLICIES */
+        #policy-section { background: #080808; border: 2px solid #D4AF37; margin: 120px 20px; padding: 100px 50px; border-radius: 4px; }
+        .policy-headline { font-family: 'Montserrat'; color: #D4AF37; text-transform: uppercase; font-size: 30px; font-weight: 900; margin-bottom: 50px; text-align: center; letter-spacing: 6px; }
+        .policy-item { margin-bottom: 40px; font-size: 19px; color: #ccc; display: flex; align-items: flex-start; max-width: 1000px; margin-left: auto; margin-right: auto; }
+        .policy-emoji { margin-right: 30px; font-size: 32px; min-width: 50px; }
 
-        #intake-area { background: #050505; padding: 120px 20px; border-top: 1px solid #D4AF37; }
-        .form-container { max-width: 650px; margin: 0 auto; }
-        .input-row { margin-bottom: 40px; }
-        label { display: block; font-family: 'Montserrat'; font-size: 12px; text-transform: uppercase; color: #D4AF37; margin-bottom: 15px; letter-spacing: 3px; font-weight: 800; }
-        input, select, textarea { width: 100%; background: #000; border: 1px solid #333; padding: 22px; color: #fff; font-size: 16px; }
-        #submit-inquiry { background: #D4AF37; color: #000; width: 100%; padding: 28px; border: none; font-family: 'Montserrat'; font-weight: 900; text-transform: uppercase; letter-spacing: 8px; cursor: pointer; transition: 0.3s; }
-        #submit-inquiry:hover { background: #fff; letter-spacing: 12px; }
+        /* CONTACT FORM */
+        #intake-area { background: #050505; padding: 140px 20px; border-top: 1px solid #D4AF37; }
+        .form-container { max-width: 700px; margin: 0 auto; }
+        .input-row { margin-bottom: 45px; }
+        label { display: block; font-family: 'Montserrat'; font-size: 13px; text-transform: uppercase; color: #D4AF37; margin-bottom: 18px; letter-spacing: 4px; font-weight: 800; }
+        input, select, textarea { width: 100%; background: #000; border: 1px solid #333; padding: 24px; color: #fff; font-size: 16px; border-radius: 2px; }
+        input:focus, textarea:focus { border-color: #D4AF37; outline: none; }
+        #submit-inquiry { background: #D4AF37; color: #000; width: 100%; padding: 30px; border: none; font-family: 'Montserrat'; font-weight: 900; text-transform: uppercase; letter-spacing: 10px; cursor: pointer; transition: 0.4s; }
+        #submit-inquiry:hover { background: #fff; letter-spacing: 14px; }
 
-        .floating-sms { position: fixed; bottom: 30px; right: 30px; background: #D4AF37; color: #000; width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; text-decoration: none; font-size: 30px; z-index: 9999; border: 2px solid #fff; }
-        footer { text-align: center; padding: 120px 20px; color: #444; font-size: 12px; letter-spacing: 8px; text-transform: uppercase; font-weight: 800; }
+        /* FLOATING ACTION */
+        .floating-sms { position: fixed; bottom: 40px; right: 40px; background: #D4AF37; color: #000; width: 75px; height: 75px; border-radius: 50%; display: flex; justify-content: center; align-items: center; text-decoration: none; font-size: 35px; z-index: 9999; border: 3px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        footer { text-align: center; padding: 140px 20px; color: #444; font-size: 13px; letter-spacing: 10px; text-transform: uppercase; font-weight: 800; }
     </style>
 </head>
 <body>
@@ -75,93 +83,116 @@
         <div id="main-brand-name">TSAH LLC</div>
     </div>
 
+    <!-- SMS QUICK ACTION -->
     <a href="sms:+17405642852" class="floating-sms">💬</a>
 
     <header id="hero-branding">
         <h1 id="invest-headline">Invest In Your<br>Future.</h1>
         <h2 id="demand-gold">Demand<br>Excellence.</h2>
         <nav id="image-nav">
-            <a href="#credit-sec" class="nav-link-style">Credit Restoration</a>
-            <a href="#clean-sec" class="nav-link-style">Home Services</a>
-            <a href="#courier-sec" class="nav-link-style">Courier Logistics</a>
+            <a href="#housing-credit-sec" class="nav-link-style">Housing & Credit Strategy</a>
+            <a href="#clean-sec" class="nav-link-style">Residential Home Services</a>
+            <a href="#courier-sec" class="nav-link-style">Sprinter Van Logistics</a>
             <a href="#referral-banner" class="nav-link-style">Referral Rewards</a>
+            <a href="#policy-section" class="nav-link-style">Standards & Policies</a>
         </nav>
     </header>
 
-    <!-- CREDIT RESTORATION SECTION -->
-    <section id="credit-sec">
-        <h2 class="sec-label">Credit Restoration Tracks</h2>
+    <!-- SECTION 1: HOUSING & CREDIT -->
+    <section id="housing-credit-sec">
+        <h2 class="sec-label">Housing & Credit Strategy</h2>
         <div class="main-grid">
+            <!-- HOUSING CONSULTANT -->
             <div class="card-box">
                 <div class="card-head-row">
-                    <span class="service-title">DIY Strategy</span>
-                    <span class="price-hero">$100<span class="unit-text"> Flat</span></span>
+                    <span class="service-title">Housing Consultant</span>
+                    <span class="price-hero">$150<span class="unit-text"> Flat</span></span>
                 </div>
-                <p class="card-p">A high-impact 60-minute consultation for those ready to lead their own restoration process.</p>
+                <p class="card-p">A specialized roadmap designed for housing procurement, stability solutions, and resource navigation.</p>
                 <ul class="feature-list">
-                    <li class="card-li">60-Minute Strategy Session</li>
-                    <li class="card-li">DIY Roadmap Construction</li>
-                    <li class="card-li">Free Credit Report Resources</li>
+                    <li class="card-li">Comprehensive Resource Identification</li>
+                    <li class="card-li">Procurement Strategy Session</li>
+                    <li class="card-li">Professional Referral Network Access</li>
                 </ul>
             </div>
 
+            <!-- DIY CREDIT -->
+            <div class="card-box">
+                <div class="card-head-row">
+                    <span class="service-title">DIY Credit Strategy</span>
+                    <span class="price-hero">$100<span class="unit-text"> Flat</span></span>
+                </div>
+                <p class="card-p">A high-impact 60-minute intensive to empower self-led restoration and credit management.</p>
+                <ul class="feature-list">
+                    <li class="card-li">60-Minute Strategy Blueprint</li>
+                    <li class="card-li">Step-by-Step DIY Roadmap</li>
+                    <li class="card-li">Free Credit Report Access Points</li>
+                </ul>
+            </div>
+
+            <!-- FULL SERVICE CREDIT -->
             <div class="card-box deluxe-edition-wrap">
                 <div class="card-head-row">
-                    <span class="service-title">Full Service</span>
+                    <span class="service-title">Full Service Credit</span>
                     <span class="price-hero">$250<span class="unit-text">/mo</span></span>
                 </div>
-                <p class="card-p">Comprehensive, hands-off management of your credit bureau correspondence.</p>
+                <p class="card-p">Concierge-level restoration featuring full bureau management and professional correspondence.</p>
                 <ul class="feature-list">
-                    <li class="card-li">Professional Dispute Management</li>
+                    <li class="card-li">Managed Dispute Strategy</li>
                     <li class="card-li">Custom Mailed Letters to Bureaus</li>
-                    <li class="card-li">Monthly Progress & Strategy Tracking</li>
+                    <li class="card-li">Monthly Progress & Impact Tracking</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- HOME SERVICES SECTION -->
+    <!-- SECTION 2: HOME SERVICES -->
     <section id="clean-sec">
         <h2 class="sec-label">Home Service Tiers</h2>
         <div class="main-grid">
+            <!-- BASIC -->
             <div class="card-box">
                 <div class="card-head-row">
                     <span class="service-title">The Basic</span>
                     <span class="price-hero">$150</span>
                 </div>
-                <p class="card-p">Traditional Clean: The essential interior refresh for floors and surfaces.</p>
+                <p class="card-p">The Traditional Clean: Essential interior maintenance for high-traffic surfaces and floors.</p>
                 <ul class="feature-list">
-                    <li class="card-li">Carpet Care: Vacuuming (up to 3 rooms)</li>
-                    <li class="card-li">Hard Floors: Dust & Wet-Mopping</li>
-                    <li class="card-li">High/Low Surface Dusting</li>
-                    <li class="card-li">Detailed Baseboard Wiping</li>
+                    <li class="card-li">Carpet Care: Deep Vacuuming (up to 3 rooms)</li>
+                    <li class="card-li">Hard Floors: Dusting & Wet-Mopping</li>
+                    <li class="card-li">High/Low Surface Detail Dusting</li>
+                    <li class="card-li">Detailed Baseboard & Edge Wiping</li>
                 </ul>
             </div>
 
+            <!-- PREMIUM -->
             <div class="card-box">
                 <div class="card-head-row">
                     <span class="service-title">The Premium</span>
                     <span class="price-hero">$300</span>
                 </div>
-                <p class="card-p">The Clear View: A deep interior clean focusing on light and clarity.</p>
+                <p class="card-p">The Clear View & Deep Clean: Complete interior restoration focusing on clarity and sanitation.</p>
                 <ul class="feature-list">
                     <li class="card-li">Includes Everything in THE BASIC</li>
-                    <li class="card-li">Interior Window Cleaning (up to 15)</li>
-                    <li class="card-li">Glass, Tracks, & Sills Detailed</li>
+                    <li class="card-li">Interior Window Detailing (up to 15)</li>
+                    <li class="card-li">Window Glass, Tracks, & Sills Detailed</li>
+                    <li class="card-li">Kitchen & Bath Deep Interior Sanitation</li>
+                    <li class="card-li">Eco-Friendly High-Gloss Floor Polish</li>
                 </ul>
             </div>
 
+            <!-- DELUXE -->
             <div class="card-box deluxe-edition-wrap">
                 <div class="card-head-row">
-                    <span class="service-title">The Deluxe</span>
+                    <span class="service-title">The Deluxe Edition</span>
                     <span class="price-hero">$650</span>
                 </div>
-                <p class="card-p">Total Property Reset: The ultimate "Inside and Out" home transformation.</p>
+                <p class="card-p">Total Property Reset: The ultimate interior and exterior overhaul for the entire property.</p>
                 <ul class="feature-list">
                     <li class="card-li">Includes Everything in THE PREMIUM</li>
-                    <li class="card-li">Full Exterior House Siding Wash</li>
-                    <li class="card-li">High-Pressure Driveway Cleaning</li>
-                    <li class="card-li">Walkway & Path Restoration</li>
+                    <li class="card-li">Full Exterior House Siding Soft Wash</li>
+                    <li class="card-li">High-Pressure Driveway & Walkway Surface</li>
+                    <li class="card-li">Priority VIP Scheduling & Walkthrough</li>
                 </ul>
             </div>
         </div>
@@ -169,100 +200,109 @@
         <div class="alacarte-box">
             <label style="margin-bottom: 25px; text-align: center;">A La Carte Cleaning Add-Ons</label>
             <div class="alacarte-grid">
-                <div class="ala-item"><strong>Power Washing</strong>$95 Per Side</div>
-                <div class="ala-item"><strong>Driveway Only</strong>$150 (Standard 2-Car)</div>
-                <div class="ala-item"><strong>Floor Deep Scrub</strong>$150 Per Room</div>
-                <div class="ala-item"><strong>Extra Window</strong>$15 Per Interior Pane</div>
-                <div class="ala-item"><strong>Sidewalk/Walkway</strong>$75 Only</div>
+                <div class="ala-item"><strong>Exterior Siding</strong>$95 Per Side</div>
+                <div class="ala-item"><strong>Driveway Restore</strong>$150 (Standard)</div>
+                <div class="ala-item"><strong>Deep Floor Scrub</strong>$150 Per Room</div>
+                <div class="ala-item"><strong>Extra Glass</strong>$15 Per Pane</div>
+                <div class="ala-item"><strong>Front Walkway</strong>$75</div>
             </div>
         </div>
     </section>
 
-    <!-- COURIER LOGISTICS SECTION -->
+    <!-- SECTION 3: COURIER LOGISTICS -->
     <section id="courier-sec">
         <h2 class="sec-label">Sprinter Courier Logistics</h2>
         <div class="main-grid">
+            <!-- BASIC -->
             <div class="card-box">
                 <div class="card-head-row">
                     <span class="service-title">The Basic</span>
                     <span class="price-hero">$150</span>
                 </div>
-                <p class="card-p">Standard local delivery within 25 miles of pickup.</p>
+                <p class="card-p">Standard Local: Reliable scheduled transport for cargo within 25 miles.</p>
                 <ul class="feature-list">
+                    <li class="card-li">Up to 500 lbs Payload</li>
                     <li class="card-li">Next-Business-Day Window</li>
-                    <li class="card-li">Up to 500 lbs (Boxed/Palletized)</li>
-                    <li class="card-li">Door-to-Door up to 25 Miles</li>
+                    <li class="card-li">+$50 Per Extra 20-Mile Zone</li>
                 </ul>
             </div>
 
+            <!-- PREMIUM -->
             <div class="card-box">
                 <div class="card-head-row">
                     <span class="service-title">The Premium</span>
                     <span class="price-hero">$300</span>
                 </div>
-                <p class="card-p">Priority Same-Day: Direct Point-to-Point delivery within 75 miles.</p>
+                <p class="card-p">Priority Same-Day: Direct point-to-point transport for commercial-grade loads.</p>
                 <ul class="feature-list">
-                    <li class="card-li">Immediate Pickup / Direct Transport</li>
-                    <li class="card-li">Up to 1,500 lbs Capacity</li>
-                    <li class="card-li">Real-time GPS Tracking/ETA Updates</li>
+                    <li class="card-li">Up to 1,500 lbs Payload</li>
+                    <li class="card-li">Immediate Priority Pickup/Delivery</li>
+                    <li class="card-li">Expanded Local Zone (75 miles)</li>
+                    <li class="card-li">Real-Time GPS Tracking & Status</li>
+                    <li class="card-li">Commercial Cargo Handling Prep</li>
                 </ul>
             </div>
 
+            <!-- DELUXE -->
             <div class="card-box deluxe-edition-wrap">
                 <div class="card-head-row">
-                    <span class="service-title">The Deluxe</span>
+                    <span class="service-title">The Deluxe Edition</span>
                     <span class="price-hero">$650</span>
                 </div>
-                <p class="card-p">White Glove / Long Haul: Premium long-distance or heavy-load service.</p>
+                <p class="card-p">White Glove Long-Haul: Premium distance logistics with full loading support.</p>
                 <ul class="feature-list">
-                    <li class="card-li">Full Van Capacity (Up to 3,000 lbs)</li>
-                    <li class="card-li">Long-Haul up to 200 Miles</li>
-                    <li class="card-li">White Glove Loading/Unloading</li>
-                    <li class="card-li">Packaging & Debris Removal</li>
+                    <li class="card-li">Full Van Capacity (3,000 lbs)</li>
+                    <li class="card-li">Long-Distance (up to 200 Miles)</li>
+                    <li class="card-li">Professional Loading & Debris Removal</li>
+                    <li class="card-li">Fragile Cargo Padding & Strapping</li>
                 </ul>
             </div>
         </div>
     </section>
 
+    <!-- REWARD PROGRAM -->
     <section id="referral-banner">
         <h3 class="ref-title">REFERRAL REWARD PROGRAM</h3>
         <p class="ref-text">REFER 2 PEOPLE TO TSAH LLC AND RECEIVE<br><span style="font-size: 60px; display: block;">20% OFF</span> YOUR NEXT SERVICE.</p>
     </section>
 
+    <!-- STANDARDS & POLICIES -->
     <section id="policy-section">
         <h2 class="policy-headline">Service Standards & Policies</h2>
-        <div class="policy-item"><span class="policy-emoji">⌛</span><div><strong>48-HOUR CANCELLATION:</strong> Notice required to avoid full service forfeiture.</div></div>
-        <div class="policy-item"><span class="policy-emoji">📏</span><div><strong>SIZING STANDARDS:</strong> Rooms up to 300 sq. ft. Homes up to 2,500 sq. ft. larger properties require custom quotes.</div></div>
-        <div class="policy-item"><span class="policy-emoji">🛡️</span><div><strong>CONTRACTOR SOP:</strong> Subcontractors provide all equipment and fuel.</div></div>
-        <div class="policy-item"><span class="policy-emoji">🐾</span><div><strong>PET POLICY:</strong> Pets must be secured in a separate room or kennel during service.</div></div>
+        <div class="policy-item"><span class="policy-emoji">⌛</span><div><strong>48-HOUR CANCELLATION:</strong> Notice is strictly required for all services to avoid forfeiture of deposit.</div></div>
+        <div class="policy-item"><span class="policy-emoji">📏</span><div><strong>SIZING STANDARDS:</strong> Rates apply to rooms up to 300 sq. ft. and homes up to 2,500 sq. ft. Custom quotes for estate-sized properties.</div></div>
+        <div class="policy-item"><span class="policy-emoji">🛡️</span><div><strong>CONTRACTOR SOP:</strong> Independent subcontractors are responsible for providing all necessary equipment and gasoline.</div></div>
+        <div class="policy-item"><span class="policy-emoji">🐾</span><div><strong>PET POLICY:</strong> For safety, all pets must be secured in a separate room or kennel during on-site services.</div></div>
     </section>
 
+    <!-- FINAL INTAKE -->
     <section id="intake-area">
         <div class="form-container">
             <form id="tsah-master-form">
                 <div class="input-row">
-                    <label>Client Name</label>
-                    <input type="text" id="client-name" required placeholder="Enter name">
+                    <label>Full Client Name</label>
+                    <input type="text" id="client-name" required placeholder="Full Name">
                 </div>
                 <div class="input-row">
-                    <label>Service Selection</label>
+                    <label>Selected Service Vertical</label>
                     <select id="client-service" required>
-                        <option value="">-- Select Service --</option>
-                        <option>Credit Restoration</option>
-                        <option>Home Services</option>
-                        <option>Sprinter Logistics</option>
+                        <option value="">-- Choose Vertical --</option>
+                        <option>Housing Consultation</option>
+                        <option>Credit Restoration Track</option>
+                        <option>Residential Home Services</option>
+                        <option>Sprinter Logistics / Courier</option>
                     </select>
                 </div>
                 <div class="input-row">
-                    <label>Details</label>
-                    <textarea id="client-details" rows="6" placeholder="Describe your needs..."></textarea>
+                    <label>Service Details / Special Requirements</label>
+                    <textarea id="client-details" rows="6" placeholder="Please describe your specific needs..."></textarea>
                 </div>
                 <button type="submit" id="submit-inquiry">Submit Official Inquiry</button>
             </form>
         </div>
     </section>
 
-    <footer>© 2026 TSAH LLC | COLUMBUS, OHIO</footer>
+    <footer>© 2026 THE STREETS ARE HUNGRY LLC | COLUMBUS, OHIO</footer>
 
     <script>
         document.getElementById('tsah-master-form').addEventListener('submit', function(event) {
@@ -271,12 +311,12 @@
             const name = document.getElementById('client-name').value;
             const service = document.getElementById('client-service').value;
             const details = document.getElementById('client-details').value;
-            const message = `TSAH LLC INQUIRY%0A----------------%0AName: ${name}%0AService: ${service}%0ADetails: ${details}`;
+            
+            const message = `TSAH LLC OFFICIAL INQUIRY%0A------------------------%0AName: ${name}%0AService: ${service}%0ADetails: ${details}`;
+            
             const isApple = /iPhone|iPad|iPod/.test(navigator.userAgent);
             window.location.href = `sms:+1${phone}${isApple ? '&' : '?'}body=${message}`;
         });
     </script>
 </body>
 </html>
-
-```
