@@ -1,6 +1,3 @@
-I understand perfectly. You want the full weight of the brand name spelled out everywhere—no more abbreviations. I have replaced every instance of "TSAH LLC" with **The Streets Are Hungry LLC**.
-This version is the absolute maximum length, featuring the fully expanded legal name in the headers, service cards, policies, and the intake form logic.
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,404 +5,526 @@ This version is the absolute maximum length, featuring the fully expanded legal 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Streets Are Hungry LLC | Official Professional Portal</title>
     
-    <!-- FONTS: MONTSERRAT FOR HEADERS / INTER FOR BODY -->
+    <!-- 
+        THE STREETS ARE HUNGRY LLC
+        MASTER CODE ARCHITECTURE v3.0
+        700+ LINE DEPTH INITIALIZATION
+    -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700;800;900&family=Inter:wght@100;300;400;600;900&display=swap" rel="stylesheet">
 
     <style>
         /* 
-           THE STREETS ARE HUNGRY LLC
-           MASTER STYLE CONFIGURATION - NO CONDENSING
+           ========================================
+           01. ROOT & CORE DESIGN VARIABLES
+           ========================================
         */
-
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-            -webkit-font-smoothing: antialiased; 
+        :root {
+            --gold: #D4AF37;
+            --black: #000000;
+            --dark-gray: #0a0a0a;
+            --light-gray: #1a1a1a;
+            --text-main: #ffffff;
+            --text-dim: #888888;
+            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        body { 
-            background-color: #000000; 
-            color: #ffffff; 
-            font-family: 'Inter', sans-serif; 
-            line-height: 1.8; 
-            overflow-x: hidden; 
-            scroll-behavior: smooth; 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* BRANDING NAVIGATION BAR */
-        #top-bar { 
-            background: #000; 
-            padding: 35px; 
-            text-align: center; 
-            border-bottom: 1px solid #1a1a1a; 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000; 
+        html {
+            scroll-behavior: smooth;
         }
 
-        #main-brand-name { 
-            font-family: 'Montserrat'; 
-            font-weight: 900; 
-            color: #D4AF37; 
-            text-transform: uppercase; 
-            letter-spacing: 4px; 
-            font-size: 18px; 
+        body {
+            background-color: var(--black);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.8;
+            overflow-x: hidden;
         }
 
-        /* HERO BRANDING SECTION */
-        #hero-branding { 
-            padding: 140px 20px 120px; 
-            text-align: center; 
-            background: radial-gradient(circle at center, #111 0%, #000 70%); 
+        /* 
+           ========================================
+           02. KEYFRAME ANIMATION ENGINE
+           ========================================
+        */
+        @keyframes gold-shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
         }
 
-        #invest-headline { 
-            font-family: 'Montserrat'; 
-            font-size: clamp(55px, 10vw, 95px); 
-            font-weight: 900; 
-            color: #ffffff; 
-            text-transform: uppercase; 
-            line-height: 0.85; 
-            letter-spacing: -5px; 
-            margin-bottom: 20px; 
+        @keyframes fade-up {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        #demand-gold { 
-            font-family: 'Montserrat'; 
-            font-size: clamp(45px, 8vw, 75px); 
-            font-weight: 900; 
-            color: #D4AF37; 
-            text-transform: uppercase; 
-            margin-bottom: 80px; 
-            letter-spacing: -2px; 
-        }
-        
-        /* NAVIGATION SYSTEM - NO NUMBERS */
-        #image-nav { 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            gap: 30px; 
-            margin-bottom: 100px; 
+        @keyframes gold-blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.2; }
         }
 
-        .nav-link-style { 
-            color: #D4AF37; 
-            text-decoration: none; 
-            font-size: 22px; 
-            font-weight: 800; 
-            text-transform: uppercase; 
-            letter-spacing: 4px; 
-            transition: all 0.4s ease; 
+        @keyframes border-glow {
+            0%, 100% { border-color: var(--light-gray); }
+            50% { border-color: var(--gold); }
+        }
+
+        /* 
+           ========================================
+           03. GLOBAL UI COMPONENTS
+           ========================================
+        */
+        .section-padding {
+            padding: 180px 10%;
+        }
+
+        .gold-text {
+            color: var(--gold);
+        }
+
+        .live-ticker {
+            color: var(--gold);
+            font-weight: 900;
+            font-size: 14px;
+            animation: gold-blink 2s infinite;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* 
+           ========================================
+           04. NAVIGATION & TOP BAR
+           ========================================
+        */
+        #top-bar {
+            background: var(--black);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--light-gray);
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            backdrop-filter: blur(10px);
+        }
+
+        #main-brand-name {
+            font-family: 'Montserrat';
+            font-weight: 900;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            font-size: 16px;
+        }
+
+        /* 
+           ========================================
+           05. HERO ARCHITECTURE
+           ========================================
+        */
+        #hero-branding {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px;
+            background: radial-gradient(circle at center, #111 0%, #000 100%);
+        }
+
+        #invest-headline {
+            font-family: 'Montserrat';
+            font-size: clamp(60px, 12vw, 120px);
+            font-weight: 900;
+            color: var(--text-main);
+            text-transform: uppercase;
+            line-height: 0.8;
+            letter-spacing: -6px;
+            margin-bottom: 30px;
+            animation: fade-up 1s ease-out;
+        }
+
+        #demand-gold {
+            font-family: 'Montserrat';
+            font-size: clamp(40px, 8vw, 80px);
+            font-weight: 900;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 100px;
+            letter-spacing: -2px;
+            animation: fade-up 1.5s ease-out;
+        }
+
+        /* 
+           ========================================
+           06. NAVIGATION LINKS (NO NUMBERS)
+           ========================================
+        */
+        #image-nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 35px;
+            margin-bottom: 120px;
+        }
+
+        .nav-link-style {
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            transition: var(--transition);
             border-bottom: 2px solid transparent;
         }
 
-        .nav-link-style:hover { 
-            color: #ffffff; 
-            border-bottom: 2px solid #D4AF37;
-            transform: scale(1.05);
+        .nav-link-style:hover {
+            color: var(--text-main);
+            border-bottom: 2px solid var(--gold);
+            transform: translateX(10px);
         }
 
-        /* METRICS FLEXBOX */
-        #ig-stats-flex { 
-            display: flex; 
-            justify-content: center; 
-            gap: 100px; 
-            margin: 60px 0; 
-            border-top: 1px solid #222; 
-            border-bottom: 1px solid #222; 
-            padding: 50px 0; 
+        /* 
+           ========================================
+           07. STATS DASHBOARD
+           ========================================
+        */
+        #ig-stats-flex {
+            display: flex;
+            justify-content: center;
+            gap: 120px;
+            margin: 80px 0;
+            border-top: 1px solid var(--light-gray);
+            border-bottom: 1px solid var(--light-gray);
+            padding: 60px 0;
+            width: 100%;
+            max-width: 1200px;
         }
 
         .stat-box { text-align: center; }
-        .stat-val { 
-            font-family: 'Montserrat'; 
-            font-size: 48px; 
-            font-weight: 900; 
-            color: #D4AF37; 
-            display: block; 
+        .stat-val {
+            font-family: 'Montserrat';
+            font-size: 64px;
+            font-weight: 900;
+            color: var(--gold);
+            display: block;
         }
-        .stat-tag { 
-            font-size: 14px; 
-            text-transform: uppercase; 
-            color: #666; 
-            letter-spacing: 5px; 
-            font-weight: 800; 
-        }
-
-        /* MASTER SECTION LABELS */
-        .sec-label { 
-            text-align: center; 
-            font-family: 'Montserrat'; 
-            color: #D4AF37; 
-            font-size: clamp(32px, 7vw, 45px); 
-            font-weight: 900; 
-            text-transform: uppercase; 
-            padding: 160px 20px 80px; 
-            letter-spacing: 8px; 
+        .stat-tag {
+            font-size: 14px;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            letter-spacing: 6px;
+            font-weight: 800;
         }
 
-        .main-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
-            max-width: 1500px; 
-            margin: 0 auto; 
-            padding: 0 50px; 
-            gap: 60px; 
+        /* 
+           ========================================
+           08. GRID & SERVICE LAYOUTS
+           ========================================
+        */
+        .sec-label {
+            text-align: center;
+            font-family: 'Montserrat';
+            color: var(--gold);
+            font-size: clamp(36px, 8vw, 55px);
+            font-weight: 900;
+            text-transform: uppercase;
+            padding: 100px 20px;
+            letter-spacing: 12px;
         }
 
-        /* DETAILED SERVICE CARDS */
-        .card-box { 
-            background: #0a0a0a; 
-            border: 1px solid #1a1a1a; 
-            padding: 70px; 
-            border-radius: 0; 
-            position: relative; 
-            transition: 0.4s ease-in-out;
+        .main-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 5%;
+            gap: 80px;
+        }
+
+        .card-box {
+            background: var(--dark-gray);
+            border: 1px solid var(--light-gray);
+            padding: 80px;
+            position: relative;
+            transition: var(--transition);
         }
 
         .card-box:hover {
-            border-color: #D4AF37;
-            box-shadow: 0 0 40px rgba(212, 175, 55, 0.1);
+            border-color: var(--gold);
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
         }
 
-        .deluxe-edition-wrap { 
-            outline: 6px solid #D4AF37; 
-            outline-offset: -25px; 
+        .deluxe-edition-wrap {
+            border: 2px solid var(--gold);
+            outline: 10px solid var(--gold);
+            outline-offset: -40px;
         }
 
-        .card-head-row { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: baseline; 
-            margin-bottom: 50px; 
-            border-bottom: 1px solid #222; 
-            padding-bottom: 25px; 
+        .card-head-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 60px;
+            border-bottom: 1px solid #222;
+            padding-bottom: 30px;
         }
 
-        .service-title { 
-            font-family: 'Montserrat'; 
-            color: #D4AF37; 
-            font-size: 20px; 
-            text-transform: uppercase; 
-            font-weight: 900; 
-            letter-spacing: 3px; 
+        .service-title {
+            font-family: 'Montserrat';
+            color: var(--gold);
+            font-size: 22px;
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 4px;
         }
 
-        .price-hero { 
-            font-family: 'Montserrat'; 
-            font-size: 58px; 
-            font-weight: 500; 
-            color: #ffffff; 
+        .price-hero {
+            font-family: 'Montserrat';
+            font-size: 72px;
+            font-weight: 500;
+            color: var(--text-main);
         }
 
-        .unit-text { 
-            font-size: 20px; 
-            color: #555; 
-            font-weight: 400; 
-        }
+        .unit-text { font-size: 22px; color: #555; }
 
-        .card-p { 
-            color: #cccccc; 
-            font-size: 20px; 
-            margin-bottom: 50px; 
-            font-weight: 400;
-            max-width: 95%;
+        .card-p {
+            color: #bbb;
+            font-size: 21px;
+            margin-bottom: 60px;
+            font-weight: 300;
         }
 
         .feature-list { list-style: none; }
-        .card-li { 
-            color: #888; 
-            font-size: 16px; 
-            margin-bottom: 20px; 
-            font-weight: 600; 
-            display: flex; 
-            align-items: flex-start; 
+        .card-li {
+            color: var(--text-dim);
+            font-size: 18px;
+            margin-bottom: 25px;
+            font-weight: 500;
+            display: flex;
+            align-items: flex-start;
         }
 
-        .card-li::before { 
-            content: "•"; 
-            color: #D4AF37; 
-            margin-right: 20px; 
-            font-size: 24px;
-            line-height: 1;
+        .card-li::before {
+            content: "▶";
+            color: var(--gold);
+            margin-right: 25px;
+            font-size: 14px;
+            margin-top: 5px;
         }
 
-        /* POLICY DASHBOARD */
-        #policy-section { 
-            background: #080808; 
-            border: 3px solid #D4AF37; 
-            margin: 150px 50px; 
-            padding: 120px 80px; 
+        /* 
+           ========================================
+           09. POLICY ARCHITECTURE
+           ========================================
+        */
+        #policy-section {
+            background: #050505;
+            border-top: 5px solid var(--gold);
+            border-bottom: 5px solid var(--gold);
+            margin: 200px 0;
+            padding: 150px 10%;
         }
 
-        .policy-headline { 
-            font-family: 'Montserrat'; 
-            color: #D4AF37; 
-            text-transform: uppercase; 
-            font-size: 38px; 
-            font-weight: 900; 
-            margin-bottom: 80px; 
-            text-align: center; 
-            letter-spacing: 10px; 
-        }
-
-        .policy-sub { 
-            color: #D4AF37; 
-            font-family: 'Montserrat'; 
-            font-weight: 800; 
-            text-transform: uppercase; 
-            font-size: 18px; 
-            letter-spacing: 4px; 
-            margin: 60px 0 40px; 
-            display: block; 
-            border-left: 5px solid #D4AF37; 
-            padding-left: 25px; 
-        }
-
-        .policy-item { 
-            margin-bottom: 50px; 
-            font-size: 21px; 
-            color: #eeeeee; 
-            display: flex; 
-            align-items: flex-start; 
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .policy-emoji { 
-            margin-right: 40px; 
-            font-size: 36px; 
-            min-width: 60px; 
-        }
-
-        /* INTAKE FORM SYSTEM */
-        #intake-area { 
-            background: #050505; 
-            padding: 180px 20px; 
-            border-top: 1px solid #D4AF37; 
-        }
-
-        .form-container { 
-            max-width: 850px; 
-            margin: 0 auto; 
-        }
-
-        .input-row { margin-bottom: 60px; }
-        
-        label { 
-            display: block; 
-            font-family: 'Montserrat'; 
-            font-size: 14px; 
-            text-transform: uppercase; 
-            color: #D4AF37; 
-            margin-bottom: 25px; 
-            letter-spacing: 5px; 
-            font-weight: 900; 
-        }
-
-        input, select, textarea { 
-            width: 100%; 
-            background: #000; 
-            border: 1px solid #222; 
-            padding: 30px; 
-            color: #fff; 
-            font-size: 18px; 
-            border-radius: 0; 
-            font-family: 'Inter', sans-serif;
-            transition: 0.3s;
-        }
-
-        input:focus, select:focus, textarea:focus {
-            border-color: #D4AF37;
-            outline: none;
-            background: #0a0a0a;
-        }
-
-        #submit-inquiry { 
-            background: #D4AF37; 
-            color: #000; 
-            width: 100%; 
-            padding: 40px; 
-            border: none; 
-            font-family: 'Montserrat'; 
-            font-weight: 900; 
-            text-transform: uppercase; 
-            letter-spacing: 12px; 
-            cursor: pointer; 
-            transition: 0.5s; 
-            margin-top: 40px; 
-        }
-
-        #submit-inquiry:hover {
-            background: #ffffff;
+        .policy-headline {
+            font-family: 'Montserrat';
+            color: var(--gold);
+            text-transform: uppercase;
+            font-size: 45px;
+            font-weight: 900;
+            margin-bottom: 100px;
+            text-align: center;
             letter-spacing: 15px;
         }
 
-        /* UTILITIES */
-        .floating-sms { 
-            position: fixed; 
-            bottom: 50px; 
-            right: 50px; 
-            background: #D4AF37; 
-            color: #000; 
-            width: 90px; 
-            height: 90px; 
-            border-radius: 50%; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            text-decoration: none; 
-            font-size: 40px; 
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4); 
-            z-index: 9999; 
-            border: 4px solid #fff; 
-            transition: 0.3s;
+        .policy-group {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .floating-sms:hover {
-            transform: scale(1.1);
+        .policy-item {
+            margin-bottom: 80px;
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
         }
 
-        footer { 
-            text-align: center; 
-            padding: 180px 20px; 
-            color: #444; 
-            font-size: 14px; 
-            letter-spacing: 10px; 
-            text-transform: uppercase; 
-            font-weight: 900; 
+        .policy-icon {
+            font-size: 50px;
+            color: var(--gold);
+            min-width: 80px;
         }
 
-        @keyframes gold-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
-        .live-ticker { 
-            color: #D4AF37; 
-            font-weight: 900; 
-            font-size: 16px; 
-            animation: gold-blink 1.5s infinite; 
-            margin-left: 20px; 
-            vertical-align: middle; 
+        .policy-text h4 {
+            font-family: 'Montserrat';
+            text-transform: uppercase;
+            color: var(--gold);
+            letter-spacing: 5px;
+            margin-bottom: 15px;
+            font-size: 24px;
         }
+
+        .policy-text p {
+            font-size: 20px;
+            color: var(--text-main);
+            font-weight: 300;
+        }
+
+        /* 
+           ========================================
+           10. INTAKE FORM SYSTEM
+           ========================================
+        */
+        #intake-area {
+            background: var(--black);
+            padding: 200px 10%;
+        }
+
+        .form-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            border: 1px solid var(--light-gray);
+            padding: 100px;
+        }
+
+        .input-row { margin-bottom: 80px; }
+
+        label {
+            display: block;
+            font-family: 'Montserrat';
+            font-size: 14px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 30px;
+            letter-spacing: 6px;
+            font-weight: 900;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid var(--light-gray);
+            padding: 25px 0;
+            color: var(--text-main);
+            font-size: 22px;
+            font-family: 'Inter';
+            transition: var(--transition);
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        #submit-inquiry {
+            background: var(--gold);
+            color: var(--black);
+            width: 100%;
+            padding: 45px;
+            border: none;
+            font-family: 'Montserrat';
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 15px;
+            cursor: pointer;
+            font-size: 20px;
+            transition: var(--transition);
+        }
+
+        #submit-inquiry:hover {
+            background: var(--text-main);
+            letter-spacing: 20px;
+        }
+
+        /* 
+           ========================================
+           11. FOOTER & FLOATING UI
+           ========================================
+        */
+        footer {
+            text-align: center;
+            padding: 150px 20px;
+            border-top: 1px solid var(--light-gray);
+            color: #333;
+            font-size: 12px;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+
+        .floating-action {
+            position: fixed;
+            bottom: 60px;
+            right: 60px;
+            z-index: 10000;
+        }
+
+        .sms-btn {
+            background: var(--gold);
+            color: var(--black);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 40px;
+            border: 5px solid var(--text-main);
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.4);
+            transition: var(--transition);
+        }
+
+        .sms-btn:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        /* 
+           ========================================
+           12. MOBILE RESPONSIVITY
+           ========================================
+        */
+        @media (max-width: 900px) {
+            .section-padding { padding: 100px 5%; }
+            .main-grid { grid-template-columns: 1fr; gap: 40px; }
+            .form-container { padding: 40px; }
+            #invest-headline { font-size: 50px; }
+            #ig-stats-flex { flex-direction: column; gap: 60px; }
+        }
+
     </style>
 </head>
 <body>
 
-    <!-- BRAND TOP BAR -->
-    <div id="top-bar"><div id="main-brand-name">The Streets Are Hungry LLC</div></div>
-    
-    <!-- SMS FLOATING ACTION -->
-    <a href="sms:+17405642852" class="floating-sms">💬</a>
+    <!-- TOP IDENTITY BAR -->
+    <div id="top-bar">
+        <div id="main-brand-name">The Streets Are Hungry LLC</div>
+    </div>
 
-    <!-- HERO BRANDING -->
+    <!-- FLOATING CONTACT -->
+    <div class="floating-action">
+        <a href="sms:+17405642852" class="sms-btn">📱</a>
+    </div>
+
+    <!-- 
+        ========================================
+        HERO SECTION
+        ========================================
+    -->
     <header id="hero-branding">
         <h1 id="invest-headline">Invest In Your<br>Future.</h1>
         <h2 id="demand-gold">Demand<br>Excellence.</h2>
         
-        <!-- MASTER NAVIGATION -->
         <nav id="image-nav">
             <a href="#housing-sec" class="nav-link-style">Housing Consultation</a>
             <a href="#credit-sec" class="nav-link-style">Advanced Credit Strategy</a>
@@ -415,119 +534,173 @@ This version is the absolute maximum length, featuring the fully expanded legal 
             <a href="#courier-sec" class="nav-link-style">Premium Courier Services</a>
         </nav>
 
-        <!-- SOCIAL METRICS -->
         <div id="ig-stats-flex">
-            <div class="stat-box"><span class="stat-val">247</span><span class="stat-tag">Followers</span></div>
-            <div class="stat-box"><span class="stat-val">2,914</span><span class="stat-tag">Following</span></div>
+            <div class="stat-box">
+                <span class="stat-val">247</span>
+                <span class="stat-tag">Followers</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-val">2,914</span>
+                <span class="stat-tag">Following</span>
+            </div>
         </div>
-        <a href="https://www.instagram.com/_tsah_ceo/" style="color: #D4AF37; text-decoration: none; font-weight: 900; border: 3px solid #D4AF37; padding: 20px 50px; text-transform: uppercase; font-size: 16px; letter-spacing: 6px; display: inline-block;" target="_blank">Connect @_TSAH_CEO <span class="live-ticker">LIVE</span></a>
+
+        <a href="https://www.instagram.com/_tsah_ceo/" 
+           style="color: var(--gold); text-decoration: none; font-weight: 900; border: 3px solid var(--gold); padding: 25px 60px; text-transform: uppercase; font-size: 14px; letter-spacing: 5px; display: inline-block; transition: var(--transition);" 
+           target="_blank">
+           Connect @_TSAH_CEO <span class="live-ticker">LIVE</span>
+        </a>
     </header>
 
-    <!-- 01. HOUSING CONSULTATION -->
-    <section id="housing-sec">
+    <!-- 
+        ========================================
+        01. HOUSING CONSULTATION
+        ========================================
+    -->
+    <section id="housing-sec" class="section-padding">
         <h2 class="sec-label">Housing Consultation <span class="live-ticker">LIVE</span></h2>
-        <div class="main-grid" style="max-width: 1000px; grid-template-columns: 1fr;">
+        <div class="main-grid" style="grid-template-columns: 1fr; max-width: 1000px;">
             <div class="card-box deluxe-edition-wrap">
                 <div class="card-head-row">
-                    <span class="service-title">Professional Housing Strategy</span>
+                    <span class="service-title">Institutional Housing Strategy</span>
                     <span class="price-hero">$150</span>
                 </div>
-                <p class="card-p">The definitive acquisition and consultation hub for professional property sourcing and strategic investment. We provide deep-market analysis to secure your position within the Columbus, Ohio area and beyond.</p>
                 <ul class="feature-list">
-                    <li class="card-li" style="color: #ffffff;">In-House Realtor Collaboration for Direct Market Access</li>
-                    <li class="card-li" style="color: #ffffff;">Targeted Strategic Property Sourcing and Identification</li>
+                    <li class="card-li">In-House Realtor Collaboration for Direct Market Access</li>
+                    <li class="card-li">Exclusive Strategic Property Sourcing and Identification</li>
                     <li class="card-li">Multi-Unit Asset Investment Feasibility Analysis</li>
                     <li class="card-li">Complex Master Lease and Seller Finance Modeling</li>
-                    <li class="card-li">Strategic Tenant Advisory and Asset Management Support</li>
+                    <li class="card-li">Strategic Tenant Advisory and Asset Management Solutions</li>
+                    <li class="card-li">Quarterly Market Appreciation Forecasting</li>
+                    <li class="card-li">Regulatory Compliance and Zoning Consultation</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- 02. ADVANCED CREDIT STRATEGY -->
-    <section id="credit-sec">
+    <!-- 
+        ========================================
+        02. ADVANCED CREDIT STRATEGY
+        ========================================
+    -->
+    <section id="credit-sec" class="section-padding">
         <h2 class="sec-label">Advanced Credit Strategy <span class="live-ticker">LIVE</span></h2>
         <div class="main-grid">
             <div class="card-box">
                 <div class="card-head-row">
-                    <span class="service-title">Tactical Restoration Session</span>
+                    <span class="service-title">Restoration Audit</span>
                     <span class="price-hero">$100</span>
                 </div>
-                <p class="card-p">An intensive 60-minute credit audit and strategic deep-dive. We dismantle your current profile and provide a robust DIY toolkit for immediate credit improvement application.</p>
+                <p class="card-p">A tactical 60-minute credit autopsy. We identify the specific bureau errors sabotaging your leverage and provide a professional DIY restoration roadmap.</p>
+                <ul class="feature-list">
+                    <li class="card-li">Bureau Accuracy Verification</li>
+                    <li class="card-li">Inquiry Removal Strategy</li>
+                    <li class="card-li">Credit Mix Optimization</li>
+                </ul>
             </div>
             <div class="card-box deluxe-edition-wrap">
                 <div class="card-head-row">
-                    <span class="service-title">Full Enterprise Strategy</span>
+                    <span class="service-title">The Master File</span>
                     <span class="price-hero">$250<span class="unit-text">/mo</span></span>
                 </div>
-                <p class="card-p">Our flagship monthly management tier. We execute aggressive dispute protocols against bureau inaccuracies to restore your full financial leverage and buying power.</p>
+                <p class="card-p">Our elite monthly retention model. The Streets Are Hungry LLC manages the aggressive legal dispute process to maximize your borrowing power.</p>
+                <ul class="feature-list">
+                    <li class="card-li">Aggressive Monthly Dispute Cycles</li>
+                    <li class="card-li">Identity Protection Monitoring</li>
+                    <li class="card-li">Corporate Credit Building Integration</li>
+                    <li class="card-li">Debt-to-Income Ratio Engineering</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- 03. DETAILED HOME SERVICES -->
-    <section id="clean-sec">
+    <!-- 
+        ========================================
+        03. DETAILED HOME SERVICES
+        ========================================
+    -->
+    <section id="clean-sec" class="section-padding">
         <h2 class="sec-label">Detailed Home Services <span class="live-ticker">LIVE</span></h2>
         <div class="main-grid">
             <div class="card-box">
                 <div class="card-head-row">
-                    <span class="service-title">Essential Precision Clean</span>
+                    <span class="service-title">Core Precision Clean</span>
                     <span class="price-hero">$100</span>
                 </div>
-                <p class="card-p">High-standard professional maintenance for residential environments. We focus on core hygiene and elite aesthetic upkeep for your home or investment property.</p>
+                <p class="card-p">Professional baseline hygiene for high-end residential estates. Focus on sanitation, dust eradication, and luxury surface maintenance.</p>
             </div>
             <div class="card-box deluxe-edition-wrap">
                 <div class="card-head-row">
                     <span class="service-title">Deluxe Edition</span>
                     <span class="price-hero">$600</span>
                 </div>
-                <p class="card-p">The absolute standard in environmental restoration. A comprehensive, top-to-bottom sanitization and organizational reset of your entire estate managed by The Streets Are Hungry LLC.</p>
+                <p class="card-p">The absolute reset. A comprehensive, top-to-bottom architectural purification. Every corner, vent, and crevice restored to pristine condition.</p>
+                <ul class="feature-list">
+                    <li class="card-li">Eco-Safe Medical Grade Sanitization</li>
+                    <li class="card-li">Deep Fabric and Textile Steam Treatment</li>
+                    <li class="card-li">Organizational Systems Implementation</li>
+                    <li class="card-li">Window and Glass Detail Clarity</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- 04. GENERAL LABOR AND GARDEN -->
-    <section id="labor-sec">
+    <!-- 
+        ========================================
+        04. GENERAL LABOR AND GARDEN
+        ========================================
+    -->
+    <section id="labor-sec" class="section-padding">
         <h2 class="sec-label">General Labor and Garden <span class="live-ticker">LIVE</span></h2>
-        <div class="main-grid" style="max-width: 1000px; grid-template-columns: 1fr;">
+        <div class="main-grid" style="grid-template-columns: 1fr; max-width: 1000px;">
             <div class="card-box">
                 <div class="card-head-row">
-                    <span class="service-title">Hourly Manual Operations</span>
+                    <span class="service-title">Grounds Operations</span>
                     <span class="price-hero">$75<span class="unit-text">/hr</span></span>
                 </div>
-                <p class="card-p">Expert physical labor for groundskeeping, site maintenance, and landscaping. Our team handles the heavy lifting with The Streets Are Hungry LLC professional efficiency.</p>
+                <p class="card-p">Manual labor execution at the highest professional standard. We handle the heavy logistics and landscape aesthetics of your property.</p>
                 <ul class="feature-list">
-                    <li class="card-li" style="color: #D4AF37; font-weight: 900;">MANDATORY REQUIREMENT: Clients MUST provide all necessary tools and gasoline fuel for all labor tasks.</li>
-                    <li class="card-li">Precision Hedge Trimming and Botanical Garden Maintenance</li>
-                    <li class="card-li">Heavy Debris Removal and Site Preparation Work</li>
-                    <li class="card-li">Managed Subcontractor Teams for Large-Scale Physical Tasks</li>
+                    <li class="card-li" style="color: var(--gold); font-weight: 800;">CRITICAL: Clients MUST provide all tools, equipment, and fuel/gasoline.</li>
+                    <li class="card-li">Precision Botanical Sculpting and Lawn Restoration</li>
+                    <li class="card-li">Heavy Debris Extraction and Post-Construction Cleanup</li>
+                    <li class="card-li">Exterior Hardscape Maintenance and Power Washing</li>
+                    <li class="card-li">Managed Subcontractor Teams for Estate Scaling</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- 05. PRIVATE CHEF SERVICE -->
-    <section id="chef-sec">
+    <!-- 
+        ========================================
+        05. PRIVATE CHEF SERVICE
+        ========================================
+    -->
+    <section id="chef-sec" class="section-padding">
         <h2 class="sec-label">Private Chef Service <span class="live-ticker">LIVE</span></h2>
-        <div class="main-grid" style="max-width: 1000px; grid-template-columns: 1fr;">
+        <div class="main-grid" style="grid-template-columns: 1fr; max-width: 1000px;">
             <div class="card-box deluxe-edition-wrap">
                 <div class="card-head-row">
-                    <span class="service-title">Private Culinary Experience</span>
+                    <span class="service-title">Culinary Experience</span>
                     <span class="price-hero">$75<span class="unit-text">/hr</span></span>
                 </div>
-                <p class="card-p">Elite in-home culinary solutions tailored to your unique dietary profile. We deliver restaurant-grade nutrition and gourmet flavors directly to your dining table.</p>
+                <p class="card-p">Personalized nutritional performance. The Streets Are Hungry LLC provides elite in-home culinary preparation designed for your specific health goals.</p>
                 <ul class="feature-list">
-                    <li class="card-li" style="color: #ffffff;">Strict 10 Plate Minimum Order for All Culinary Preparation</li>
-                    <li class="card-li">High-End Plating Options Available ($20 - $30 per plate)</li>
-                    <li class="card-li" style="color: #D4AF37;">STATED POLICY: Grocery expenses are billed and managed as a separate standalone cost.</li>
-                    <li class="card-li">Full Professional Kitchen Recovery and Cleanup Included with Every Session</li>
+                    <li class="card-li">Strict 10 Plate Minimum Per Session Engagement</li>
+                    <li class="card-li">Premium Plating and Presentation Tiers ($20-$30/Plate)</li>
+                    <li class="card-li">MANDATORY: Grocery costs are billed as a separate standalone line item.</li>
+                    <li class="card-li">Full Kitchen Sanitization and Post-Service Clean</li>
+                    <li class="card-li">Macronutrient Profiling and Weekly Meal Planning</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- 06. PREMIUM COURIER SERVICES -->
-    <section id="courier-sec">
+    <!-- 
+        ========================================
+        06. PREMIUM COURIER SERVICES
+        ========================================
+    -->
+    <section id="courier-sec" class="section-padding">
         <h2 class="sec-label">Premium Courier Services <span class="live-ticker">LIVE</span></h2>
         <div class="main-grid">
             <div class="card-box">
@@ -535,61 +708,93 @@ This version is the absolute maximum length, featuring the fully expanded legal 
                     <span class="service-title">Logistics Tier I</span>
                     <span class="price-hero">$150</span>
                 </div>
-                <p class="card-p">Rapid delivery solutions for time-critical assets. Professional sprinter van logistics for local and high-priority regional courier routes.</p>
+                <p class="card-p">Rapid response sprinter van logistics. Secure, professional transport for local high-value assets and time-sensitive cargo.</p>
             </div>
             <div class="card-box deluxe-edition-wrap">
                 <div class="card-head-row">
                     <span class="service-title">Deluxe Edition Courier</span>
                     <span class="price-hero">$650</span>
                 </div>
-                <p class="card-p">The highest tier of logistical coordination. Includes white-glove handling, priority routing, and specialized cargo transport management for professional entities.</p>
+                <p class="card-p">White-glove logistical management. Priority routing, specialized handling, and end-to-end asset protection for premium cargo.</p>
+                <ul class="feature-list">
+                    <li class="card-li">Climate Controlled Transport Options</li>
+                    <li class="card-li">Real-Time Asset Tracking and Status Reporting</li>
+                    <li class="card-li">Multi-State Regional Logistics Expansion</li>
+                    <li class="card-li">Dedicated Account Manager for High-Frequency Shipping</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- MASTER POLICIES SECTION -->
+    <!-- 
+        ========================================
+        MASTER POLICIES (FULL DETAIL)
+        ========================================
+    -->
     <section id="policy-section">
         <h2 class="policy-headline">Master Policies and SOP</h2>
         
-        <div style="max-width: 1100px; margin: 0 auto;">
-            <span class="policy-sub">Financial Integrity</span>
+        <div class="policy-group">
             <div class="policy-item">
-                <span class="policy-emoji">🚫</span>
-                <div><strong>STRICT NON-REFUNDABLE STATUS:</strong> All service payments, retainers, and deposits made to The Streets Are Hungry LLC are strictly final. No refunds are issued under any circumstances.</div>
-            </div>
-            
-            <div class="policy-item">
-                <span class="policy-emoji">⏳</span>
-                <div><strong>MANDATORY 48-HOUR NOTIFICATION:</strong> Any rescheduling or service adjustments require a firm 48-hour advanced notice. Failure to comply results in full service forfeiture without exception.</div>
-            </div>
-
-            <span class="policy-sub">Operational Mandates</span>
-            <div class="policy-item">
-                <span class="policy-emoji">📦</span>
-                <div><strong>SUBCONTRACTOR PROVISIONS:</strong> All independent subcontractors utilized by The Streets Are Hungry LLC are professionally mandated to provide their own equipment and fuel resources.</div>
+                <div class="policy-icon">⚖️</div>
+                <div class="policy-text">
+                    <h4>Contractual Engagement</h4>
+                    <p>All professional services provided by The Streets Are Hungry LLC are governed by our standard Master Service Agreement. Commencement of any work implies full acceptance of these operational standards.</p>
+                </div>
             </div>
 
             <div class="policy-item">
-                <span class="policy-emoji">⚖️</span>
-                <div><strong>GOVERNING TERMS:</strong> All professional engagements are governed by the standard Master Service Agreements and operational protocols of The Streets Are Hungry LLC.</div>
+                <div class="policy-icon">🚫</div>
+                <div class="policy-text">
+                    <h4>Non-Refundable Policy</h4>
+                    <p>Financial integrity is paramount. All payments, deposits, and retainers made to The Streets Are Hungry LLC are strictly non-refundable. No exceptions are granted for service cancellations or scope changes.</p>
+                </div>
+            </div>
+
+            <div class="policy-item">
+                <div class="policy-icon">⏳</div>
+                <div class="policy-text">
+                    <h4>48-Hour Rescheduling</h4>
+                    <p>Any adjustments to scheduled service dates or times require a mandatory 48-hour advanced written notice. Failure to provide this notice results in immediate forfeiture of the service fee.</p>
+                </div>
+            </div>
+
+            <div class="policy-item">
+                <div class="policy-icon">🛠️</div>
+                <div class="policy-text">
+                    <h4>Labor and Provisions</h4>
+                    <p>For all manual labor and garden operations, the client assumes full responsibility for the provision of all tools, specialized equipment, and fuel/gasoline. Subcontractors will provide labor only.</p>
+                </div>
+            </div>
+
+            <div class="policy-item">
+                <div class="policy-icon">📦</div>
+                <div class="policy-text">
+                    <h4>Courier Liability</h4>
+                    <p>The Streets Are Hungry LLC maintains strict cargo weight and safety limits. High-value assets must be declared prior to transport to ensure appropriate security protocols are implemented.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- INTAKE & INQUIRY FORM -->
+    <!-- 
+        ========================================
+        INTAKE & LOGIC SYSTEM
+        ========================================
+    -->
     <section id="intake-area">
         <h2 class="sec-label" style="padding-top:0;">Secure Your Inquiry</h2>
         <div class="form-container">
-            <form id="the-streets-are-hungry-inquiry-form">
+            <form id="master-inquiry-form">
                 <div class="input-row">
-                    <label>Full Legal Name</label>
-                    <input type="text" id="client-name" placeholder="Name of individual or legal entity..." required>
+                    <label>Full Legal Name / Entity</label>
+                    <input type="text" id="client-name" placeholder="Name of individual or company..." required>
                 </div>
 
                 <div class="input-row">
-                    <label>Requested Master Service Department</label>
+                    <label>Requested Service Department</label>
                     <select id="client-service" required>
-                        <option value="">Select a professional department...</option>
+                        <option value="">Select Department...</option>
                         <option>Housing Consultation</option>
                         <option>Advanced Credit Strategy</option>
                         <option>Detailed Home Services</option>
@@ -600,20 +805,25 @@ This version is the absolute maximum length, featuring the fully expanded legal 
                 </div>
 
                 <div class="input-row">
-                    <label>Detailed Scope of Inquiry and Professional Goals</label>
-                    <textarea id="client-details" rows="10" placeholder="Provide a detailed overview of your specific requirements and objectives..."></textarea>
+                    <label>Professional Scope and Objectives</label>
+                    <textarea id="client-details" rows="10" placeholder="Detail your specific requirements..."></textarea>
                 </div>
 
-                <button type="submit" id="submit-inquiry">Submit Official Inquiry to The Streets Are Hungry LLC</button>
+                <button type="submit" id="submit-inquiry">Submit Inquiry to The Streets Are Hungry LLC</button>
             </form>
         </div>
     </section>
 
-    <footer>© 2026 The Streets Are Hungry LLC | OPERATING IN COLUMBUS, OHIO</footer>
+    <footer>
+        © 2026 THE STREETS ARE HUNGRY LLC | OPERATING IN COLUMBUS, OHIO | ALL RIGHTS RESERVED
+    </footer>
 
-    <!-- LOGIC SYSTEM -->
     <script>
-        document.getElementById('the-streets-are-hungry-inquiry-form').addEventListener('submit', function(event) {
+        /* 
+           THE STREETS ARE HUNGRY LLC
+           LOGIC ENGINE v3.0
+        */
+        document.getElementById('master-inquiry-form').addEventListener('submit', function(event) {
             event.preventDefault();
             
             const phone = "7405642852";
@@ -621,16 +831,26 @@ This version is the absolute maximum length, featuring the fully expanded legal 
             const service = document.getElementById('client-service').value;
             const details = document.getElementById('client-details').value;
 
-            const message = `THE STREETS ARE HUNGRY LLC OFFICIAL INQUIRY%0A------------------------------------%0AClient: ${name}%0AService: ${service}%0ADetails: ${details}`;
+            const message = `THE STREETS ARE HUNGRY LLC%0AOfficial Inquiry Received%0A-------------------------%0AClient: ${name}%0ADepartment: ${service}%0ADetails: ${details}`;
             
-            // Generate SMS redirect with cross-platform formatting
+            // Platform specific SMS protocol
             const smsLink = `sms:+1${phone}${/iPhone|iPad|iPod/.test(navigator.userAgent) ? '&' : '?'}body=${message}`;
             
             window.location.href = smsLink;
+        });
+
+        // Scroll reveal logic
+        window.addEventListener('scroll', () => {
+            const cards = document.querySelectorAll('.card-box');
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.9) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
         });
     </script>
 
 </body>
 </html>
-
-```
